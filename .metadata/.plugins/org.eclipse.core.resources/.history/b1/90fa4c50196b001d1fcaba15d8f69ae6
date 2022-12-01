@@ -1,0 +1,224 @@
+package Test;
+
+import java.awt.AWTException;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import MainPack.BaseClass;
+import Pages.Add_Notes;
+import Pages.Assets;
+import Pages.Attached_Files;
+import Pages.Customer;
+import Pages.DemoPage;
+import Pages.Edit_Customer;
+import io.appium.java_client.MobileElement;
+
+public class Customer_Related_TestCases extends BaseClass{
+	
+	@Test(enabled=false)//priority=0  enabled=false
+	public void AddCustomer() throws InterruptedException, AWTException 
+	{
+		Customer customer = new Customer(driver);
+		customer.Side_Menu();
+		customer.Private_Customer();
+    	customer.Customer_Name(Name);
+		customer.Customer_SurName(Surname);
+		customer.Customer_Telephone("8248724397");
+		customer.Customer_Mobile("8248724397");
+		customer.Customer_email("ssaravanan@commusoft.com");
+		customer.Customer_AddressLine1("Address line 1");
+		
+		customer.Customer_Save();
+		customer.Customer_Fav();
+		customer.Customer_Back();
+		
+	}//scrolltothetop(440,1953,370,330);
+	
+	@Test(enabled=false)//priority=1  enabled=false
+	public void Edit_CustomerDetails() throws InterruptedException 
+	{
+		Edit_Customer edit_Customer = new Edit_Customer(driver);
+		Customer customer = new Customer(driver);
+		customer.Side_Menu();
+		customer.Click_FavCus();
+		TwoSec();
+		edit_Customer.Click_Cus(Name,Surname);
+//		FiveSec();
+//		clickpoint(399,567);
+		edit_Customer.Click_Cus_InCusDetailsScreen(Name, Surname);
+		FiveSec();
+		edit_Customer.Click_EditButton();
+		edit_Customer.Edit_Name(EditName);
+		edit_Customer.Edit_Landline(EditLandline);
+		edit_Customer.Edit_Mobile(EditMob);
+		edit_Customer.Edit_Email(EditEmail);
+		edit_Customer.Edit_AddressLine1(EditAddress1);
+		FiveSec();
+		customer.Customer_Save();
+		edit_Customer.Verify_EditedEmail(EditEmail);
+		edit_Customer.Verify_EditedMobile(EditMob);
+		edit_Customer.Verify_EditedLandline(EditLandline);
+		edit_Customer.Verify_EditedAddress1(EditAddress1);
+		customer.Customer_Back();
+		edit_Customer.Verify_EditedName(EditName, Surname);
+		customer.Customer_Back();
+		customer.Side_Menu();
+		customer.Click_FavCus();
+		edit_Customer.Verify_EditedNameinFavCusScreen(EditName, Surname);
+		customer.Side_Menu();
+		edit_Customer.Click_ViewDiary();
+		
+	}
+	
+	@Test(enabled=false)
+	public void Add_Notes_ForCustomer() throws InterruptedException 
+	{
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Customer customer = new Customer(driver);
+		customer.Side_Menu();
+		customer.Customer_search();
+		add_Notes.TypeCustomerNameInSearchField(EditName, Surname);
+		add_Notes.Click_Cus(EditName, Surname);
+		add_Notes.Click_Choc_MenuButton();
+		add_Notes.Click_NotesSection();
+		add_Notes.Verify_NotesScreen();
+		add_Notes.Click_FabIcon();
+		add_Notes.Click_Addnewnote();
+		add_Notes.Enter_Title(NoteTitle);
+		add_Notes.Enter_Note(Note);
+		customer.Customer_Save();
+		add_Notes.Click_ExpandedFabIcon();
+		scrolltothedown(500,1700,500,2165);//For Refresh The Page
+		add_Notes.Click_FabIcon();
+		add_Notes.Click_Add_new_phone_call();
+		add_Notes.Click_Calltype_Dropdown();
+		add_Notes.Select_IncomingCall();
+		add_Notes.Click_ContactName_Dropdown();
+		add_Notes.Select_ContactName(EditName, Surname);
+		add_Notes.Click_ContactNumber_Dropdown();
+		add_Notes.Select_ContactNumber();
+		add_Notes.EnterNoteForPhoneCall(NoteForPhoneCall);
+		customer.Customer_Save();
+		add_Notes.Click_ExpandedFabIcon();
+		scrolltothedown(500,1700,500,2165);
+		add_Notes.Click_FabIcon();
+		add_Notes.Click_Sendnewemail();
+		add_Notes.Click_To();
+		add_Notes.Select_Email();
+		customer.Customer_Save();
+		add_Notes.EnterSubject(SubjectForEmail);
+		customer.Customer_Save();
+		add_Notes.Click_ExpandedFabIcon();
+		scrolltothedown(500,1700,500,2165);
+		add_Notes.Click_FabIcon();
+		add_Notes.Click_SendnewSMS();
+		add_Notes.Click_SMSContactName_Dropdown();
+		add_Notes.Select_ContactName(EditName, Surname);
+		add_Notes.Click_ToContactNumber_Dropdown();
+		add_Notes.Select_ContactNumber();
+		add_Notes.Enter_Message(MessageForSMS);
+		customer.Customer_Save();
+		add_Notes.Click_ExpandedFabIcon();
+		scrolltothedown(500,1700,500,2165);
+		add_Notes.Verify_Note(NoteTitle);
+		add_Notes.Verify_PhoneCall(NoteForPhoneCall);
+		add_Notes.Verify_Email(SubjectForEmail);
+		add_Notes.Verify_SMS(MessageForSMS);
+		customer.Customer_Back();
+		customer.Customer_Back();
+		customer.Customer_Back();
+		
+		
+	}
+	
+	@Test(enabled=false)//priority=2
+	public void Attached_Files_For_Customer() throws InterruptedException 
+	{
+		Attached_Files attached_Files = new Attached_Files(driver);
+		Customer customer = new Customer(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		
+		customer.Side_Menu();
+		customer.Customer_search();
+		add_Notes.TypeCustomerNameInSearchField(EditName, Surname);
+		add_Notes.Click_Cus(EditName, Surname);
+		add_Notes.Click_Choc_MenuButton();
+		attached_Files.Click_AttachedFiles();
+		add_Notes.Click_FabIcon();
+		attached_Files.Click_TakePhoto();
+		attached_Files.Enter_Photo_Filename(PhotoFileName);
+		attached_Files.Click_Save();
+		attached_Files.Take_Photo();
+		attached_Files.Click_TickSymbol();
+		attached_Files.Click_TakeVideo();
+		attached_Files.Enter_Video_Filename(VideoFileName);
+		attached_Files.Click_Save();
+		attached_Files.Take_Video();
+		attached_Files.Click_TickSymbol();
+		attached_Files.Click_ChooseFromCameraRoll();
+		attached_Files.SelectFromCameraRoll();
+		attached_Files.Click_RecordAudio();
+		attached_Files.Enter_Audio_Filename(AudioFileName);
+		attached_Files.Click_TickSymbolForAudio();
+		attached_Files.RecordAudio();
+		attached_Files.Verify_AllAttachedFiles();
+		customer.Customer_Back();
+		customer.Customer_Back();
+		customer.Customer_Back();
+		
+		
+	}
+	
+	@Test(enabled=false)//enabled=false  priority=4
+	public void Assets_ForCustomer() throws InterruptedException 
+	{
+		Assets assets = new Assets(driver);
+		Customer customer = new Customer(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		customer.Side_Menu();
+		customer.Customer_search();
+		add_Notes.TypeCustomerNameInSearchField(EditName, Surname);
+		add_Notes.Click_Cus(EditName, Surname);
+		add_Notes.Click_Choc_MenuButton();
+		assets.Click_Assets();
+		assets.Click_FabIcon();
+		assets.Search_Asset(AssetName);
+		assets.Click_SystemBoiler();
+		scroll(driver, "Commissioned on");
+		assets.Click_TakePhoto();
+		assets.Select_TakePhoto_From_AlertPrompt();
+		assets.Click_CenterButton_InCamera();
+		assets.Click_Tick();
+		scroll(driver, "Extinguisher Location");
+		assets.Click_TakePhoto();
+		assets.Select_CameraRoll();
+		assets.Click_Gallery();
+		assets.Select_Pic_FromGallery();
+		attached_Files.Click_Save();
+		assets.Verification_Assets(AssetName);
+		
+//		customer.Customer_Back();
+//		customer.Customer_Back();  -----> Currently these are all commented coz of the app issue once the build is rready for automation will uncomment that
+//		customer.Customer_Back();
+		
+	}
+	
+	@Test(priority=4)
+	public void Demo() throws InterruptedException 
+	{
+		Customer customer = new Customer(driver);
+		DemoPage demoPage = new DemoPage(driver);
+
+		customer.Side_Menu();
+		customer.Private_Customer();
+		
+		
+	}
+	
+	
+	
+	
+
+}

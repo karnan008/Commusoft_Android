@@ -1,0 +1,57 @@
+package Pages;
+
+import org.openqa.selenium.By;
+
+import MainPack.Wrapper;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class DemoPage extends Wrapper{
+	
+	public DemoPage(AndroidDriver<MobileElement> sdriver) 
+	{
+		this.driver=sdriver;
+	}
+	
+	public void test(String ExactText) throws InterruptedException 
+	{
+
+		FiveSec();
+		
+		String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+	
+		while(GetText.equals(ExactText)) 
+		{
+//			System.err.println("Exact Text Is Not Presented In That Page");
+			scrolltothedown(294, 735, 297, 532);
+			GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+			
+		}
+		
+		System.err.println("Test Case Passed");
+		
+	}
+	//METHOD FOR SELECT CLINIC
+//		public void SelectClinicinActivateAssessmentTab(String clinic) throws InterruptedException 
+//		{
+//
+//			String CLINIC=driver.findElement(By.xpath("//div[text()='"+clinic+"']")).getText();
+//
+//			while(!(CLINIC.equals(clinic))) {
+//				WebElement rightarrowbutton=driver.findElement(By.xpath("//div[@class='mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple']"));
+//				ActionClick(rightarrowbutton);
+//				CLINIC=driver.findElement(By.xpath("//div[text()='"+clinic+"']")).getText();
+//
+//			}
+//			Thread.sleep(4000);
+//			driver.findElement(By.xpath("//div[text()='"+clinic+"']")).click();
+//
+//
+//		}
+	
+	
+	
+	
+	
+
+}

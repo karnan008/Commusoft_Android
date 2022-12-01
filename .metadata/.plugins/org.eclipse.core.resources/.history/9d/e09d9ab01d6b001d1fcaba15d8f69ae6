@@ -1,0 +1,49 @@
+package Pages;
+
+import org.openqa.selenium.By;
+
+import MainPack.Wrapper;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class DemoPage extends Wrapper{
+	
+	public DemoPage(AndroidDriver<MobileElement> sdriver) 
+	{
+		this.driver=sdriver;
+	}
+	
+	public void test(String ExactText) throws InterruptedException 
+	{
+		
+//		String pageSource = driver.getPageSource();
+//		System.out.println(pageSource);
+		
+		FiveSec();
+		
+		String GetText = driver.findElement(By.xpath("//*[@text='Town']")).getText();
+		
+//		String ExactText="Town";
+		
+//		if(GetText.equals(ExactText)) 
+//		{
+//			System.out.println("TEST CASE PASSED");
+//		}
+		
+		while(!GetText.equals(ExactText)) 
+		{
+//			System.err.println("Exact Text Is Not Presented In That Page");
+			scrolltothedown(294, 735, 297, 532);
+			GetText = driver.findElement(By.xpath("//*[@text='Email']")).getText();
+			
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+
+}

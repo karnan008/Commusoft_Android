@@ -1,0 +1,95 @@
+package Pages;
+
+import MainPack.Wrapper;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class Assets extends Wrapper{
+	
+	public Assets(AndroidDriver<MobileElement> sdriver) 
+	{
+		this.driver=sdriver;
+	}
+	
+	public void Click_Assets() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Assets']");
+		click("//*[@text='Assets']");
+	}
+	
+	public void Click_FabIcon() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/addcustomer_asset']");
+		click("//*[@resource-id='com.commusoft.v4:id/addcustomer_asset']");
+	}
+	
+	public void Search_Asset(String assetname) //com.commusoft.v4:id/searchText
+	{
+		ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/searchText']");
+		type("//*[@resource-id='com.commusoft.v4:id/searchText']", assetname);
+	}
+	
+	public void Click_SystemBoiler() //System boiler
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@text='System boiler'])[2]");
+		click("(//*[@text='System boiler'])[2]");
+	}
+	
+	public void ScrollToCommissionedOn() //Commissioned on
+	{
+		FiveSec();
+//		scroll(driver, "County");
+		scroll(driver, "Commissioned on");
+		FiveSec();
+	}
+	
+	public void Click_TakePhoto()
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='TAKE PHOTO']");
+		click("//*[@text='TAKE PHOTO']");
+
+	}
+	
+	public void Select_TakePhoto_From_AlertPrompt() //Take photo
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Take photo']");
+		click("//*[@text='Take photo']");
+	}
+	public void Click_CenterButton_InCamera() //com.android.camera:id/shutter_button_horizontal
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.android.camera:id/shutter_button_horizontal']");
+		click("//*[@resource-id='com.android.camera:id/shutter_button_horizontal']");
+	}
+	public void Click_Tick() //com.android.camera:id/done_button
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.android.camera:id/done_button']");
+		click("//*[@resource-id='com.android.camera:id/done_button']");
+	}
+	//Scroll(driver, "Extinguisher Location")
+	//Click_TakePhoto
+	//Choose from camera roll
+	public void Select_CameraRoll() //Choose from camera roll
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Choose from camera roll']");
+		click("//*[@text='Choose from camera roll']");
+	}
+	
+	public void Click_Gallery() //Gallery
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Gallery']");
+		click("//*[@text='Gallery']");
+	}
+	
+	public void Select_Pic_FromGallery() //com.miui.gallery:id/micro_thumb  com.commusoft.v4:id/save
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@resource-id='com.miui.gallery:id/micro_thumb'])[1]");
+		click("(//*[@resource-id='com.miui.gallery:id/micro_thumb'])[1]");
+	}
+	//attached_Files.Click_Save();
+	public void Verification_Assets() 
+	{
+		
+	}
+	
+
+}

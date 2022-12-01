@@ -1,0 +1,52 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.SessionId;
+
+import MainPack.Wrapper;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class DemoPage extends Wrapper{
+	
+	public DemoPage(AndroidDriver<MobileElement> sdriver) 
+	{
+		this.driver=sdriver;
+	}
+	
+	public void test() throws InterruptedException 
+	{
+
+		FiveSec();
+			
+
+		SessionId sessionId = driver.getSessionId();    //5f8429a7-1ff0-4d5e-961c-89172af1abc4
+		System.out.println("Session Id Is: "+sessionId);//517bb795-bc17-4652-825f-beb5200059c2
+//		DemoWrapper2("County");
+		Scroll23("Extinguisher Location");
+		
+	}
+	//METHOD FOR SELECT CLINIC
+//		public void SelectClinicinActivateAssessmentTab(String clinic) throws InterruptedException 
+//		{
+//
+//			String CLINIC=driver.findElement(By.xpath("//div[text()='"+clinic+"']")).getText();
+//
+//			while(!(CLINIC.equals(clinic))) {
+//				WebElement rightarrowbutton=driver.findElement(By.xpath("//div[@class='mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple']"));
+//				ActionClick(rightarrowbutton);
+//				CLINIC=driver.findElement(By.xpath("//div[text()='"+clinic+"']")).getText();
+//
+//			}
+//			Thread.sleep(4000);
+//			driver.findElement(By.xpath("//div[text()='"+clinic+"']")).click();
+//
+//
+//		}
+	
+	
+	
+	
+	
+
+}
