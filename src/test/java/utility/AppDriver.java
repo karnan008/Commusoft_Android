@@ -1,4 +1,4 @@
-package utility;
+package Utility;
 
 import io.appium.java_client.MobileElement;
 
