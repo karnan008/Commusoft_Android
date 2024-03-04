@@ -1,27 +1,26 @@
-package utility;
+package Utility;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import action.BaseClass;
 
+import MainPack.BaseClass;
 
-public class Screenshot extends BaseClass {
-
+public class Screenshot extends BaseClass{
 
 	public static String errflpath;
-	
-	public static String capture(WebDriver driver) throws IOException 
+	public static String capture(WebDriver gdriver) throws IOException 
 	{
-	File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	File Dest = new File("./ScreenShot/" + currentdate()+ ".png");
-	errflpath = Dest.getAbsolutePath();
+	File scrFile = ((TakesScreenshot) gdriver).getScreenshotAs(OutputType.FILE);
+	File Dest = new File("./ScreenShots/" + currentdate()+ ".png");
+		errflpath = Dest.getAbsolutePath();
 	FileUtils.copyFile(scrFile, Dest);
 	return errflpath;
 	}
@@ -35,4 +34,5 @@ public class Screenshot extends BaseClass {
 		
 	return	customformat.format(currentDate);
 	}
+	
 }

@@ -3,19 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcase.Customer_Usecases">
+      <class name="New_ui_Testclass.BasicSmoke_MobAndWeb">
         <methods>
-          <include name="Add_Service_Reminder"/>
-          <include name="Customer_Notes"/>
-          <include name="Add_WA"/>
-          <include name="Create_Customer"/>
-          <include name="Customer_Edit"/>
           <include name="teardown"/>
           <include name="teardown"/>
-          <include name="Add_Contact"/>
+          <include name="ConnectWeb"/>
+          <include name="CurrentClassName"/>
           <include name="setup"/>
+          <include name="initial"/>
+          <include name="Assets_ForCustomer"/>
+          <include name="tearDownWeb"/>
         </methods>
-      </class> <!-- testcase.Customer_Usecases -->
+      </class> <!-- New_ui_Testclass.BasicSmoke_MobAndWeb -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
