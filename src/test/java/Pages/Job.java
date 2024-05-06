@@ -428,10 +428,10 @@ public class Job extends Wrapper{
 	public void ExceptionHandling_For_DataNotLoad_InInvoiceScreen() throws InterruptedException 
 	{
 		TwoSec();
-		ExplicitWait_ElementToBeClickable("//*[@text='Sub total *']");
+		ExplicitWait_ElementToBeClickable("//*[@text='Sub totalï¿½*']");
 		try 
 		{
-			if(driver.findElement(By.xpath("//*[@text='Sub total *']")).isDisplayed()) 
+			if(driver.findElement(By.xpath("//*[@text='Sub totalï¿½*']")).isDisplayed()) 
 			{
 				System.out.println("Data is visible in invoice screen");
 			}
@@ -449,7 +449,7 @@ public class Job extends Wrapper{
 			click("//*[@text='Raise final invoice']");//Raise final invoice
 			ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/descriptionValue']");
 			type("//*[@resource-id='com.commusoft.v4:id/descriptionValue']", "Invoice Description");
-			ScrollDown24("Invoice category *");
+			ScrollDown24("Invoice categoryï¿½*");
 			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/spinnerinvoicecategoryValue']");
 			click("//*[@resource-id='com.commusoft.v4:id/spinnerinvoicecategoryValue']");
 			ExplicitWait_ElementToBeClickable("(//*[@resource-id='android:id/text1'])[2]");

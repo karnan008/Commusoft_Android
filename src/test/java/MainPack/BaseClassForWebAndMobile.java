@@ -141,29 +141,29 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 		try {
 			
 		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps.setCapability(MobileCapabilityType.VERSION, "9");//VERSION
+		caps.setCapability("appium:platformName", "Android");
+		caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.0");//VERSION
 		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
-		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
+		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "127.0.0.1:6555");
 		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ");      
-		caps.setCapability(MobileCapabilityType.UDID, "jrd6hmy5mzhihihu");//jrd6hmy5mzhihihu  192.168.100.93:5555   adb-jrd6hmy5mzhihihu-v6tb4X._adb-tls-connect._tcp.
+		//caps.setCapability(MobileCapabilityType.UDID, "jrd6hmy5mzhihihu");//jrd6hmy5mzhihihu  192.168.100.93:5555   adb-jrd6hmy5mzhihihu-v6tb4X._adb-tls-connect._tcp.
 		//caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
 		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
 		caps.setCapability(MobileCapabilityType.NO_RESET, true);
-		caps.setCapability("automationName", "UiAutomator2");//UiAutomator2  espresso
-		caps.setCapability(MobileCapabilityType.APPLICATION_NAME, "Commusoft");//APPLICATION_NAME
-		caps.setCapability("clearDeviceLogsOnStart", true);
-		caps.setCapability("appPackage", "com.commusoft.v4"); //-----> Live pointed 
+		caps.setCapability("appium:automationName", "UiAutomator2");//UiAutomator2  espresso
+		//caps.setCapability(MobileCapabilityType.APPLICATION_NAME, "Commusoft");//APPLICATION_NAME
+		caps.setCapability("appium:clearDeviceLogsOnStart", true);
+		caps.setCapability("appium:appPackage", "com.commusoft.v4"); //-----> Live pointed 
 		
 //		caps.setCapability("appPackage", "com.commusoft.v4.couchdb"); //-------> Stage build
 //		caps.setCapability("appPackage", "com.commusoft.v4.dev");//--------> Dev build
-		caps.setCapability("appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");// appActivity  com.commusoft.v4.Setup.Activities.SplashScreen
+		caps.setCapability("appium:appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");// appActivity  com.commusoft.v4.Setup.Activities.SplashScreen
 		
 		
-		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);// http://0.0.0.0:4723/wd/hub
+		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/"), caps);// http://0.0.0.0:4723/wd/hub
 		
-		udid = driver.getCapabilities().getCapability("udid").toString();
-		System.out.println("Mobile UDID is: "+udid);
+//		udid = driver.getCapabilities().getCapability("udid").toString();
+//		System.out.println("Mobile UDID is: "+udid);
 		
 		
 		}catch(Exception exp) {
@@ -196,10 +196,10 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 	    ExcelReader excelReader = new ExcelReader(driverWeb);
 	  
         
-        if(simpleName.contains("Commusoft_WebAndMobile") &&  Running_UserName.contains("ssara")) 
+        if(simpleName.contains("Commusoft_WebAndMobile") &&  Running_UserName.contains("karna")) 
         {
         	excelReader.OfficeStaff();
-        }else if(simpleName.contains("BasicSmoke_MobAndWeb") &&  Running_UserName.contains("ssara")) 
+        }else if(simpleName.contains("BasicSmoke_MobAndWeb") &&  Running_UserName.contains("karna")) 
         {
         	excelReader.Owner();
         	
