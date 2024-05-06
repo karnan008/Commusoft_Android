@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-skipped">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ssara\AppData\Local\Temp\testng-eclipse--70283432\testng-customsuite.xml</span>
+                    <span>C:\Users\ssara\AppData\Local\Temp\testng-eclipse-1318792036\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">33 methods, 1 failed,  3 skipped,  29 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Default_suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Assets_ForCustomer">Assets_ForCustomer</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                    <span class="method-stats">31 methods,  1 skipped,  30 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title skipped">Retried methods</span>
@@ -118,17 +104,7 @@
                     <div class="method-list-content skipped suite-Default_suite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Assets_ForCustomer">Assets_ForCustomer</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Assets_ForCustomer">Assets_ForCustomer</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Assets_ForCustomer">Assets_ForCustomer</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="VerifyCustomerFilesInWeb">VerifyCustomerFilesInWeb</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Default_suite -->
@@ -173,6 +149,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Add_Reminders_ForCustomer_InMobile">Add_Reminders_ForCustomer_InMobile</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Assets_ForCustomer">Assets_ForCustomer</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -297,97 +278,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">New_ui_Testclass.BasicSmoke_MobAndWeb</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Assets_ForCustomer">
-                  </a> <!-- Assets_ForCustomer -->
-                  <span class="method-name">Assets_ForCustomer</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text=&apos;Assets&apos;] (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-	at Pages.Assets.Click_Assets(Assets.java:19)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SARAVANAN-SANTH&apos;, ip: &apos;192.168.100.116&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text=&apos;Assets&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
@@ -396,15 +286,20 @@ Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Assets_ForCustomer">
-                  </a> <!-- Assets_ForCustomer -->
-                  <span class="method-name">Assets_ForCustomer</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text=&apos;Assets&apos;] (tried for 40 second(s) with 500 milliseconds interval)
+                  <a name="VerifyCustomerFilesInWeb">
+                  </a> <!-- VerifyCustomerFilesInWeb -->
+                  <span class="method-name">VerifyCustomerFilesInWeb</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of any elements located by By.xpath: //td[text()=&apos;Video&apos;] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SARAVANAN-SANTH&apos;, ip: &apos;192.168.100.116&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.support.events.EventFiringWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.119, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\ssara\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55327}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d59622f2cf36faa2627726cbdecc3b0a
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-	at Pages.Assets.Click_Assets(Assets.java:19)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
+	at MainPack.WrapperForWeb.ExplicitWait_PresenceOfEle2(WrapperForWeb.java:307)
+	at MobAndWeb_Page.VerifyAttachedFilesOnWeb.VerifyVideoFile(VerifyAttachedFilesOnWeb.java:33)
+	at New_ui_Testclass.BasicSmoke_MobAndWeb.VerifyCustomerFilesInWeb(BasicSmoke_MobAndWeb.java:253)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -433,212 +328,6 @@ Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SARAVANAN-SANTH&apos;, ip: &apos;192.168.100.116&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text=&apos;Assets&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Assets_ForCustomer">
-                  </a> <!-- Assets_ForCustomer -->
-                  <span class="method-name">Assets_ForCustomer</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text=&apos;Assets&apos;] (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-	at Pages.Assets.Click_Assets(Assets.java:19)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SARAVANAN-SANTH&apos;, ip: &apos;192.168.100.116&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text=&apos;Assets&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Assets_ForCustomer">
-                  </a> <!-- Assets_ForCustomer -->
-                  <span class="method-name">Assets_ForCustomer</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text=&apos;Assets&apos;] (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-	at Pages.Assets.Click_Assets(Assets.java:19)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SARAVANAN-SANTH&apos;, ip: &apos;192.168.100.116&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text=&apos;Assets&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -698,6 +387,13 @@ Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
                   <a name="Add_Reminders_ForCustomer_InMobile">
                   </a> <!-- Add_Reminders_ForCustomer_InMobile -->
                   <span class="method-name">Add_Reminders_ForCustomer_InMobile</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Assets_ForCustomer">
+                  </a> <!-- Assets_ForCustomer -->
+                  <span class="method-name">Assets_ForCustomer</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -859,7 +555,7 @@ Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ssara\AppData\Local\Temp\testng-eclipse--70283432\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ssara\AppData\Local\Temp\testng-eclipse-1318792036\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -908,144 +604,136 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(33);
+data.addRows(31);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'EstimateAcceptWithPrice_InMobile')
 data.setCell(0, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(0, 3, 210993);
+data.setCell(0, 3, 193647);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'EmailCertificateFromMobileAndVerifyOnTheGmailApp')
 data.setCell(1, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(1, 3, 192416);
+data.setCell(1, 3, 188597);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'CompleteJobWithInvoiceAndPayment_InMobile')
 data.setCell(2, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(2, 3, 180861);
+data.setCell(2, 3, 182499);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'GenerateCertificateForJob_And_VerifyInMobile')
 data.setCell(3, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(3, 3, 162707);
+data.setCell(3, 3, 163208);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'Reject_Estimate_InMobile')
 data.setCell(4, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(4, 3, 88907);
+data.setCell(4, 3, 83613);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'Abort_Estimate_InMobile')
 data.setCell(5, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(5, 3, 88229);
+data.setCell(5, 3, 83149);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'Abort_Job_InMobile')
 data.setCell(6, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(6, 3, 81413);
+data.setCell(6, 3, 79801);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'Reject_Job_InMobile')
 data.setCell(7, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(7, 3, 79792);
+data.setCell(7, 3, 79329);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'Add_Reminders_ForCustomer_InMobile')
 data.setCell(8, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(8, 3, 79772);
+data.setCell(8, 3, 77144);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'AddCommunicationsForCustomer_InMobile')
 data.setCell(9, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(9, 3, 73218);
+data.setCell(9, 3, 68260);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'CreateCustomerAndVerifyInWeb')
+data.setCell(10, 1, 'VerifyCustomerFilesInWeb')
 data.setCell(10, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(10, 3, 42216);
+data.setCell(10, 3, 46502);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'Add_AttachedFiles_ForCustomer_InMobile')
+data.setCell(11, 1, 'CreateCustomerAndVerifyInWeb')
 data.setCell(11, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(11, 3, 41755);
+data.setCell(11, 3, 41375);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'Assets_ForCustomer')
+data.setCell(12, 1, 'Add_AttachedFiles_ForCustomer_InMobile')
 data.setCell(12, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(12, 3, 41549);
+data.setCell(12, 3, 39985);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'Assets_ForCustomer')
+data.setCell(13, 1, 'AddWorkaddressAndVerifyInWeb')
 data.setCell(13, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(13, 3, 41345);
+data.setCell(13, 3, 38506);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'Assets_ForCustomer')
 data.setCell(14, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(14, 3, 41339);
+data.setCell(14, 3, 32757);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'Assets_ForCustomer')
+data.setCell(15, 1, 'EditCustomerAndVerifyInWeb')
 data.setCell(15, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(15, 3, 41193);
+data.setCell(15, 3, 27595);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'AddWorkaddressAndVerifyInWeb')
+data.setCell(16, 1, 'WorkAddressEditInWebAndVerifyInMob')
 data.setCell(16, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(16, 3, 40648);
+data.setCell(16, 3, 22427);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'EditCustomerAndVerifyInWeb')
+data.setCell(17, 1, 'EditWorkAddressAndVerifyinWeb')
 data.setCell(17, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(17, 3, 30076);
+data.setCell(17, 3, 16963);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'WorkAddressEditInWebAndVerifyInMob')
+data.setCell(18, 1, 'AddCustomerContactsInMob')
 data.setCell(18, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(18, 3, 24293);
+data.setCell(18, 3, 16337);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'EditWorkAddressAndVerifyinWeb')
+data.setCell(19, 1, 'CustomerEditInWebAndVerifyInMob')
 data.setCell(19, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(19, 3, 17677);
+data.setCell(19, 3, 15142);
 data.setCell(20, 0, 20)
-data.setCell(20, 1, 'CustomerEditInWebAndVerifyInMob')
+data.setCell(20, 1, 'Verify_CompletedJobWithFinalInvoice_OnWeb')
 data.setCell(20, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(20, 3, 17116);
+data.setCell(20, 3, 8275);
 data.setCell(21, 0, 21)
-data.setCell(21, 1, 'AddCustomerContactsInMob')
+data.setCell(21, 1, 'VerifyCustomerRemindersOnWeb')
 data.setCell(21, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(21, 3, 16039);
+data.setCell(21, 3, 7896);
 data.setCell(22, 0, 22)
-data.setCell(22, 1, 'VerifyCustomerRemindersOnWeb')
+data.setCell(22, 1, 'Verify_CompletedCertificateInWeb')
 data.setCell(22, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(22, 3, 7770);
+data.setCell(22, 3, 7052);
 data.setCell(23, 0, 23)
-data.setCell(23, 1, 'VerifyCustomerNotesInWeb')
+data.setCell(23, 1, 'VerifyCustomerFilesInWeb')
 data.setCell(23, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(23, 3, 7649);
+data.setCell(23, 3, 6435);
 data.setCell(24, 0, 24)
-data.setCell(24, 1, 'VerifyCustomerFilesInWeb')
+data.setCell(24, 1, 'VerifyCustomerNotesInWeb')
 data.setCell(24, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(24, 3, 7588);
+data.setCell(24, 3, 6344);
 data.setCell(25, 0, 25)
-data.setCell(25, 1, 'Verify_CompletedCertificateInWeb')
+data.setCell(25, 1, 'VerifyCustomerContactOnWeb')
 data.setCell(25, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(25, 3, 6872);
+data.setCell(25, 3, 5960);
 data.setCell(26, 0, 26)
-data.setCell(26, 1, 'VerifyCustomerContactOnWeb')
+data.setCell(26, 1, 'Verify_AbortedEstimateInWeb')
 data.setCell(26, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(26, 3, 6135);
+data.setCell(26, 3, 5867);
 data.setCell(27, 0, 27)
-data.setCell(27, 1, 'Verify_CompletedJobWithFinalInvoice_OnWeb')
+data.setCell(27, 1, 'Verify_RejectedEstimateInWeb')
 data.setCell(27, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(27, 3, 5971);
+data.setCell(27, 3, 5490);
 data.setCell(28, 0, 28)
-data.setCell(28, 1, 'Verify_RejectedEstimateInWeb')
+data.setCell(28, 1, 'Verify_RejectedJobInWeb')
 data.setCell(28, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(28, 3, 5568);
+data.setCell(28, 3, 5408);
 data.setCell(29, 0, 29)
-data.setCell(29, 1, 'Verify_RejectedJobInWeb')
+data.setCell(29, 1, 'Verify_AcceptedEstimate_OnWeb')
 data.setCell(29, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(29, 3, 5309);
+data.setCell(29, 3, 5174);
 data.setCell(30, 0, 30)
 data.setCell(30, 1, 'Verify_AbortedJobInWeb')
 data.setCell(30, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(30, 3, 5248);
-data.setCell(31, 0, 31)
-data.setCell(31, 1, 'Verify_AbortedEstimateInWeb')
-data.setCell(31, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(31, 3, 5217);
-data.setCell(32, 0, 32)
-data.setCell(32, 1, 'Verify_AcceptedEstimate_OnWeb')
-data.setCell(32, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(32, 3, 4940);
+data.setCell(30, 3, 5038);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 minutes</span>
+              <span class="suite-total-time">Total running time: 26 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -1078,289 +766,271 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">CurrentClassName</span>
-                <span class="method-start">181 ms</span>
+                <span class="method-start">139 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">ConnectWeb</span>
-                <span class="method-start">185 ms</span>
+                <span class="method-start">141 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">11676 ms</span>
+                <span class="method-start">14251 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                <span class="method-start">22131 ms</span>
+                <span class="method-start">38050 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=CreateCustomerAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.CreateCusto...)</span>
-                <span class="method-start">64353 ms</span>
+                <span class="method-start">79430 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">EditCustomerAndVerifyInWeb</span>
-                <span class="method-start">64682 ms</span>
+                <span class="method-start">79918 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=EditCustomerAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.EditCustomerA...)</span>
-                <span class="method-start">94759 ms</span>
+                <span class="method-start">107520 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">CustomerEditInWebAndVerifyInMob</span>
-                <span class="method-start">94808 ms</span>
+                <span class="method-start">107651 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=CustomerEditInWebAndVerifyInMob status=SUCCESS method=BasicSmoke_MobAndWeb.Customer...)</span>
-                <span class="method-start">111925 ms</span>
+                <span class="method-start">122796 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddCommunicationsForCustomer_InMobile</span>
-                <span class="method-start">111969 ms</span>
+                <span class="method-start">122878 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=AddCommunicationsForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Ad...)</span>
-                <span class="method-start">185188 ms</span>
+                <span class="method-start">191140 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">VerifyCustomerNotesInWeb</span>
-                <span class="method-start">185225 ms</span>
+                <span class="method-start">191181 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=VerifyCustomerNotesInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerN...)</span>
-                <span class="method-start">192875 ms</span>
+                <span class="method-start">197526 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Add_AttachedFiles_ForCustomer_InMobile</span>
-                <span class="method-start">192912 ms</span>
+                <span class="method-start">197577 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Add_AttachedFiles_ForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.A...)</span>
-                <span class="method-start">234668 ms</span>
+                <span class="method-start">237564 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">VerifyCustomerFilesInWeb</span>
-                <span class="method-start">234749 ms</span>
+                <span class="method-start">237603 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown([TestResult name=VerifyCustomerFilesInWeb status=SKIP method=BasicSmoke_MobAndWeb.VerifyCustomerFile...)</span>
+                <span class="method-start">286124 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">VerifyCustomerFilesInWeb</span>
+                <span class="method-start">286159 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=VerifyCustomerFilesInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerF...)</span>
-                <span class="method-start">242338 ms</span>
+                <span class="method-start">292594 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Assets_ForCustomer</span>
-                <span class="method-start">242367 ms</span>
+                <span class="method-start">292624 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=Assets_ForCustomer status=SKIP method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri...)</span>
-                <span class="method-start">285724 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">Assets_ForCustomer</span>
-                <span class="method-start">285764 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=Assets_ForCustomer status=SKIP method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri...)</span>
-                <span class="method-start">329132 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">Assets_ForCustomer</span>
-                <span class="method-start">329166 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=Assets_ForCustomer status=SKIP method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri...)</span>
-                <span class="method-start">372371 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">Assets_ForCustomer</span>
-                <span class="method-start">372402 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=Assets_ForCustomer status=FAILURE method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[...)</span>
-                <span class="method-start">415981 ms</span>
+                <span class="method-name">teardown([TestResult name=Assets_ForCustomer status=SUCCESS method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[...)</span>
+                <span class="method-start">325382 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Add_Reminders_ForCustomer_InMobile</span>
-                <span class="method-start">417221 ms</span>
+                <span class="method-start">325408 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Add_Reminders_ForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Add_R...)</span>
-                <span class="method-start">496994 ms</span>
+                <span class="method-start">402552 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">VerifyCustomerRemindersOnWeb</span>
-                <span class="method-start">497026 ms</span>
+                <span class="method-start">402586 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=VerifyCustomerRemindersOnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCusto...)</span>
-                <span class="method-start">504797 ms</span>
+                <span class="method-start">410482 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddCustomerContactsInMob</span>
-                <span class="method-start">504842 ms</span>
+                <span class="method-start">410509 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=AddCustomerContactsInMob status=SUCCESS method=BasicSmoke_MobAndWeb.AddCustomerCont...)</span>
-                <span class="method-start">520883 ms</span>
+                <span class="method-start">426847 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">VerifyCustomerContactOnWeb</span>
-                <span class="method-start">520931 ms</span>
+                <span class="method-start">426883 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=VerifyCustomerContactOnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustome...)</span>
-                <span class="method-start">527068 ms</span>
+                <span class="method-start">432843 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddWorkaddressAndVerifyInWeb</span>
-                <span class="method-start">527128 ms</span>
+                <span class="method-start">432869 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=AddWorkaddressAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.AddWorkaddr...)</span>
-                <span class="method-start">567776 ms</span>
+                <span class="method-start">471376 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">EditWorkAddressAndVerifyinWeb</span>
-                <span class="method-start">567849 ms</span>
+                <span class="method-start">471413 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=EditWorkAddressAndVerifyinWeb status=SUCCESS method=BasicSmoke_MobAndWeb.EditWorkAd...)</span>
-                <span class="method-start">585530 ms</span>
+                <span class="method-start">488377 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">WorkAddressEditInWebAndVerifyInMob</span>
-                <span class="method-start">585599 ms</span>
+                <span class="method-start">488411 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=WorkAddressEditInWebAndVerifyInMob status=SUCCESS method=BasicSmoke_MobAndWeb.WorkA...)</span>
-                <span class="method-start">609894 ms</span>
+                <span class="method-start">510838 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">EstimateAcceptWithPrice_InMobile</span>
-                <span class="method-start">609929 ms</span>
+                <span class="method-start">510881 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=EstimateAcceptWithPrice_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Estimat...)</span>
-                <span class="method-start">820923 ms</span>
+                <span class="method-start">704529 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_AcceptedEstimate_OnWeb</span>
-                <span class="method-start">820965 ms</span>
+                <span class="method-start">704552 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_AcceptedEstimate_OnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_Acc...)</span>
-                <span class="method-start">825906 ms</span>
+                <span class="method-start">709731 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Reject_Estimate_InMobile</span>
-                <span class="method-start">825931 ms</span>
+                <span class="method-start">709758 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Reject_Estimate_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Reject_Estimate...)</span>
-                <span class="method-start">914839 ms</span>
+                <span class="method-start">793372 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_RejectedEstimateInWeb</span>
-                <span class="method-start">914867 ms</span>
+                <span class="method-start">793397 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_RejectedEstimateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_Reje...)</span>
-                <span class="method-start">920435 ms</span>
+                <span class="method-start">798887 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Abort_Estimate_InMobile</span>
-                <span class="method-start">920470 ms</span>
+                <span class="method-start">798919 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Abort_Estimate_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Abort_Estimate_I...)</span>
-                <span class="method-start">1008699 ms</span>
+                <span class="method-start">882069 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_AbortedEstimateInWeb</span>
-                <span class="method-start">1008723 ms</span>
+                <span class="method-start">882102 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_AbortedEstimateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_Abort...)</span>
-                <span class="method-start">1013941 ms</span>
+                <span class="method-start">887970 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">CompleteJobWithInvoiceAndPayment_InMobile</span>
-                <span class="method-start">1013971 ms</span>
+                <span class="method-start">887993 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=CompleteJobWithInvoiceAndPayment_InMobile status=SUCCESS method=BasicSmoke_MobAndWe...)</span>
-                <span class="method-start">1194834 ms</span>
+                <span class="method-start">1070494 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_CompletedJobWithFinalInvoice_OnWeb</span>
-                <span class="method-start">1194858 ms</span>
+                <span class="method-start">1070536 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_CompletedJobWithFinalInvoice_OnWeb status=SUCCESS method=BasicSmoke_MobAndWe...)</span>
-                <span class="method-start">1200829 ms</span>
+                <span class="method-start">1078812 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Reject_Job_InMobile</span>
-                <span class="method-start">1200852 ms</span>
+                <span class="method-start">1078870 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Reject_Job_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Reject_Job_InMobile(...)</span>
-                <span class="method-start">1280645 ms</span>
+                <span class="method-start">1158200 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_RejectedJobInWeb</span>
-                <span class="method-start">1280668 ms</span>
+                <span class="method-start">1158265 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_RejectedJobInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_RejectedJ...)</span>
-                <span class="method-start">1285978 ms</span>
+                <span class="method-start">1163674 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Abort_Job_InMobile</span>
-                <span class="method-start">1286006 ms</span>
+                <span class="method-start">1163736 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Abort_Job_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Abort_Job_InMobile()[...)</span>
-                <span class="method-start">1367420 ms</span>
+                <span class="method-start">1243538 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_AbortedJobInWeb</span>
-                <span class="method-start">1367441 ms</span>
+                <span class="method-start">1243598 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_AbortedJobInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AbortedJob...)</span>
-                <span class="method-start">1372689 ms</span>
+                <span class="method-start">1248637 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">GenerateCertificateForJob_And_VerifyInMobile</span>
-                <span class="method-start">1372711 ms</span>
+                <span class="method-start">1248694 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=GenerateCertificateForJob_And_VerifyInMobile status=SUCCESS method=BasicSmoke_MobAn...)</span>
-                <span class="method-start">1535420 ms</span>
+                <span class="method-start">1411905 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">Verify_CompletedCertificateInWeb</span>
-                <span class="method-start">1535444 ms</span>
+                <span class="method-start">1411958 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=Verify_CompletedCertificateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_...)</span>
-                <span class="method-start">1542316 ms</span>
+                <span class="method-start">1419012 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">EmailCertificateFromMobileAndVerifyOnTheGmailApp</span>
-                <span class="method-start">1542338 ms</span>
+                <span class="method-start">1419078 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown([TestResult name=EmailCertificateFromMobileAndVerifyOnTheGmailApp status=SUCCESS method=BasicSmoke_M...)</span>
-                <span class="method-start">1734755 ms</span>
+                <span class="method-start">1607676 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDownWeb</span>
-                <span class="method-start">1734894 ms</span>
+                <span class="method-start">1607840 ms</span>
               </div> <!-- configuration-suite after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">1734897 ms</span>
+                <span class="method-start">1607843 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -198,26 +198,60 @@ public class Settings extends Wrapper{
 		ExplicitWait_PresenceOfEle2("//input[@placeholder='Search']");
 		typeForWeb("//input[@placeholder='Search']", automationNewQuestionTemplate);
 	}
-	public void Configure() 
+	public void Configure() throws InterruptedException 
 	{
 		WebThreeSec();
+		Thread.sleep(2000);
 		ExplicitWait_ElementToBeClickable2("//button[text()=' Configure ']");
 //		Webclick("//button[text()=' Configure ']");
 		
+		WebElement element = driverWeb.findElement(By.xpath("//button[text()=' Configure ']"));
+		JavascriptExecutor executor = (JavascriptExecutor)driverWeb;
+//		executor.executeScript("arguments[0].click();", element);
+		
 		try 
 		{
-			Webclick("//button[text()=' Configure ']");
+			executor.executeScript("arguments[0].click();", element);
 			if(driverWeb.findElement(By.xpath("//span[text()='Automatically invoice']")).isDisplayed())
 				System.out.println("");
 		}catch(Exception e) 
 		{
-			Webclick("//button[text()=' Configure ']");
+			executor.executeScript("arguments[0].click();", element);
 		}
 	}
-	public void Click_AutomaticallyInvoice() 
+	public void Click_AutomaticallyInvoice() throws InterruptedException 
 	{
+		Thread.sleep(3000);
 		ExplicitWait_ElementToBeClickable2("//span[text()='Automatically invoice']");
 		Webclick("//span[text()='Automatically invoice']");
+	}
+	public void Delete_AutomaticInvoiceRule_Prerequisite() throws InterruptedException 
+	{
+		Thread.sleep(1000);
+		ExplicitWait_ElementToBeClickable2("//button[text()='Add invoice rule ']");
+		String pageSource = driverWeb.getPageSource();
+//		System.out.println(pageSource);
+		if(pageSource.contains("Private Customer")) 
+		{   //Delete Rule
+			WebThreeSec();
+			
+			ExplicitWait_ElementToBeClickable2("/html/body/cs-full-screen-modal/div/div[2]/section/app-job-description-fs-layout/div/div[2]/div/div/div/app-job-description-automatic-invoice/div/section/div[2]/app-settings-table/div/div/div[1]/div[2]/table/tbody/tr/td[4]/button[2]");
+			WebElement element = driverWeb.findElement(By.xpath("/html/body/cs-full-screen-modal/div/div[2]/section/app-job-description-fs-layout/div/div[2]/div/div/div/app-job-description-automatic-invoice/div/section/div[2]/app-settings-table/div/div/div[1]/div[2]/table/tbody/tr/td[4]/button[2]"));
+			((JavascriptExecutor) driverWeb).executeScript("arguments[0].scrollIntoView(true);", element);
+			element.click();
+			//Type Delete
+			WebTwoSec();
+			ExplicitWait_PresenceOfEle2("/html/body/cs-confirmation-modal/div[2]/div[2]/div/div/div[1]/div/input");
+			typeForWeb("/html/body/cs-confirmation-modal/div[2]/div[2]/div/div/div[1]/div/input", "Delete");
+			//Delete confirm
+			WebOneSec();
+			ExplicitWait_ElementToBeClickable2("//button[text()='delete']");
+			Webclick("//button[text()='delete']");
+		}else 
+		{
+			System.out.println("");
+		}
+		
 	}
 	public void AddInvoiceRule() 
 	{
@@ -227,6 +261,12 @@ public class Settings extends Wrapper{
 	public void Select_CustomerType() 
 	{
 		WebOneSec();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ExplicitWait_PresenceOfEle2("//select[@formcontrolname='customerType']");
 
 		SelectByVisibileText("//select[@formcontrolname='customerType']", "Private Customer");
@@ -269,16 +309,26 @@ public class Settings extends Wrapper{
 		SelectByVisibileText("//select[@formcontrolname='email']", "Don’t email");
 	}
 	
-	public void DefaultNominalValue() 
+	public void DefaultNominalValue(String others) throws InterruptedException 
 	{
 		ExplicitWait_ElementToBeClickable2("//a[@class='select2-choice select2-default']");
 		Webclick("//a[@class='select2-choice select2-default']");
+		
+		Thread.sleep(3000);
 		ExplicitWait_ElementToBeClickable2("//ul[@class='select2-results']/li[1]");
 		Webclick("//ul[@class='select2-results']/li[1]");
+		
+//		ExplicitWait_ElementToBeClickable2("(//input[@class='select2-input'])[2]");////ul[@class='select2-results']/li[1]
+//		Webclick("(//input[@class='select2-input'])[2]");
+//		typeForWeb("(//input[@class='select2-input'])[2]", others);
+//		ExplicitWait_ElementToBeClickable2("//span[text()='others']");
+//		Webclick("//span[text()='others']");
 	}
-	public void PrefinalInvoiceSave() 
+	public void PrefinalInvoiceSave() throws InterruptedException 
 	{
 		ExplicitWait_ElementToBeClickable2("(//span[text()='Save'])[2]");
+		Webclick("(//span[text()='Save'])[2]");
+		Thread.sleep(1000);
 		Webclick("(//span[text()='Save'])[2]");
 	}
 	
@@ -289,21 +339,42 @@ public class Settings extends Wrapper{
 		Webclick("//span[text()='Pricing items']");
 	}
 	
-	public void Type_PriceItem(String automationpricingitem) 
+	public void Type_PriceItem(String automationpricingitem) throws InterruptedException //td[@class='overflow_handsontable select_icon required']
 	{
-		ExplicitWait_ElementToBeClickable2("//td[contains(@class,'overflow')]");
-		WebDoubleClick("//td[contains(@class,'overflow')]");
-		WebThreeSec();
-//		ExplicitWait_PresenceOfEle2("//li[text()='Please enter 2 more characters']/preceding::input[@class='select2-input'][1]");
-//		Webclick("//li[text()='Please enter 2 more characters']/preceding::input[@class='select2-input'][1]");
-//		typeForWeb("//li[text()='Please enter 2 more characters']/preceding::input[@class='select2-input'][1]", "Automation Pricing Item");
-//		ExplicitWait_ElementToBeClickable2("//div[@class='select2-result-label']");
-//		Webclick("//div[@class='select2-result-label']");
 		
-		Webclick("//*[@id='select2-drop']/div/input");
-		typeForWeb("//*[@id='select2-drop']/div/input", automationpricingitem);
-		ExplicitWait_ElementToBeClickable2("//div[@class='select2-result-label']");
-		Webclick("//div[@class='select2-result-label']");
+		Thread.sleep(2000);
+		ExplicitWait_PresenceOfEle2("//h3[text()='Pricing items']");
+		String pageSource = driverWeb.getPageSource();
+//		System.out.println(pageSource);
+		if(pageSource.contains(automationpricingitem)) 
+		{
+			System.out.println("IF BLOCK");
+			ExplicitWait_ElementToBeClickable2("(//span[text()='Actions'])[1]/following::a[text()='Delete'][1]");
+			Webclick("(//span[text()='Actions'])[1]/following::a[text()='Delete'][1]");//Click delete button
+			
+			ExplicitWait_ElementToBeClickable2("//a[text()='Yes']");
+			Webclick("//a[text()='Yes']"); // Click yes to delete
+			
+			ExplicitWait_ElementToBeClickable2("//td[contains(@class,'overflow')]");
+			WebDoubleClick("//td[contains(@class,'overflow')]");
+			WebThreeSec();
+			
+			Webclick("//*[@id='select2-drop']/div/input");
+			typeForWeb("//*[@id='select2-drop']/div/input", automationpricingitem);
+			ExplicitWait_ElementToBeClickable2("//div[@class='select2-result-label']");
+			Webclick("//div[@class='select2-result-label']");
+		}else 
+		{
+			System.out.println("ELSE BLOCK");
+			ExplicitWait_ElementToBeClickable2("//td[contains(@class,'overflow')]");
+			WebDoubleClick("//td[contains(@class,'overflow')]");
+			WebThreeSec();
+			
+			Webclick("//*[@id='select2-drop']/div/input");
+			typeForWeb("//*[@id='select2-drop']/div/input", automationpricingitem);
+			ExplicitWait_ElementToBeClickable2("//div[@class='select2-result-label']");
+			Webclick("//div[@class='select2-result-label']");
+		}
 	}
 	
 	public void NumberOfMinutesIncluded() 

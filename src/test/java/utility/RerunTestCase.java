@@ -8,7 +8,7 @@ import MainPack.Wrapper;
 public class RerunTestCase extends Wrapper implements IRetryAnalyzer{
 
 	private int RetryCount=0;
-	private static final int maxcount = 3;
+	private static final int maxcount = 2;
 	
 	@Override
 	public boolean retry(ITestResult result) {

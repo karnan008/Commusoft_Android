@@ -106,6 +106,8 @@ public class Wrapper extends WrapperForWeb
 	 public String AccountNumber;
 	 public String WAName;
 	 public String WAAccountNumber;
+	 public static String arrive_Answer;
+	 public static String leave_Answer;
 	 
 	
 	public final Logger log4j = LogManager.getLogger(BaseClassForWebAndMobile.class);
@@ -157,7 +159,12 @@ public class Wrapper extends WrapperForWeb
 //        	
 //            try {
 //                MobileElement enter = driver.findElement(By.xpath(xpath));
-////                button.click();
+//                try {
+//                    Thread.sleep(1000);
+//                    }catch(Exception e) 
+//                    {
+//                    	
+//                    }
 //                enter.sendKeys(value);
 //                
 //            } catch (Exception e) {
@@ -243,7 +250,12 @@ public class Wrapper extends WrapperForWeb
 //        	
 //            try {
 //                MobileElement button = driver.findElement(By.xpath(option));
-//                Thread.sleep(1000);
+//                try {
+//                    Thread.sleep(1000);
+//                    }catch(Exception e) 
+//                    {
+//                    	
+//                    }
 //                button.click();
 //                
 //            } catch (Exception e) {

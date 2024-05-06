@@ -573,8 +573,8 @@ public class Customer extends MainPack.Wrapper{
 
 	public void GetUserName()  
 	{
-		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.TextView'])[2]");
-		username = driver.findElement(By.xpath("(//*[@class='android.widget.TextView'])[2]")).getText();
+		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.TextView'])[1]");
+		username = driver.findElement(By.xpath("(//*[@class='android.widget.TextView'])[1]")).getText();
 		System.setProperty("username", username);
 		System.out.println("Current User name: "+username);
 		TwoSec();

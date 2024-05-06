@@ -159,7 +159,7 @@ public class EstimateAccept extends Wrapper{
 		
 		MobileElement num = driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/searchText']"));
 
-		num.sendKeys("3797");
+		num.sendKeys("4191");
 
 		ThreeSec();
 		click("//*[@resource-id='com.commusoft.v4:id/searchButtonView']");
@@ -231,9 +231,9 @@ public class EstimateAccept extends Wrapper{
 				Green = Integer.toString(green);
 				Blue = Integer.toString(blue);
 
-				System.out.println("Red Color value = "+ Red);
-				System.out.println("Green Color value = "+ Green);
-				System.out.println("Blue Color value = "+ Blue);
+//				System.out.println("Red Color value = "+ Red);
+//				System.out.println("Green Color value = "+ Green);
+//				System.out.println("Blue Color value = "+ Blue);
 
 				if(Red.equals("218")&&Green.equals("210")&&Blue.equals("203")) //Red.equals("218")&&Green.equals("210")&&Blue.equals("203")
 				{
@@ -297,7 +297,7 @@ public class EstimateAccept extends Wrapper{
 	}
 
 
-	public void SearchEstimateByNumber() throws AWTException 
+	public void SearchEstimateByNumber() throws AWTException, InterruptedException 
 	{
 //		FiveSec();
 //
@@ -330,7 +330,7 @@ public class EstimateAccept extends Wrapper{
 		estimatenumber = System.getProperty("estimatenumber");
 		MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
 		num.sendKeys(estimatenumber);
-		
+		Thread.sleep(2000);
 		TouchAction touchAction = new TouchAction(driver);
 		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
 		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
@@ -356,9 +356,11 @@ public class EstimateAccept extends Wrapper{
 	
 	public void Estimate_Select() 
 	{
-		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.LinearLayout'])[7]");
-		click("(//*[@class='android.widget.LinearLayout'])[7]");
+//		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.LinearLayout'])[7]");
+//		click("(//*[@class='android.widget.LinearLayout'])[7]");
 
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/eventdateView']");
+		click("//*[@resource-id='com.commusoft.v4:id/eventdateView']");
 	}
 	
 	public void GOTOEVENT() 

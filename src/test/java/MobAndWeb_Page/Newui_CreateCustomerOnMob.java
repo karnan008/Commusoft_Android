@@ -83,7 +83,7 @@ public class Newui_CreateCustomerOnMob extends Wrapper{
 		click("//*[@text='Search']");
 	}
 
-	public void SearchCustomerByNumber() throws AWTException 
+	public void SearchCustomerByNumber() throws AWTException, InterruptedException 
 	{
 //		ExplicitWait_PresenceOfEle("(//*[@class='android.view.View'])[7]");
 //		click("(//*[@class='android.view.View'])[7]");
@@ -114,6 +114,7 @@ public class Newui_CreateCustomerOnMob extends Wrapper{
 		customernumber = System.getProperty("customernumber");
 		MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
 		num.sendKeys(customernumber);
+		Thread.sleep(2000);
 		TouchAction touchAction = new TouchAction(driver);
 		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
 		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
