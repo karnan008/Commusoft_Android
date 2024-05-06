@@ -67,8 +67,8 @@ public class Web_Estimate extends Wrapper{
 
 
 
-		ExplicitWait_PresenceOfEle2("//a[text()='Diary']");
-		Webclick("//a[text()='Diary']");
+//		ExplicitWait_PresenceOfEle2("//a[text()='Diary']");
+//		Webclick("//a[text()='Diary']");
 
 		WebFiveSec();
 
@@ -79,8 +79,14 @@ public class Web_Estimate extends Wrapper{
 
 		Webclick("(//a[contains(@ng-click,'changeDate')])[2]");
 
-		//		JavascriptExecutor js=(JavascriptExecutor)driverWeb;
-		//		js.executeScript("arguments[0].click()", today);
+//		ExplicitWait_PresenceOfEle2("//button[text()='Daily']");
+//		Webclick("//button[text()='Daily']");
+//		String engineerName = driver.findElement(By.xpath("//th[@class='fc-resource-cell']")).getText();
+//		username=System.getProperty("username");
+//		if(engineerName.equals(username)) 
+//		{
+//			
+//		}
 
 	}
 
@@ -206,7 +212,8 @@ public class Web_Estimate extends Wrapper{
 	
 		
 		Webclick("//button[text()='Monthly']");
-		Webclick("(//td[contains(@class,'fc-today ')])[2]");
+		Webclick("(//td[contains(@class,'fc-today ')])[2]");//a[text()='Normal']
+		
 		WebThreeSec();
 		WebElement userSelect = driverWeb.findElement(By.xpath("//select[@ng-options='user.name for user in users']"));
 	    Select select = new Select(userSelect);
@@ -214,6 +221,46 @@ public class Web_Estimate extends Wrapper{
 	    
 	    username=System.getProperty("username");
 	    select.selectByVisibleText(username);
+		
+//		String pageSource = driverWeb.getPageSource();
+//		System.out.println(pageSource);
+//		if(pageSource.contains("Advanced options")) 
+//		{
+//			WebThreeSec();
+//			WebElement userSelect = driverWeb.findElement(By.xpath("//select[@ng-options='user.name for user in users']"));
+//		    Select select = new Select(userSelect);
+//		    
+//		    
+//		    username=System.getProperty("username");
+//		    select.selectByVisibleText(username);
+//		}else
+//		{
+//			driverWeb.navigate().refresh();
+//			ExplicitWait_PresenceOfEle2("//a[text()='Diary']");
+//			driverWeb.navigate().back();
+//			ExplicitWait_PresenceOfEle2("//select[@name='estimate[templateid]']");
+//			WebElement temp = driverWeb.findElement(By.xpath("//select[@name='estimate[templateid]']"));
+//			Select sl=new Select(temp);
+//			sl.selectByVisibleText("Automation Estimate");
+//			ScrollWeb("//span[text()='Add estimate']");
+//			ExplicitWait_PresenceOfEle2("//label[@class='checkbox']");
+//			Webclick("//label[@class='checkbox']");
+//			ExplicitWait_PresenceOfEle2("//span[text()='Add estimate']");
+//			Webclick("//span[text()='Add estimate']");
+//			
+//			Webclick("//button[text()='Monthly']");
+//			Webclick("(//td[contains(@class,'fc-today ')])[2]");
+//			WebThreeSec();
+//			WebElement userSelect = driverWeb.findElement(By.xpath("//select[@ng-options='user.name for user in users']"));
+//		    Select select = new Select(userSelect);
+//		    
+//		    
+//		    username=System.getProperty("username");
+//		    select.selectByVisibleText(username);
+//		}
+		
+		
+		
 		
 	}
 

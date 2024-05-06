@@ -23,8 +23,8 @@ public class CustomerWeb extends Wrapper{
 	{
 		ExplicitWait_PresenceOfEle2("(//span[@class='select2-chosen'])[2]");
 		Webclick("(//span[@class='select2-chosen'])[2]"); 
-		ExplicitWait_PresenceOfEle2("(//li[@class=\"select2-results-dept-0 select2-result select2-result-selectable\"])[2]");
-		Webclick("(//li[@class=\"select2-results-dept-0 select2-result select2-result-selectable\"])[2]");
+		ExplicitWait_PresenceOfEle2("(//li[@class='select2-results-dept-0 select2-result select2-result-selectable'])[2]");
+		Webclick("(//li[@class='select2-results-dept-0 select2-result select2-result-selectable'])[2]");
 	}
 	public void Customer_Name(String webname)
 	{

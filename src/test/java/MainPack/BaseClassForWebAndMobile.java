@@ -3,16 +3,28 @@ package MainPack;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
+import org.testng.TestNG;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.xml.XmlClass;
+import org.testng.xml.XmlInclude;
+import org.testng.xml.XmlSuite;
+import org.testng.xml.XmlTest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -32,9 +44,10 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseClassForWebAndMobile extends Wrapper{
+public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 	
-
+	private List<ITestResult> failedTestResults = new ArrayList<>();
+	
 	public String simpleName;
 	public String Running_UserName;
 	
@@ -116,6 +129,7 @@ public class BaseClassForWebAndMobile extends Wrapper{
 	public String AutomationPricingItem="Automation Pricing Item";
 	
 	
+	
 	AppiumDriverLocalService appiumService;
     String appiumServiceUrl;
     
@@ -132,7 +146,7 @@ public class BaseClassForWebAndMobile extends Wrapper{
 		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
 		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ");      
-		caps.setCapability(MobileCapabilityType.UDID, "192.168.100.93:5555");//jrd6hmy5mzhihihu  192.168.100.93:5555   adb-jrd6hmy5mzhihihu-v6tb4X._adb-tls-connect._tcp.
+		caps.setCapability(MobileCapabilityType.UDID, "jrd6hmy5mzhihihu");//jrd6hmy5mzhihihu  192.168.100.93:5555   adb-jrd6hmy5mzhihihu-v6tb4X._adb-tls-connect._tcp.
 		//caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
 		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
 		caps.setCapability(MobileCapabilityType.NO_RESET, true);
@@ -244,6 +258,46 @@ public class BaseClassForWebAndMobile extends Wrapper{
 //		driverWeb.quit();
 	}
 
+///------------------------------------------------------------
+	
+	//Method onTestFailure, onFinish is for run only the failed case after all the test cases are executed
+	@Override
+    public void onTestFailure(ITestResult result) {
+        failedTestResults.add(result);
+    }
 
+    @Override
+    public void onFinish(ITestContext context) {
+        if (!failedTestResults.isEmpty()) {
+            System.out.println("Failed test case running");
+            TestNG testNG = new TestNG();
+            XmlSuite suite = new XmlSuite();
+            XmlTest test = new XmlTest(suite);
+            test.setName("Failed Test Retest");
+
+            for (ITestResult failedResult : failedTestResults) {
+                Class failedTestClass = failedResult.getTestClass().getRealClass();
+                XmlClass xmlClass = new XmlClass(failedTestClass);
+                xmlClass.setIncludedMethods(getFailedTestMethods(failedTestClass));
+                test.getClasses().add(xmlClass);
+            }
+
+            List<XmlSuite> suites = new ArrayList<>();
+            suites.add(suite);
+            testNG.setXmlSuites(suites);
+            testNG.run();
+        }
+    }
+
+    private List<XmlInclude> getFailedTestMethods(Class failedTestClass) {
+        List<XmlInclude> failedMethods = new ArrayList<>();
+        for (ITestResult failedResult : failedTestResults) {
+            if (failedResult.getTestClass().getRealClass().equals(failedTestClass)) {
+                ITestNGMethod method = failedResult.getMethod();
+                failedMethods.add(new XmlInclude(method.getMethodName()));
+            }
+        }
+        return failedMethods;
+    }
 
 }

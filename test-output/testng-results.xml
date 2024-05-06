@@ -1,145 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="3" ignored="0" total="33" passed="29" failed="1" skipped="0">
+<testng-results retried="1" ignored="0" total="31" passed="30" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-29T15:06:13 IST" name="Default suite" finished-at="2024-02-29T15:35:07 IST" duration-ms="1734609">
+  <suite started-at="2024-05-06T11:28:17 IST" name="Default suite" finished-at="2024-05-06T11:55:04 IST" duration-ms="1607606">
     <groups>
     </groups>
-    <test started-at="2024-02-29T15:06:13 IST" name="Default test" finished-at="2024-02-29T15:35:07 IST" duration-ms="1734609">
+    <test started-at="2024-05-06T11:28:17 IST" name="Default test" finished-at="2024-05-06T11:55:04 IST" duration-ms="1607606">
       <class name="New_ui_Testclass.BasicSmoke_MobAndWeb">
-        <test-method is-config="true" signature="initial()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:06:13 IST" name="initial" finished-at="2024-02-29T15:06:13 IST" duration-ms="180" status="PASS">
+        <test-method is-config="true" signature="initial()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:28:17 IST" name="initial" finished-at="2024-05-06T11:28:17 IST" duration-ms="139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initial -->
-        <test-method is-config="true" signature="CurrentClassName()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:06:13 IST" name="CurrentClassName" finished-at="2024-02-29T15:06:13 IST" depends-on-methods="MainPack.BaseClassForWebAndMobile.initial" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="CurrentClassName()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:28:17 IST" name="CurrentClassName" finished-at="2024-05-06T11:28:17 IST" depends-on-methods="MainPack.BaseClassForWebAndMobile.initial" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CurrentClassName -->
-        <test-method is-config="true" signature="ConnectWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:06:13 IST" name="ConnectWeb" finished-at="2024-02-29T15:06:24 IST" duration-ms="11491" status="PASS">
+        <test-method is-config="true" signature="ConnectWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:28:17 IST" name="ConnectWeb" finished-at="2024-05-06T11:28:31 IST" duration-ms="14110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConnectWeb -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:06:24 IST" name="setup" finished-at="2024-02-29T15:06:35 IST" duration-ms="10402" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:28:31 IST" name="setup" finished-at="2024-05-06T11:28:55 IST" duration-ms="23760" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CreateCustomerAndVerifyInWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:06:35 IST" name="CreateCustomerAndVerifyInWeb" finished-at="2024-02-29T15:07:17 IST" duration-ms="42216" status="PASS">
+        <test-method signature="CreateCustomerAndVerifyInWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:28:55 IST" name="CreateCustomerAndVerifyInWeb" finished-at="2024-05-06T11:29:36 IST" duration-ms="41375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateCustomerAndVerifyInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:07:17 IST" name="teardown" finished-at="2024-02-29T15:07:17 IST" duration-ms="326" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:29:36 IST" name="teardown" finished-at="2024-05-06T11:29:36 IST" duration-ms="477" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CreateCustomerAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.CreateCustomerAndVerifyInWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=CreateCustomerAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.CreateCustomerAndVerifyInWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="EditCustomerAndVerifyInWeb()[pri:1, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:07:17 IST" name="EditCustomerAndVerifyInWeb" finished-at="2024-02-29T15:07:47 IST" duration-ms="30076" status="PASS">
+        <test-method signature="EditCustomerAndVerifyInWeb()[pri:1, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:29:36 IST" name="EditCustomerAndVerifyInWeb" finished-at="2024-05-06T11:30:04 IST" duration-ms="27595" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EditCustomerAndVerifyInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:07:47 IST" name="teardown" finished-at="2024-02-29T15:07:48 IST" duration-ms="49" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:30:04 IST" name="teardown" finished-at="2024-05-06T11:30:04 IST" duration-ms="129" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=EditCustomerAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.EditCustomerAndVerifyInWeb()[pri:1, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=EditCustomerAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.EditCustomerAndVerifyInWeb()[pri:1, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="CustomerEditInWebAndVerifyInMob()[pri:2, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:07:48 IST" name="CustomerEditInWebAndVerifyInMob" finished-at="2024-02-29T15:08:05 IST" duration-ms="17116" status="PASS">
+        <test-method signature="CustomerEditInWebAndVerifyInMob()[pri:2, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:30:04 IST" name="CustomerEditInWebAndVerifyInMob" finished-at="2024-05-06T11:30:19 IST" duration-ms="15142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CustomerEditInWebAndVerifyInMob -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:08:05 IST" name="teardown" finished-at="2024-02-29T15:08:05 IST" duration-ms="43" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:30:19 IST" name="teardown" finished-at="2024-05-06T11:30:19 IST" duration-ms="82" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CustomerEditInWebAndVerifyInMob status=SUCCESS method=BasicSmoke_MobAndWeb.CustomerEditInWebAndVerifyInMob()[pri:2, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=CustomerEditInWebAndVerifyInMob status=SUCCESS method=BasicSmoke_MobAndWeb.CustomerEditInWebAndVerifyInMob()[pri:2, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="AddCommunicationsForCustomer_InMobile()[pri:3, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:08:05 IST" name="AddCommunicationsForCustomer_InMobile" finished-at="2024-02-29T15:09:18 IST" duration-ms="73218" status="PASS">
+        <test-method signature="AddCommunicationsForCustomer_InMobile()[pri:3, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:30:19 IST" name="AddCommunicationsForCustomer_InMobile" finished-at="2024-05-06T11:31:28 IST" duration-ms="68260" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCommunicationsForCustomer_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:09:18 IST" name="teardown" finished-at="2024-02-29T15:09:18 IST" duration-ms="37" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:31:28 IST" name="teardown" finished-at="2024-05-06T11:31:28 IST" duration-ms="40" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddCommunicationsForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.AddCommunicationsForCustomer_InMobile()[pri:3, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=AddCommunicationsForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.AddCommunicationsForCustomer_InMobile()[pri:3, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="VerifyCustomerNotesInWeb()[pri:4, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:09:18 IST" name="VerifyCustomerNotesInWeb" finished-at="2024-02-29T15:09:26 IST" duration-ms="7649" status="PASS">
+        <test-method signature="VerifyCustomerNotesInWeb()[pri:4, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:31:28 IST" name="VerifyCustomerNotesInWeb" finished-at="2024-05-06T11:31:34 IST" duration-ms="6344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyCustomerNotesInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:09:26 IST" name="teardown" finished-at="2024-02-29T15:09:26 IST" duration-ms="36" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:31:34 IST" name="teardown" finished-at="2024-05-06T11:31:34 IST" duration-ms="50" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyCustomerNotesInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerNotesInWeb()[pri:4, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCustomerNotesInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerNotesInWeb()[pri:4, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Add_AttachedFiles_ForCustomer_InMobile()[pri:5, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:09:26 IST" name="Add_AttachedFiles_ForCustomer_InMobile" finished-at="2024-02-29T15:10:07 IST" duration-ms="41755" status="PASS">
+        <test-method signature="Add_AttachedFiles_ForCustomer_InMobile()[pri:5, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:31:34 IST" name="Add_AttachedFiles_ForCustomer_InMobile" finished-at="2024-05-06T11:32:14 IST" duration-ms="39985" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_AttachedFiles_ForCustomer_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:10:07 IST" name="teardown" finished-at="2024-02-29T15:10:07 IST" duration-ms="81" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:32:14 IST" name="teardown" finished-at="2024-05-06T11:32:14 IST" duration-ms="38" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Add_AttachedFiles_ForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Add_AttachedFiles_ForCustomer_InMobile()[pri:5, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Add_AttachedFiles_ForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Add_AttachedFiles_ForCustomer_InMobile()[pri:5, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="VerifyCustomerFilesInWeb()[pri:6, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:10:07 IST" name="VerifyCustomerFilesInWeb" finished-at="2024-02-29T15:10:15 IST" duration-ms="7588" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyCustomerFilesInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:10:15 IST" name="teardown" finished-at="2024-02-29T15:10:15 IST" duration-ms="28" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyCustomerFilesInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerFilesInWeb()[pri:6, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method retried="true" signature="Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:10:15 IST" name="Assets_ForCustomer" finished-at="2024-02-29T15:10:56 IST" duration-ms="41339" status="SKIP">
+        <test-method retried="true" signature="VerifyCustomerFilesInWeb()[pri:6, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:32:14 IST" name="VerifyCustomerFilesInWeb" finished-at="2024-05-06T11:33:01 IST" duration-ms="46502" status="SKIP">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[Expected condition failed: waiting for presence of any elements located by By.xpath: //td[text()='Video'] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SARAVANAN-SANTH', ip: '192.168.100.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.support.events.EventFiringWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.119, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\ssara\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55327}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d59622f2cf36faa2627726cbdecc3b0a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of any elements located by By.xpath: //td[text()='Video'] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SARAVANAN-SANTH', ip: '192.168.100.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.support.events.EventFiringWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.119, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\ssara\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55327}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d59622f2cf36faa2627726cbdecc3b0a
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-at Pages.Assets.Click_Assets(Assets.java:19)
-at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
+at MainPack.WrapperForWeb.ExplicitWait_PresenceOfEle2(WrapperForWeb.java:307)
+at MobAndWeb_Page.VerifyAttachedFilesOnWeb.VerifyVideoFile(VerifyAttachedFilesOnWeb.java:33)
+at New_ui_Testclass.BasicSmoke_MobAndWeb.VerifyCustomerFilesInWeb(BasicSmoke_MobAndWeb.java:253)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -168,689 +163,388 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SARAVANAN-SANTH', ip: '192.168.100.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text='Assets']}
-at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Assets_ForCustomer -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:10:58 IST" name="teardown" finished-at="2024-02-29T15:10:58 IST" duration-ms="40" status="PASS">
+        </test-method> <!-- VerifyCustomerFilesInWeb -->
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:33:03 IST" name="teardown" finished-at="2024-05-06T11:33:03 IST" duration-ms="35" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Assets_ForCustomer status=SKIP method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCustomerFilesInWeb status=SKIP method=BasicSmoke_MobAndWeb.VerifyCustomerFilesInWeb()[pri:6, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method retried="true" signature="Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:10:58 IST" name="Assets_ForCustomer" finished-at="2024-02-29T15:11:40 IST" duration-ms="41345" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-at Pages.Assets.Click_Assets(Assets.java:19)
-at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SARAVANAN-SANTH', ip: '192.168.100.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text='Assets']}
-at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="VerifyCustomerFilesInWeb()[pri:6, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:33:03 IST" name="VerifyCustomerFilesInWeb" finished-at="2024-05-06T11:33:09 IST" duration-ms="6435" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Assets_ForCustomer -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:11:42 IST" name="teardown" finished-at="2024-02-29T15:11:42 IST" duration-ms="34" status="PASS">
+        </test-method> <!-- VerifyCustomerFilesInWeb -->
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:33:09 IST" name="teardown" finished-at="2024-05-06T11:33:09 IST" duration-ms="30" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Assets_ForCustomer status=SKIP method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCustomerFilesInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerFilesInWeb()[pri:6, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method retried="true" signature="Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:11:42 IST" name="Assets_ForCustomer" finished-at="2024-02-29T15:12:23 IST" duration-ms="41193" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-at Pages.Assets.Click_Assets(Assets.java:19)
-at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SARAVANAN-SANTH', ip: '192.168.100.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text='Assets']}
-at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:33:09 IST" name="Assets_ForCustomer" finished-at="2024-05-06T11:33:42 IST" duration-ms="32757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Assets_ForCustomer -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:12:25 IST" name="teardown" finished-at="2024-02-29T15:12:25 IST" duration-ms="31" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:33:42 IST" name="teardown" finished-at="2024-05-06T11:33:42 IST" duration-ms="26" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Assets_ForCustomer status=SKIP method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Assets_ForCustomer status=SUCCESS method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:12:25 IST" name="Assets_ForCustomer" finished-at="2024-02-29T15:13:07 IST" duration-ms="41549" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text='Assets'] (tried for 40 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:814)
-at Pages.Assets.Click_Assets(Assets.java:19)
-at New_ui_Testclass.BasicSmoke_MobAndWeb.Assets_ForCustomer(BasicSmoke_MobAndWeb.java:267)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SARAVANAN-SANTH', ip: '192.168.100.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, applicationName: Commusoft, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi, newCommandTimeout: 10000, noReset: true, platformName: android, udid: 192.168.100.93:5555, version: 9}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, version: 9, viewportRect: {height: 2058, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: fa316f2c-1daa-4853-808e-a8c48ee51256
-*** Element info: {Using=xpath, value=//*[@text='Assets']}
-at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Assets_ForCustomer -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:13:09 IST" name="teardown" finished-at="2024-02-29T15:13:10 IST" duration-ms="1239" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Assets_ForCustomer status=FAILURE method=BasicSmoke_MobAndWeb.Assets_ForCustomer()[pri:7, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method signature="Add_Reminders_ForCustomer_InMobile()[pri:8, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:13:10 IST" name="Add_Reminders_ForCustomer_InMobile" finished-at="2024-02-29T15:14:30 IST" duration-ms="79772" status="PASS">
+        <test-method signature="Add_Reminders_ForCustomer_InMobile()[pri:8, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:33:42 IST" name="Add_Reminders_ForCustomer_InMobile" finished-at="2024-05-06T11:34:59 IST" duration-ms="77144" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_Reminders_ForCustomer_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:14:30 IST" name="teardown" finished-at="2024-02-29T15:14:30 IST" duration-ms="31" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:34:59 IST" name="teardown" finished-at="2024-05-06T11:34:59 IST" duration-ms="34" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Add_Reminders_ForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Add_Reminders_ForCustomer_InMobile()[pri:8, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Add_Reminders_ForCustomer_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Add_Reminders_ForCustomer_InMobile()[pri:8, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="VerifyCustomerRemindersOnWeb()[pri:9, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:14:30 IST" name="VerifyCustomerRemindersOnWeb" finished-at="2024-02-29T15:14:38 IST" duration-ms="7770" status="PASS">
+        <test-method signature="VerifyCustomerRemindersOnWeb()[pri:9, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:34:59 IST" name="VerifyCustomerRemindersOnWeb" finished-at="2024-05-06T11:35:07 IST" duration-ms="7896" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyCustomerRemindersOnWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:14:38 IST" name="teardown" finished-at="2024-02-29T15:14:38 IST" duration-ms="45" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:35:07 IST" name="teardown" finished-at="2024-05-06T11:35:07 IST" duration-ms="26" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyCustomerRemindersOnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerRemindersOnWeb()[pri:9, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCustomerRemindersOnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerRemindersOnWeb()[pri:9, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="AddCustomerContactsInMob()[pri:10, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:14:38 IST" name="AddCustomerContactsInMob" finished-at="2024-02-29T15:14:54 IST" duration-ms="16039" status="PASS">
+        <test-method signature="AddCustomerContactsInMob()[pri:10, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:35:07 IST" name="AddCustomerContactsInMob" finished-at="2024-05-06T11:35:23 IST" duration-ms="16337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCustomerContactsInMob -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:14:54 IST" name="teardown" finished-at="2024-02-29T15:14:54 IST" duration-ms="46" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:35:23 IST" name="teardown" finished-at="2024-05-06T11:35:23 IST" duration-ms="35" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddCustomerContactsInMob status=SUCCESS method=BasicSmoke_MobAndWeb.AddCustomerContactsInMob()[pri:10, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=AddCustomerContactsInMob status=SUCCESS method=BasicSmoke_MobAndWeb.AddCustomerContactsInMob()[pri:10, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="VerifyCustomerContactOnWeb()[pri:11, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:14:54 IST" name="VerifyCustomerContactOnWeb" finished-at="2024-02-29T15:15:00 IST" duration-ms="6135" status="PASS">
+        <test-method signature="VerifyCustomerContactOnWeb()[pri:11, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:35:23 IST" name="VerifyCustomerContactOnWeb" finished-at="2024-05-06T11:35:29 IST" duration-ms="5960" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyCustomerContactOnWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:15:00 IST" name="teardown" finished-at="2024-02-29T15:15:00 IST" duration-ms="59" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:35:29 IST" name="teardown" finished-at="2024-05-06T11:35:29 IST" duration-ms="25" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyCustomerContactOnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerContactOnWeb()[pri:11, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCustomerContactOnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.VerifyCustomerContactOnWeb()[pri:11, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="AddWorkaddressAndVerifyInWeb()[pri:12, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:15:00 IST" name="AddWorkaddressAndVerifyInWeb" finished-at="2024-02-29T15:15:40 IST" duration-ms="40648" status="PASS">
+        <test-method signature="AddWorkaddressAndVerifyInWeb()[pri:12, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:35:29 IST" name="AddWorkaddressAndVerifyInWeb" finished-at="2024-05-06T11:36:08 IST" duration-ms="38506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddWorkaddressAndVerifyInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:15:40 IST" name="teardown" finished-at="2024-02-29T15:15:41 IST" duration-ms="73" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:36:08 IST" name="teardown" finished-at="2024-05-06T11:36:08 IST" duration-ms="36" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddWorkaddressAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.AddWorkaddressAndVerifyInWeb()[pri:12, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=AddWorkaddressAndVerifyInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.AddWorkaddressAndVerifyInWeb()[pri:12, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="EditWorkAddressAndVerifyinWeb()[pri:13, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:15:41 IST" name="EditWorkAddressAndVerifyinWeb" finished-at="2024-02-29T15:15:58 IST" duration-ms="17677" status="PASS">
+        <test-method signature="EditWorkAddressAndVerifyinWeb()[pri:13, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:36:08 IST" name="EditWorkAddressAndVerifyinWeb" finished-at="2024-05-06T11:36:25 IST" duration-ms="16963" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EditWorkAddressAndVerifyinWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:15:58 IST" name="teardown" finished-at="2024-02-29T15:15:58 IST" duration-ms="69" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:36:25 IST" name="teardown" finished-at="2024-05-06T11:36:25 IST" duration-ms="33" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=EditWorkAddressAndVerifyinWeb status=SUCCESS method=BasicSmoke_MobAndWeb.EditWorkAddressAndVerifyinWeb()[pri:13, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=EditWorkAddressAndVerifyinWeb status=SUCCESS method=BasicSmoke_MobAndWeb.EditWorkAddressAndVerifyinWeb()[pri:13, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="WorkAddressEditInWebAndVerifyInMob()[pri:14, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:15:58 IST" name="WorkAddressEditInWebAndVerifyInMob" finished-at="2024-02-29T15:16:23 IST" duration-ms="24293" status="PASS">
+        <test-method signature="WorkAddressEditInWebAndVerifyInMob()[pri:14, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:36:25 IST" name="WorkAddressEditInWebAndVerifyInMob" finished-at="2024-05-06T11:36:47 IST" duration-ms="22427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WorkAddressEditInWebAndVerifyInMob -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:16:23 IST" name="teardown" finished-at="2024-02-29T15:16:23 IST" duration-ms="34" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:36:47 IST" name="teardown" finished-at="2024-05-06T11:36:47 IST" duration-ms="42" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=WorkAddressEditInWebAndVerifyInMob status=SUCCESS method=BasicSmoke_MobAndWeb.WorkAddressEditInWebAndVerifyInMob()[pri:14, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=WorkAddressEditInWebAndVerifyInMob status=SUCCESS method=BasicSmoke_MobAndWeb.WorkAddressEditInWebAndVerifyInMob()[pri:14, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="EstimateAcceptWithPrice_InMobile()[pri:15, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:16:23 IST" name="EstimateAcceptWithPrice_InMobile" finished-at="2024-02-29T15:19:54 IST" duration-ms="210993" status="PASS">
+        <test-method signature="EstimateAcceptWithPrice_InMobile()[pri:15, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:36:47 IST" name="EstimateAcceptWithPrice_InMobile" finished-at="2024-05-06T11:40:01 IST" duration-ms="193647" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EstimateAcceptWithPrice_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:19:54 IST" name="teardown" finished-at="2024-02-29T15:19:54 IST" duration-ms="41" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:40:01 IST" name="teardown" finished-at="2024-05-06T11:40:01 IST" duration-ms="23" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=EstimateAcceptWithPrice_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.EstimateAcceptWithPrice_InMobile()[pri:15, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=EstimateAcceptWithPrice_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.EstimateAcceptWithPrice_InMobile()[pri:15, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_AcceptedEstimate_OnWeb()[pri:16, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:19:54 IST" name="Verify_AcceptedEstimate_OnWeb" finished-at="2024-02-29T15:19:59 IST" duration-ms="4940" status="PASS">
+        <test-method signature="Verify_AcceptedEstimate_OnWeb()[pri:16, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:40:01 IST" name="Verify_AcceptedEstimate_OnWeb" finished-at="2024-05-06T11:40:06 IST" duration-ms="5174" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_AcceptedEstimate_OnWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:19:59 IST" name="teardown" finished-at="2024-02-29T15:19:59 IST" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:40:06 IST" name="teardown" finished-at="2024-05-06T11:40:06 IST" duration-ms="27" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_AcceptedEstimate_OnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AcceptedEstimate_OnWeb()[pri:16, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_AcceptedEstimate_OnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AcceptedEstimate_OnWeb()[pri:16, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Reject_Estimate_InMobile()[pri:17, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:19:59 IST" name="Reject_Estimate_InMobile" finished-at="2024-02-29T15:21:28 IST" duration-ms="88907" status="PASS">
+        <test-method signature="Reject_Estimate_InMobile()[pri:17, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:40:06 IST" name="Reject_Estimate_InMobile" finished-at="2024-05-06T11:41:30 IST" duration-ms="83613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Reject_Estimate_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:21:28 IST" name="teardown" finished-at="2024-02-29T15:21:28 IST" duration-ms="27" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:41:30 IST" name="teardown" finished-at="2024-05-06T11:41:30 IST" duration-ms="25" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Reject_Estimate_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Reject_Estimate_InMobile()[pri:17, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Reject_Estimate_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Reject_Estimate_InMobile()[pri:17, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_RejectedEstimateInWeb()[pri:18, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:21:28 IST" name="Verify_RejectedEstimateInWeb" finished-at="2024-02-29T15:21:33 IST" duration-ms="5568" status="PASS">
+        <test-method signature="Verify_RejectedEstimateInWeb()[pri:18, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:41:30 IST" name="Verify_RejectedEstimateInWeb" finished-at="2024-05-06T11:41:35 IST" duration-ms="5490" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_RejectedEstimateInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:21:33 IST" name="teardown" finished-at="2024-02-29T15:21:33 IST" duration-ms="34" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:41:35 IST" name="teardown" finished-at="2024-05-06T11:41:35 IST" duration-ms="31" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_RejectedEstimateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_RejectedEstimateInWeb()[pri:18, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_RejectedEstimateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_RejectedEstimateInWeb()[pri:18, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Abort_Estimate_InMobile()[pri:19, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:21:33 IST" name="Abort_Estimate_InMobile" finished-at="2024-02-29T15:23:01 IST" duration-ms="88229" status="PASS">
+        <test-method signature="Abort_Estimate_InMobile()[pri:19, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:41:35 IST" name="Abort_Estimate_InMobile" finished-at="2024-05-06T11:42:59 IST" duration-ms="83149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Abort_Estimate_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:23:01 IST" name="teardown" finished-at="2024-02-29T15:23:01 IST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:42:59 IST" name="teardown" finished-at="2024-05-06T11:42:59 IST" duration-ms="32" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Abort_Estimate_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Abort_Estimate_InMobile()[pri:19, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Abort_Estimate_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Abort_Estimate_InMobile()[pri:19, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_AbortedEstimateInWeb()[pri:20, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:23:01 IST" name="Verify_AbortedEstimateInWeb" finished-at="2024-02-29T15:23:07 IST" duration-ms="5217" status="PASS">
+        <test-method signature="Verify_AbortedEstimateInWeb()[pri:20, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:42:59 IST" name="Verify_AbortedEstimateInWeb" finished-at="2024-05-06T11:43:05 IST" duration-ms="5867" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_AbortedEstimateInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:23:07 IST" name="teardown" finished-at="2024-02-29T15:23:07 IST" duration-ms="29" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:43:05 IST" name="teardown" finished-at="2024-05-06T11:43:05 IST" duration-ms="23" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_AbortedEstimateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AbortedEstimateInWeb()[pri:20, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_AbortedEstimateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AbortedEstimateInWeb()[pri:20, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="CompleteJobWithInvoiceAndPayment_InMobile()[pri:21, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:23:07 IST" name="CompleteJobWithInvoiceAndPayment_InMobile" finished-at="2024-02-29T15:26:08 IST" duration-ms="180861" status="PASS">
+        <test-method signature="CompleteJobWithInvoiceAndPayment_InMobile()[pri:21, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:43:05 IST" name="CompleteJobWithInvoiceAndPayment_InMobile" finished-at="2024-05-06T11:46:07 IST" duration-ms="182499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CompleteJobWithInvoiceAndPayment_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:26:08 IST" name="teardown" finished-at="2024-02-29T15:26:08 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:46:07 IST" name="teardown" finished-at="2024-05-06T11:46:07 IST" duration-ms="41" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CompleteJobWithInvoiceAndPayment_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.CompleteJobWithInvoiceAndPayment_InMobile()[pri:21, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=CompleteJobWithInvoiceAndPayment_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.CompleteJobWithInvoiceAndPayment_InMobile()[pri:21, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_CompletedJobWithFinalInvoice_OnWeb()[pri:22, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:26:08 IST" name="Verify_CompletedJobWithFinalInvoice_OnWeb" finished-at="2024-02-29T15:26:14 IST" duration-ms="5971" status="PASS">
+        <test-method signature="Verify_CompletedJobWithFinalInvoice_OnWeb()[pri:22, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:46:07 IST" name="Verify_CompletedJobWithFinalInvoice_OnWeb" finished-at="2024-05-06T11:46:15 IST" duration-ms="8275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_CompletedJobWithFinalInvoice_OnWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:26:14 IST" name="teardown" finished-at="2024-02-29T15:26:14 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:46:15 IST" name="teardown" finished-at="2024-05-06T11:46:15 IST" duration-ms="58" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_CompletedJobWithFinalInvoice_OnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_CompletedJobWithFinalInvoice_OnWeb()[pri:22, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_CompletedJobWithFinalInvoice_OnWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_CompletedJobWithFinalInvoice_OnWeb()[pri:22, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Reject_Job_InMobile()[pri:23, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:26:14 IST" name="Reject_Job_InMobile" finished-at="2024-02-29T15:27:33 IST" duration-ms="79792" status="PASS">
+        <test-method signature="Reject_Job_InMobile()[pri:23, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:46:15 IST" name="Reject_Job_InMobile" finished-at="2024-05-06T11:47:35 IST" duration-ms="79329" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Reject_Job_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:27:33 IST" name="teardown" finished-at="2024-02-29T15:27:33 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:47:35 IST" name="teardown" finished-at="2024-05-06T11:47:35 IST" duration-ms="63" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Reject_Job_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Reject_Job_InMobile()[pri:23, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Reject_Job_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Reject_Job_InMobile()[pri:23, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_RejectedJobInWeb()[pri:24, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:27:33 IST" name="Verify_RejectedJobInWeb" finished-at="2024-02-29T15:27:39 IST" duration-ms="5309" status="PASS">
+        <test-method signature="Verify_RejectedJobInWeb()[pri:24, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:47:35 IST" name="Verify_RejectedJobInWeb" finished-at="2024-05-06T11:47:40 IST" duration-ms="5408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_RejectedJobInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:27:39 IST" name="teardown" finished-at="2024-02-29T15:27:39 IST" duration-ms="28" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:47:40 IST" name="teardown" finished-at="2024-05-06T11:47:40 IST" duration-ms="60" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_RejectedJobInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_RejectedJobInWeb()[pri:24, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_RejectedJobInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_RejectedJobInWeb()[pri:24, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Abort_Job_InMobile()[pri:25, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:27:39 IST" name="Abort_Job_InMobile" finished-at="2024-02-29T15:29:00 IST" duration-ms="81413" status="PASS">
+        <test-method signature="Abort_Job_InMobile()[pri:25, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:47:40 IST" name="Abort_Job_InMobile" finished-at="2024-05-06T11:49:00 IST" duration-ms="79801" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Abort_Job_InMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:29:00 IST" name="teardown" finished-at="2024-02-29T15:29:00 IST" duration-ms="20" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:49:00 IST" name="teardown" finished-at="2024-05-06T11:49:00 IST" duration-ms="59" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Abort_Job_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Abort_Job_InMobile()[pri:25, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Abort_Job_InMobile status=SUCCESS method=BasicSmoke_MobAndWeb.Abort_Job_InMobile()[pri:25, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_AbortedJobInWeb()[pri:26, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:29:00 IST" name="Verify_AbortedJobInWeb" finished-at="2024-02-29T15:29:05 IST" duration-ms="5248" status="PASS">
+        <test-method signature="Verify_AbortedJobInWeb()[pri:26, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:49:00 IST" name="Verify_AbortedJobInWeb" finished-at="2024-05-06T11:49:05 IST" duration-ms="5038" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_AbortedJobInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:29:05 IST" name="teardown" finished-at="2024-02-29T15:29:05 IST" duration-ms="22" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:49:05 IST" name="teardown" finished-at="2024-05-06T11:49:05 IST" duration-ms="56" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_AbortedJobInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AbortedJobInWeb()[pri:26, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_AbortedJobInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_AbortedJobInWeb()[pri:26, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="GenerateCertificateForJob_And_VerifyInMobile()[pri:27, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:29:05 IST" name="GenerateCertificateForJob_And_VerifyInMobile" finished-at="2024-02-29T15:31:48 IST" duration-ms="162707" status="PASS">
+        <test-method signature="GenerateCertificateForJob_And_VerifyInMobile()[pri:27, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:49:05 IST" name="GenerateCertificateForJob_And_VerifyInMobile" finished-at="2024-05-06T11:51:48 IST" duration-ms="163208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GenerateCertificateForJob_And_VerifyInMobile -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:31:48 IST" name="teardown" finished-at="2024-02-29T15:31:48 IST" duration-ms="23" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:51:48 IST" name="teardown" finished-at="2024-05-06T11:51:48 IST" duration-ms="52" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=GenerateCertificateForJob_And_VerifyInMobile status=SUCCESS method=BasicSmoke_MobAndWeb.GenerateCertificateForJob_And_VerifyInMobile()[pri:27, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=GenerateCertificateForJob_And_VerifyInMobile status=SUCCESS method=BasicSmoke_MobAndWeb.GenerateCertificateForJob_And_VerifyInMobile()[pri:27, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="Verify_CompletedCertificateInWeb()[pri:28, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:31:48 IST" name="Verify_CompletedCertificateInWeb" finished-at="2024-02-29T15:31:55 IST" duration-ms="6872" status="PASS">
+        <test-method signature="Verify_CompletedCertificateInWeb()[pri:28, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:51:48 IST" name="Verify_CompletedCertificateInWeb" finished-at="2024-05-06T11:51:56 IST" duration-ms="7052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_CompletedCertificateInWeb -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:31:55 IST" name="teardown" finished-at="2024-02-29T15:31:55 IST" duration-ms="22" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:51:56 IST" name="teardown" finished-at="2024-05-06T11:51:56 IST" duration-ms="65" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Verify_CompletedCertificateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_CompletedCertificateInWeb()[pri:28, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=Verify_CompletedCertificateInWeb status=SUCCESS method=BasicSmoke_MobAndWeb.Verify_CompletedCertificateInWeb()[pri:28, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="EmailCertificateFromMobileAndVerifyOnTheGmailApp()[pri:29, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:31:55 IST" name="EmailCertificateFromMobileAndVerifyOnTheGmailApp" finished-at="2024-02-29T15:35:07 IST" duration-ms="192416" status="PASS">
+        <test-method signature="EmailCertificateFromMobileAndVerifyOnTheGmailApp()[pri:29, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:51:56 IST" name="EmailCertificateFromMobileAndVerifyOnTheGmailApp" finished-at="2024-05-06T11:55:04 IST" duration-ms="188597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmailCertificateFromMobileAndVerifyOnTheGmailApp -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:35:07 IST" name="teardown" finished-at="2024-02-29T15:35:07 IST" duration-ms="30" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:55:04 IST" name="teardown" finished-at="2024-05-06T11:55:04 IST" duration-ms="58" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=EmailCertificateFromMobileAndVerifyOnTheGmailApp status=SUCCESS method=BasicSmoke_MobAndWeb.EmailCertificateFromMobileAndVerifyOnTheGmailApp()[pri:29, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28] output={null}]]]>
+                <![CDATA[[TestResult name=EmailCertificateFromMobileAndVerifyOnTheGmailApp status=SUCCESS method=BasicSmoke_MobAndWeb.EmailCertificateFromMobileAndVerifyOnTheGmailApp()[pri:29, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="tearDownWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:35:08 IST" name="tearDownWeb" finished-at="2024-02-29T15:35:08 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="tearDownWeb()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:55:04 IST" name="tearDownWeb" finished-at="2024-05-06T11:55:04 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownWeb -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@dc7df28]" started-at="2024-02-29T15:35:08 IST" name="teardown" finished-at="2024-02-29T15:35:13 IST" duration-ms="5005" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:New_ui_Testclass.BasicSmoke_MobAndWeb@7b4c50bc]" started-at="2024-05-06T11:55:04 IST" name="teardown" finished-at="2024-05-06T11:55:09 IST" duration-ms="5015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -1,11 +1,11 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import MainPack.Wrapper;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import junit.framework.Assert;
 
 public class Job extends Wrapper{
 	
@@ -53,6 +53,7 @@ public class Job extends Wrapper{
 	public void Job_Status() throws InterruptedException
 	{
 		Thread.sleep(3000);
+		ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/diary_status_text']");
 		if((driver.findElement(By.id("com.commusoft.v4:id/diary_status_text"))).isDisplayed())
 		{
 			System.out.println("Job in Left status");
@@ -71,6 +72,11 @@ public class Job extends Wrapper{
 		}
 		
 	
+	}
+	public void Payment_Save() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Save']");
+		click("//*[@text='Save']");
 	}
 	public void Sign_save() throws InterruptedException
 	{
@@ -112,6 +118,12 @@ public class Job extends Wrapper{
 	{
 		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.EditText'])[1]");
 		type("(//*[@class='android.widget.EditText'])[1]", arriveanswer);
+		
+		
+		arrive_Answer = driver.findElement(By.xpath("(//*[@class='android.widget.EditText'])[1]")).getText();
+	    System.setProperty("arrive_Answer", arrive_Answer);
+		System.out.println("Arrive answer: "+arrive_Answer);
+		
 	}
 	public void Arrive_Question() throws InterruptedException
 	{
@@ -139,14 +151,19 @@ public class Job extends Wrapper{
 		{
 			ExplicitWait_PresenceOfEle("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText");
 			type("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText", leaveanswer);
-                 
+            
+			leave_Answer = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText")).getText();
+		    System.setProperty("leave_Answer", leave_Answer);
+			System.out.println("Leave answer: "+leave_Answer);
 		}catch(Exception e)
 		
 		{
-			
 			ExplicitWait_PresenceOfEle("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]");
 			type("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]", leaveanswer);
-			  
+			 
+			leave_Answer = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]")).getText();
+		    System.setProperty("leave_Answer", leave_Answer);
+			System.out.println("Leave answer: "+leave_Answer);
 		}
 	}
 	public void Complete_Continue() throws InterruptedException
@@ -219,22 +236,39 @@ public class Job extends Wrapper{
 		click("//android.widget.TextView[@text='Add payment']");
 //		Thread.sleep(4000);
 	}
-	public void Method_Value() throws InterruptedException
+	
+	public void SelectOtherOptionAndMethod_Value() throws InterruptedException
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/spinnermethodValue']");
-		click("//*[@resource-id='com.commusoft.v4:id/spinnermethodValue']");
-		ExplicitWait_ElementToBeClickable("//android.widget.TextView[@text='Cash']");
-		
-		click("//android.widget.TextView[@text='Cash']");
+//		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/spinnermethodValue']");
+//		click("//*[@resource-id='com.commusoft.v4:id/spinnermethodValue']");
+//		ExplicitWait_ElementToBeClickable("//android.widget.TextView[@text='Cash']");
+//		
+//		click("//android.widget.TextView[@text='Cash']");
 //		Thread.sleep(2000);
+		
+		
+		ExplicitWait_ElementToBeClickable("//*[@text='Other']"); 
+		click("//*[@text='Other']");
+		
+		ExplicitWait_ElementToBeClickable("(//*[@content-desc='Trailing icon'])[2]");
+		click("(//*[@content-desc='Trailing icon'])[2]");
+		
+		ExplicitWait_ElementToBeClickable("//android.widget.TextView[@text='Cash']");
+		click("//android.widget.TextView[@text='Cash']");
 	}
 	public void Nominal_Value() throws InterruptedException
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/spinnernominalaccountvalue']");
-		click("//*[@resource-id='com.commusoft.v4:id/spinnernominalaccountvalue']");
+//		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/spinnernominalaccountvalue']");
+//		click("//*[@resource-id='com.commusoft.v4:id/spinnernominalaccountvalue']");
+//		ExplicitWait_ElementToBeClickable("//android.widget.TextView[@text='Cash']");
+//		click("//android.widget.TextView[@text='Cash']");
+//		Thread.sleep(2000);
+		Thread.sleep(1000);
+		ExplicitWait_ElementToBeClickable("(//*[@content-desc='Trailing icon'])[3]"); 
+		click("(//*[@content-desc='Trailing icon'])[3]");
+		
 		ExplicitWait_ElementToBeClickable("//android.widget.TextView[@text='Cash']");
 		click("//android.widget.TextView[@text='Cash']");
-//		Thread.sleep(2000);
 	}
 	public void Parts_Nominal_Value() throws InterruptedException
 	{
@@ -446,11 +480,12 @@ public class Job extends Wrapper{
 	public void Verify_ArriveQuestions(String arriveanswer) throws InterruptedException 
 	{
 		TwoSec();
-		ScrollDown24("VIEW LEAVE QUESTIONS");
-		ExplicitWait_ElementToBeClickable("//*[@text='VIEW ARRIVE QUESTIONS']");
-		click("//*[@text='VIEW ARRIVE QUESTIONS']");
-		String ActualArriveAnswer = driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/simple_answer']")).getText();
-		Assert.assertEquals(arriveanswer, ActualArriveAnswer);
+		ScrollDown24(arriveanswer);
+//		ExplicitWait_ElementToBeClickable("//*[@text='VIEW ARRIVE QUESTIONS']");
+//		click("//*[@text='VIEW ARRIVE QUESTIONS']");
+		ExplicitWait_PresenceOfEle("//*[@text='Arrive questions']");
+		System.getProperty("arrive_Answer", arrive_Answer);
+		Assert.assertEquals(arrive_Answer,arriveanswer );
 	}
 	
 	public void Close() 
@@ -458,14 +493,27 @@ public class Job extends Wrapper{
 		ExplicitWait_ElementToBeClickable("//*[@text='Close']");
 		click("//*[@text='Close']");
 	}
+	public void ViewDiaryHistory_Back() 
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.ImageView'])[5]");
+		click("(//*[@class='android.widget.ImageView'])[5]");
+	}
+	
+	public void DiaryHistoryBack() 
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.ImageView'])");
+		click("(//*[@class='android.widget.ImageView'])");
+	}
+	
 	public void Verify_LeaveQuestions(String leaveanswer) throws InterruptedException 
 	{
 		TwoSec();
-		ScrollDown24("VIEW LEAVE QUESTIONS");
-		ExplicitWait_ElementToBeClickable("//*[@text='VIEW LEAVE QUESTIONS']");
-		click("//*[@text='VIEW LEAVE QUESTIONS']");
-		String ActualLeaveAnswer = driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/simple_answer']")).getText();
-		Assert.assertEquals(leaveanswer, ActualLeaveAnswer);
+		ScrollDown24(leaveanswer);
+//		ExplicitWait_ElementToBeClickable("//*[@text='VIEW LEAVE QUESTIONS']");
+//		click("//*[@text='VIEW LEAVE QUESTIONS']");
+		ExplicitWait_PresenceOfEle("//*[@text='Leave questions']");
+		System.getProperty("leave_Answer", leave_Answer);
+		Assert.assertEquals(leave_Answer, leaveanswer );
 	}
 //	Close
 	public void CloseDiaryHistory() 

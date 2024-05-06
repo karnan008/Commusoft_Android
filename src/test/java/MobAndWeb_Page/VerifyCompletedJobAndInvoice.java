@@ -32,7 +32,7 @@ public class VerifyCompletedJobAndInvoice extends Wrapper{
 	{
 		ExplicitWait_PresenceOfEle2("//input[@type='search']");
 		WebElement num = driverWeb.findElement(By.xpath("//input[@type='search']"));
-		num.sendKeys("7760");
+		num.sendKeys("8308");
 
 		WebThreeSec();
 		num.sendKeys(Keys.ENTER);
@@ -45,8 +45,8 @@ public class VerifyCompletedJobAndInvoice extends Wrapper{
 	
 	public void SelectJobDemo() 
 	{
-		ExplicitWait_ElementToBeClickable2("//a[text()='7760']");
-		Webclick("//a[text()='7760']");
+		ExplicitWait_ElementToBeClickable2("//a[text()='8308']");
+		Webclick("//a[text()='8308']");
 	}
 	public void VerifyJobstatus() 
 	{
@@ -77,9 +77,15 @@ public class VerifyCompletedJobAndInvoice extends Wrapper{
 		AssertTrueWeb("/html/body/div[3]/ng-container/div/section/div[2]/div/ng-container/div[2]/span[1]/div/section/div/div/div[1]/div/div/div/div[1]/p/strong");
 	}
 	
-	public void Invoice_Tab() 
+	public void Invoice_Tab()  
 	{
 		WebThreeSec();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ExplicitWait_PresenceOfEle2("//span[text()='Invoices']");
 		Webclick("//span[text()='Invoices']");
 	}
@@ -101,7 +107,12 @@ public class VerifyCompletedJobAndInvoice extends Wrapper{
 	
 	public void View() 
 	{
-		WebOneSec();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ScrollWeb("(//a[@has-permission='Diary,readaccess'])[3]");
 		ExplicitWait_PresenceOfEle2("(//a[@has-permission='Diary,readaccess'])[3]");
 		Webclick("(//a[@has-permission='Diary,readaccess'])[3]");

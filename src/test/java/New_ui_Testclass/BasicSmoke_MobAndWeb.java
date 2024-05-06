@@ -621,9 +621,9 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		job2.ExceptionHandling_For_DataNotLoad_InInvoiceScreen();
 		job2.Invoice_Saves();
 		job2.Payment();
-		job2.Method_Value();
+		job2.SelectOtherOptionAndMethod_Value();
 		job2.Nominal_Value();
-		job2.Sign_save();
+		job2.Payment_Save();
 		job2.Job_Status();
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();

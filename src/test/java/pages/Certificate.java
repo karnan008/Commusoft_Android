@@ -228,6 +228,12 @@ public class Certificate extends Wrapper{
 	
 	public void CertificateFabIcon_Web() 
 	{
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ExplicitWait_ElementToBeClickable2("//span[@class='preview-file-link actions-toggle ng-scope ss-plus']");
 		Webclick("//span[@class='preview-file-link actions-toggle ng-scope ss-plus']");
 		

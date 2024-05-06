@@ -88,7 +88,7 @@ public class Job extends Wrapper{
 //		Thread.sleep(2000);
 	}
 
-	public void SearchJobByNumber() throws AWTException 
+	public void SearchJobByNumber() throws AWTException, InterruptedException 
 	{
 //		FiveSec();
 
@@ -122,12 +122,26 @@ public class Job extends Wrapper{
 		jobnumber = System.getProperty("jobnumber");
 		MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
 		num.sendKeys(jobnumber);
+		Thread.sleep(2000);
 		TouchAction touchAction = new TouchAction(driver);
 		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
 		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
 
 		
 	
+	}
+	
+	public void SearchJobByNumberDemo() 
+	{
+		ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");
+		MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
+		num.sendKeys("8699");
+		
+		TouchAction touchAction = new TouchAction(driver);
+		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
+		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
+
+		
 	}
 	
 	

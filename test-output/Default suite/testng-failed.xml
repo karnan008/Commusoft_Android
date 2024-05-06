@@ -8,10 +8,10 @@
           <include name="teardown"/>
           <include name="teardown"/>
           <include name="ConnectWeb"/>
+          <include name="VerifyCustomerFilesInWeb"/>
           <include name="CurrentClassName"/>
           <include name="setup"/>
           <include name="initial"/>
-          <include name="Assets_ForCustomer"/>
           <include name="tearDownWeb"/>
         </methods>
       </class> <!-- New_ui_Testclass.BasicSmoke_MobAndWeb -->

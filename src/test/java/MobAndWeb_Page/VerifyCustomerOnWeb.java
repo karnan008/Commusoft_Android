@@ -53,6 +53,16 @@ public class VerifyCustomerOnWeb extends Wrapper{
 
 	
 	}
+	
+	public void FailClickCustomer() 
+	{
+
+		Webclick("/html/body/div[3]/ng-container/div/section/div[2]/div/ng-container/div[2]/section/div[2]/div[2]/section[1]/table/tbody/tr/td[1]/span/a");
+		
+
+	
+	
+	}
 
 	public void EnableNewUI() 
 	{

@@ -174,7 +174,7 @@ public class Estimate extends Wrapper {
 	
 	public void Savebtn() throws InterruptedException
 	{
-		ExplicitWait_ElementToBeClickable("//*[@content-desc='Save'] ");
+		ExplicitWait_ElementToBeClickable("//*[@content-desc='Save'] "); //android.widget.TextView[@text='Save']
 		click("//*[@content-desc='Save'] ");
 		
 	}
