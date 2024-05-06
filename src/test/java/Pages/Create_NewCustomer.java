@@ -26,13 +26,13 @@ public class Create_NewCustomer extends WrapperClass{
 	public void Enter_Surname() throws InterruptedException 
 	{
 		ThreeSec();
-		Type2("(//*[@text='Tap To Enter…'])[2]", Surname);
+		Type2("(//*[@text='Tap To Enterï¿½'])[2]", Surname);
 	}
 	
 	public void Enter_Addressline1() 
 	{
 		ThreeSec();
-		Type2("(//*[@text='Tap To Enter…'])[5]", Addressline1);
+		Type2("(//*[@text='Tap To Enterï¿½'])[5]", Addressline1);
 	}
 	
 	public void Click_Tick() 
@@ -55,7 +55,7 @@ public class Create_NewCustomer extends WrapperClass{
 	public void Enter_Customer() throws InterruptedException 
 	{
 		ThreeSec();
-		Type2("//*[@text='Search…']", Surname);
+		Type2("//*[@text='Searchï¿½']", Surname);
 		HitEnter();
 	}
 	

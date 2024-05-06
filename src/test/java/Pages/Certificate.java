@@ -74,7 +74,7 @@ public class Certificate extends Wrapper{
 				MobileElement displayed = driver.findElement(By.xpath("//*[ends-with(@text,'put')]"));
 				boolean input = displayed.isDisplayed();
 				System.out.println("Input Field is displayed: "+input);
-				type("//*[@text='Tap To Enter…']", certificateinput);
+				type("//*[@text='Tap To Enterï¿½']", certificateinput);
 			}catch(Exception e) 
 			{
 				

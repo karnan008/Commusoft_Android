@@ -139,10 +139,10 @@ public class Parts extends Wrapper{
 		ExplicitWait_ElementToBeClickable("//*[@text='Check in']");
 		click("//*[@text='Check in']");
 	}
-	public void Verify_CheckInPart() //Marking as available…
+	public void Verify_CheckInPart() //Marking as availableï¿½
 	{
-		ExplicitWait_PresenceOfEle("//*[@text='Marking as available…']");
-		MobileElement CheckInStatus = driver.findElement(By.xpath("//*[@text='Marking as available…']"));
+		ExplicitWait_PresenceOfEle("//*[@text='Marking as availableï¿½']");
+		MobileElement CheckInStatus = driver.findElement(By.xpath("//*[@text='Marking as availableï¿½']"));
 		Verify_AssertTrue(CheckInStatus);
 		System.out.println("Status Text Is: "+CheckInStatus.getText());
 		click("//*[@text='Close']");

@@ -274,8 +274,8 @@ public class Customer extends MainPack.Wrapper{
 	{
 		Thread.sleep(3000);
 		//		click("#com.commusoft.v4:id/spinnersendToView");
-		ExplicitWait_ElementToBeClickable("//*[@text='Send to *']/following-sibling::*[@class='android.widget.Spinner']");
-		click("//*[@text='Send to *']/following-sibling::*[@class='android.widget.Spinner']");
+		ExplicitWait_ElementToBeClickable("//*[@text='Send toï¿½*']/following-sibling::*[@class='android.widget.Spinner']");
+		click("//*[@text='Send toï¿½*']/following-sibling::*[@class='android.widget.Spinner']");
 		ExplicitWait_ElementToBeClickable("//*[contains(@text,'"+title+" "+editname+" "+surname+"')]");
 
 		click("//*[contains(@text,'"+title+" "+editname+" "+surname+"')]");
