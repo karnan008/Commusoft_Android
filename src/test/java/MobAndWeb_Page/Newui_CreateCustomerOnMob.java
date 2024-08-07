@@ -115,9 +115,10 @@ public class Newui_CreateCustomerOnMob extends Wrapper{
 		MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
 		num.sendKeys(customernumber);
 		Thread.sleep(2000);
-		TouchAction touchAction = new TouchAction(driver);
-		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
-		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
+//		TouchAction touchAction = new TouchAction(driver);
+//		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
+//		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
+		click("(//*[@class='android.widget.ImageView'])[1]");
 
 	}
 

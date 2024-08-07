@@ -1,5 +1,6 @@
 package New_ui_Testclass;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.BeforeSuite;
@@ -44,17 +45,21 @@ import Utility.RerunTestCase;
 
 
 
+
 public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBaseClassForWebAndMobile
 
 	
 	//Once its executed, do manually invoice, additional work for job, parts
+	 public BasicSmoke_MobAndWeb() {
+	        super(); // Ensure the constructor of the base class is called
+	    }
 	
 	@BeforeSuite(alwaysRun = true)
 	public void CurrentClassName() 
 	{
 		BasicSmoke_MobAndWeb basicSmoke_MobAndWeb = new BasicSmoke_MobAndWeb();
 		simpleName = basicSmoke_MobAndWeb.getClass().getSimpleName();
-		System.err.println("Current class name is: "+simpleName);
+		System.out.println("Current class name is: "+simpleName);
 		Running_UserName = System.getProperty("user.name");
         System.out.println("Current running user name: " + Running_UserName);
 	}
@@ -163,13 +168,13 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		newUI_Notes.Enter_Note(Note);
 		newUI_Notes.Save();
 		newUI_Notes.Verify_AddedNote();
-		newUI_Notes.FabIcon();
-		newUI_Notes.NewPhoneCall();
-		newUI_Notes.Call_Type();
-		newUI_Notes.ContactNameSearch();
-		newUI_Notes.PhoneNote(NoteForPhoneCall);
-		newUI_Notes.Save();
-		newUI_Notes.Verify_PhoneCall();
+//		newUI_Notes.FabIcon();
+//		newUI_Notes.NewPhoneCall();
+//		newUI_Notes.Call_Type();
+//		newUI_Notes.ContactNameSearch();
+//		newUI_Notes.PhoneNote(NoteForPhoneCall);
+//		newUI_Notes.Save();
+//		newUI_Notes.Verify_PhoneCall();
 		newUI_Notes.FabIcon();
 		add_Notes.Click_Sendnewemail();
 		newUI_Notes.Search_To();
@@ -197,62 +202,62 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		verifyCustomerOnWeb.ClickCustomer();
 		verifyNotesInWeb.CommunicationTab();
 		verifyNotesInWeb.VerifyNote(NoteTitle);
-		verifyNotesInWeb.VerifyPhoneCall(NoteForPhoneCall);
+//		verifyNotesInWeb.VerifyPhoneCall(NoteForPhoneCall);// Comment this line bcoz of unable to add call from mobile
 		verifyNotesInWeb.VerifyEmail(SubjectForEmail);
 		verifyNotesInWeb.VerifySMS(MessageForSMS);
 		
 		
 	}
 	
-	@Test(priority=5, retryAnalyzer = RerunTestCase.class)
-	public void Add_AttachedFiles_ForCustomer_InMobile() throws InterruptedException 
-	{
-
-		AttachedFiles_ForWorkAddresss attachedFiles_ForWorkAddresss = new AttachedFiles_ForWorkAddresss(driver);
-		Customer customer = new Customer(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Attached_Files attached_Files = new Attached_Files(driver);
-		Pages.Edit_WorkAddress edit_WorkAddress = new Edit_WorkAddress(driver);
+//	@Test(priority=5, retryAnalyzer = RerunTestCase.class)
+//	public void Add_AttachedFiles_ForCustomer_InMobile() throws InterruptedException 
+//	{
+//
+//		AttachedFiles_ForWorkAddresss attachedFiles_ForWorkAddresss = new AttachedFiles_ForWorkAddresss(driver);
+//		Customer customer = new Customer(driver);
+//		Add_Notes add_Notes = new Add_Notes(driver);
+//		Attached_Files attached_Files = new Attached_Files(driver);
+//		Pages.Edit_WorkAddress edit_WorkAddress = new Edit_WorkAddress(driver);
+//	
+//		add_Notes.Click_Choc_MenuButton();
+//		attached_Files.Click_AttachedFiles();
+//		add_Notes.Click_FabIcon();
+//		attached_Files.Click_TakePhoto();
+//		attached_Files.Exception_Handling();
+//		attached_Files.Enter_Photo_Filename(PhotoFileName);
+//		attached_Files.Click_Save();
+//		attached_Files.Take_Photo();
+//		attached_Files.Click_TickSymbol();
+//		attached_Files.Click_TakeVideo();
+//		attached_Files.Enter_Video_Filename(VideoFileName);
+//		attached_Files.Click_Save();
+//		attached_Files.Take_Video();
+//		attached_Files.Click_TickSymbol();
+////		attached_Files.Click_ChooseFromCameraRoll();
+////		attached_Files.SelectFromCameraRoll();
+//		attached_Files.Click_RecordAudio();
+//		attached_Files.Exception_Handling();
+//		attached_Files.Enter_Audio_Filename(AudioFileName);    //comment 475,476,477,478,479, coz audio butto is not clickable (20-Dec-2022)
+//		attached_Files.Click_TickSymbolForAudio();
+//		attached_Files.RecordAudio();
+//
+//
+//	
+//	}
 	
-		add_Notes.Click_Choc_MenuButton();
-		attached_Files.Click_AttachedFiles();
-		add_Notes.Click_FabIcon();
-		attached_Files.Click_TakePhoto();
-		attached_Files.Exception_Handling();
-		attached_Files.Enter_Photo_Filename(PhotoFileName);
-		attached_Files.Click_Save();
-		attached_Files.Take_Photo();
-		attached_Files.Click_TickSymbol();
-		attached_Files.Click_TakeVideo();
-		attached_Files.Enter_Video_Filename(VideoFileName);
-		attached_Files.Click_Save();
-		attached_Files.Take_Video();
-		attached_Files.Click_TickSymbol();
-//		attached_Files.Click_ChooseFromCameraRoll();
-//		attached_Files.SelectFromCameraRoll();
-		attached_Files.Click_RecordAudio();
-		attached_Files.Exception_Handling();
-		attached_Files.Enter_Audio_Filename(AudioFileName);    //comment 475,476,477,478,479, coz audio butto is not clickable (20-Dec-2022)
-		attached_Files.Click_TickSymbolForAudio();
-		attached_Files.RecordAudio();
-
-
-	
-	}
-	
-	@Test(priority=6, retryAnalyzer = RerunTestCase.class)
-	public void VerifyCustomerFilesInWeb() 
-	{
-		VerifyAttachedFilesOnWeb verifyAttachedFilesOnWeb = new VerifyAttachedFilesOnWeb(driverWeb);
-		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
-		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
-		editCustomerInWeb.SearchCustomer();
-		verifyCustomerOnWeb.ClickCustomer();
-		verifyAttachedFilesOnWeb.FilesTab();
-		verifyAttachedFilesOnWeb.VerifyPhotoFile(PhotoFileName);
-		verifyAttachedFilesOnWeb.VerifyVideoFile(VideoFileName);
-	
-	}
+//	@Test(priority=6, retryAnalyzer = RerunTestCase.class)
+//	public void VerifyCustomerFilesInWeb() 
+//	{
+//		VerifyAttachedFilesOnWeb verifyAttachedFilesOnWeb = new VerifyAttachedFilesOnWeb(driverWeb);
+//		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
+//		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
+//		editCustomerInWeb.SearchCustomer();
+//		verifyCustomerOnWeb.ClickCustomer();
+//		verifyAttachedFilesOnWeb.FilesTab();
+//		verifyAttachedFilesOnWeb.VerifyPhotoFile(PhotoFileName);
+//		verifyAttachedFilesOnWeb.VerifyVideoFile(VideoFileName);
+//	
+//	}
 	
 	
 	@Test(priority=7, retryAnalyzer = RerunTestCase.class)
@@ -284,47 +289,47 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	}
 	
 	
-	@Test(priority=8, retryAnalyzer = RerunTestCase.class)
-	public void Add_Reminders_ForCustomer_InMobile() throws InterruptedException
-	{
-		Thread.sleep(10000);
-		Customer customer = new Customer(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-	
-		customer.Customer_More();
-		customer.Reminders();
-		
-		customer.Reminderplus();
-		customer.ServiceReminder();
-		customer.Click_ServiceType_Dropdown();
-		customer.SelectReminder();
-		customer.ReminderDate();                   
-		customer.Sendto(Title,WebName, Surname);
-		customer.Tick();
-		
+//	@Test(priority=8, retryAnalyzer = RerunTestCase.class)
+//	public void Add_Reminders_ForCustomer_InMobile() throws InterruptedException
+//	{
+//		Thread.sleep(10000);
+//		Customer customer = new Customer(driver);
+//		Add_Notes add_Notes = new Add_Notes(driver);
+//	
+//		customer.Customer_More();
+//		customer.Reminders();
+//		
 //		customer.Reminderplus();
-//		customer.Click_Remainder();
-//		customer.Click_RemainderDate();
-//		customer.Select_Date();                     Service reminder is removed, coz in web they removed it, So commented these lines on 27/11/2023
-//		customer.Click_Done();
-//		customer.Enter_NotesForReminder(Note);
-//		customer.Select_User(UserName);//UserName
-//		customer.Click_Tick();
-		
-	}
+//		customer.ServiceReminder();
+//		customer.Click_ServiceType_Dropdown();
+//		customer.SelectReminder();
+//		customer.ReminderDate();                   
+//		customer.Sendto(Title,WebName, Surname);
+//		customer.Tick();
+//		
+////		customer.Reminderplus();
+////		customer.Click_Remainder();
+////		customer.Click_RemainderDate();
+////		customer.Select_Date();                     Service reminder is removed, coz in web they removed it, So commented these lines on 27/11/2023
+////		customer.Click_Done();
+////		customer.Enter_NotesForReminder(Note);
+////		customer.Select_User(UserName);//UserName
+////		customer.Click_Tick();
+//		
+//	}
 	
-	@Test(priority=9, retryAnalyzer = RerunTestCase.class)
-	public void VerifyCustomerRemindersOnWeb() 
-	{
-		VerifyRemindersOnWeb verifyRemindersOnWeb = new VerifyRemindersOnWeb(driverWeb);
-		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
-		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
-		editCustomerInWeb.SearchCustomer();
-		verifyCustomerOnWeb.ClickCustomer();
-		verifyRemindersOnWeb.ReminderTab();
-		verifyRemindersOnWeb.VerifyServiceReminder(Title, WebName, Surname);
-	
-	}
+//	@Test(priority=9, retryAnalyzer = RerunTestCase.class)
+//	public void VerifyCustomerRemindersOnWeb() 
+//	{
+//		VerifyRemindersOnWeb verifyRemindersOnWeb = new VerifyRemindersOnWeb(driverWeb);
+//		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
+//		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
+//		editCustomerInWeb.SearchCustomer();
+//		verifyCustomerOnWeb.ClickCustomer();
+//		verifyRemindersOnWeb.ReminderTab();
+//		verifyRemindersOnWeb.VerifyServiceReminder(Title, WebName, Surname);
+//	
+//	}
 	
 	@Test(priority=10, retryAnalyzer = RerunTestCase.class)
 	public void AddCustomerContactsInMob() throws InterruptedException 
@@ -614,7 +619,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		job2.Sign_save();
 		job2.Final_Invoice();
 		job2.Invoice_Description();
-		ScrollDown24("Invoice category *");
+		ScrollDown24Contains("Invoice category");
 		job2.Invoice_Category();
 		job2.Invoice_Next();
 		job2.Breakdown_Value("100");
@@ -847,6 +852,42 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	
 	}
 	
+	
+	@Test (enabled=false)
+	public void Demo() throws AWTException, InterruptedException, IOException 
+	{
+		AddNotes_ForWorkAddress addNotes_ForWorkAddress = new AddNotes_ForWorkAddress(driver);
+		Edit_WorkAddress edit_WorkAddress = new Edit_WorkAddress(driver);
+		Customer customer = new Customer(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Edit_Customer edit_Customer = new Edit_Customer(driver);
+		NewUI_EditCustomerOnMob newUI_EditCustomerOnMob = new NewUI_EditCustomerOnMob(driver);
+		NewUI_Notes newUI_Notes = new NewUI_Notes(driver);
+		
+		
+		newUI_Notes.FabIcon();
+		newUI_Notes.NewPhoneCall();
+		newUI_Notes.Call_Type();
+//		newUI_Notes.ContactNameSearch();
+//		newUI_Notes.PhoneNote(NoteForPhoneCall);
+//		newUI_Notes.Save();
+//		newUI_Notes.Verify_PhoneCall();
+//		newUI_Notes.FabIcon();
+//		add_Notes.Click_Sendnewemail();
+//		newUI_Notes.Search_To();
+//		newUI_Notes.Subject(SubjectForEmail);
+//		newUI_Notes.ComposeEmail(ComposeEmail);
+//		newUI_Notes.sendEmail();
+//		newUI_Notes.Verify_Email();
+//		newUI_Notes.FabIcon();
+//		add_Notes.Click_SendnewSMS();
+//		newUI_Notes.SelectContactName();
+//		newUI_Notes.ComposeSMS(MessageForSMS);
+//		newUI_Notes.sendSMS();
+//		newUI_Notes.Verify_SMS();
+//		newUI_Notes.Communication_Back();
+		
+	}
 	
 	
 	

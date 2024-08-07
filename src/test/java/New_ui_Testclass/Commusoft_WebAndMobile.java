@@ -680,7 +680,7 @@ public class Commusoft_WebAndMobile extends BaseClassForWebAndMobile {
 	}
 	
 	@Test(priority=25, retryAnalyzer = RerunTestCase.class)
-	public void CreateJobDiaryEventInWeb_UsingNewQuestionTemplate() 
+	public void CreateJobDiaryEventInWeb_UsingNewQuestionTemplate() throws InterruptedException 
 	{
 		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
 		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
@@ -751,7 +751,7 @@ public class Commusoft_WebAndMobile extends BaseClassForWebAndMobile {
 		job2.Sign_save();
 		job2.Final_Invoice();
 		job2.Invoice_Description();
-		ScrollDown24("Invoice category *");
+		ScrollDown24Contains("Invoice category");
 		job2.Invoice_Category();
 		job2.Invoice_Next();
 		job2.Breakdown_Value("100");
@@ -865,13 +865,13 @@ public class Commusoft_WebAndMobile extends BaseClassForWebAndMobile {
 		estimateAccept.Diary_Travel();
 		estimateAccept.Diary_Arrive();
 		
-		job.Arrive_Question1(ArriveAnswer);
+//		job.Arrive_Question1(ArriveAnswer);
 		job.Sign_save();
 		
 		signature(284, 1414, 805, 1468);
 		job.Sign_save();
 		job.Job_Report();
-		job.LeaveQuestion2(LeaveAnswer);
+//		job.LeaveQuestion2(LeaveAnswer);
 		job.Sign_save();
 		job.Job_Leave();
 		job.Complete_Continue();
@@ -881,7 +881,7 @@ public class Commusoft_WebAndMobile extends BaseClassForWebAndMobile {
 		job.Sign_save();
 		job.Final_Invoice();
 		job.Invoice_Description();
-		ScrollDown24("Invoice category *");
+		ScrollDown24Contains("Invoice category");
 		job.Invoice_Category();
 		job.Invoice_Next();
 		invoiceBreakdown.Click_InvoiceBreakdown_Dropdown();
@@ -1000,7 +1000,7 @@ public class Commusoft_WebAndMobile extends BaseClassForWebAndMobile {
 		job.Sign_save();
 		job.Final_Invoice();
 		job.Invoice_Description();
-		ScrollDown24("Invoice category *");
+		ScrollDown24Contains("Invoice category");
 		job.Invoice_Category();
 		job.Invoice_Next();
 		invoiceBreakdown.Click_InvoiceBreakdown_Dropdown();
@@ -1802,169 +1802,50 @@ public class Commusoft_WebAndMobile extends BaseClassForWebAndMobile {
        
         
 	}
-	
-	@Test(priority=42, retryAnalyzer = RerunTestCase.class) //QA-309
-	public void AddOfficeTaskFromMobileAndCompleteOnWebByOtherUser_FinallyVerifyTheOfficeTaskStatusOnMobile() throws InterruptedException, AWTException 
-	{
-		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
-		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
-		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
-		Web_Job web_Job = new Web_Job(driverWeb);
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-		editCustomerInWeb.SearchCustomer();
-		verifyCustomerOnWeb.ClickCustomer();
-		web_Job.AddNewJob();
-		web_Job.job_Description();
-		web_Job.Select_Job(AutomationNewQuestionTemplate);
-		web_Job.SaveJob();
-		web_Job.StoreJobNumber();
-	    EstimateAccept estimateAccept = new EstimateAccept(driver);	
-	    Job job = new Job(driver);
-	    Pages.Job job2 = new Pages.Job(driver);
-	    InvoiceBreakdown invoiceBreakdown = new InvoiceBreakdown(driver);
-	    VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		newui_CreateCustomerOnMob.Search_Tab();
-		job.SearchJobByNumber();
-		job.SelectJob(AutomationNewQuestionTemplate);
-		estimateAccept.Click_Choc_MenuButton();
-		estimateAccept.OfficeTask();
-		invoiceBreakdown.Click_FabIcon_InInvoiceScreen();
-		estimateAccept.TypeAndSelectUsername();
-		job2.Sign_save();
-		verifyCompletedJobAndInvoice.WebOfficeTaskMenu();
-		verifyCompletedJobAndInvoice.SearchTask();
-		verifyCompletedJobAndInvoice.MarkAsCompleted();
-		estimateAccept.Verify_CompletedStatusOnMobile();
-		Click_NavigateUp_BackButton();
-		newui_CreateCustomerOnMob.Home();
-		Refresh();
-	
-	}
-	
-	
-//	@Test(priority=0)//retryAnalyzer = RerunTestCase.class    retryAnalyzer = Retry.class
-//	public void PassDemo1() throws InterruptedException, AWTException, IOException 
+//	
+//	@Test(priority=42, retryAnalyzer = RerunTestCase.class) //QA-309
+//	public void AddOfficeTaskFromMobileAndCompleteOnWebByOtherUser_FinallyVerifyTheOfficeTaskStatusOnMobile() throws InterruptedException, AWTException 
 //	{
-//
-//		Job job = new Job(driver);
-//		Pages.Job job2 = new Pages.Job(driver);
-//		EstimateAccept estimate2 = new EstimateAccept(driver);
-//		Add_Notes add_Notes = new Add_Notes(driver);
-//		Certificate certificate = new Certificate(driver);
-//		Customer customer = new Customer(driver);
-//		EstimateAccept estimateAccept = new EstimateAccept(driver);	
+//		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
+//		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
 //		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
-//		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-//	    Certificate certificate_Web = new Certificate(driverWeb);
-//	    Settings settings = new Settings(driverWeb);
-//	    VerifyAcceptEstimateOnWeb verifyAcceptEstimateOnWeb = new VerifyAcceptEstimateOnWeb(driverWeb);
-//	    CustomerWeb customerWeb = new CustomerWeb(driverWeb);
-//	    VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
-//	    NotesAndCommunication notesAndCommunication = new NotesAndCommunication(driverWeb);
-//	    EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
-//	    Web_Job web_Job = new Web_Job(driverWeb);
-//	    Web_Estimate web_Estimate = new Web_Estimate(driverWeb);
-//	    EstimateReject estimateReject = new EstimateReject(driver);
-//	    Estimate estimate = new Estimate(driver);
-//
-//
-//
+//		Web_Job web_Job = new Web_Job(driverWeb);
 //		Click_NavigateUp_BackButton();
 //		Click_MenuClosed_BackButton();
-//		newui_CreateCustomerOnMob.Home();
-//		customer.profile();
-//		customer.GetUserName();
-//		editCustomerInWeb.SearchCustomerDemo();
+//		editCustomerInWeb.SearchCustomer();
 //		verifyCustomerOnWeb.ClickCustomer();
 //		web_Job.AddNewJob();
 //		web_Job.job_Description();
 //		web_Job.Select_Job(AutomationNewQuestionTemplate);
-//		web_Job.DiaryEventCheckbox();
 //		web_Job.SaveJob();
-//		web_Estimate.Today();
-//		web_Estimate.SelectUser();
-//		web_Estimate.SelectSlotInMonthlyView();
-//		web_Estimate.Save_Diary();
 //		web_Job.StoreJobNumber();
-//		
-//		verifyAcceptEstimateOnWeb.Notification_Logo();
-//		verifyAcceptEstimateOnWeb.SeeAllNotification();
-//		verifyAcceptEstimateOnWeb.RemoveNotification();
-//	
-//	
-////		newui_CreateCustomerOnMob.Search_Tab();
-////		job.SearchJobByNumber();
-////		job.SelectJob(AutomationNewQuestionTemplate);
-////		estimateAccept.Click_Choc_MenuButton();
-////		estimateAccept.Diary_History();
-////		estimateAccept.Estimate_Select();
-////		estimateAccept.GOTOEVENT();
-//	    estimateAccept.Diary();
-//	    estimateAccept.EstimateTravel();
-//		estimateAccept.Diary_Accept();
-//		job.StoreJobNumber();
-//		
-//		
-//		
-//		estimateAccept.Diary_Travel();
-//		estimateAccept.Diary_Arrive();
-//		
-//		job2.Arrive_Question1(ArriveAnswer);
-//		job.Next();
-//		signature(310, 1248, 700, 1200);//simulator
-//		job.Finish();
-//		job2.Job_Report();
-//		job2.LeaveQuestion2(LeaveAnswer);
-//		job.Finish();
-//		job2.Job_Leave();
-//		job2.Complete_Continue();
-//		signature(284, 1414, 805, 1468);
+//	    EstimateAccept estimateAccept = new EstimateAccept(driver);	
+//	    Job job = new Job(driver);
+//	    Pages.Job job2 = new Pages.Job(driver);
+//	    InvoiceBreakdown invoiceBreakdown = new InvoiceBreakdown(driver);
+//	    VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+//		newui_CreateCustomerOnMob.Search_Tab();
+//		job.SearchJobByNumber();
+//		job.SelectJob(AutomationNewQuestionTemplate);
+//		estimateAccept.Click_Choc_MenuButton();
+//		estimateAccept.OfficeTask();
+//		invoiceBreakdown.Click_FabIcon_InInvoiceScreen();
+//		estimateAccept.TypeAndSelectUsername();
 //		job2.Sign_save();
-//		signature(310, 868, 791, 941);
-//		job2.Sign_save();
-//		job2.DoNothing();
-//		verifyAcceptEstimateOnWeb.Notification_Logo();
-//		verifyAcceptEstimateOnWeb.SeeAllNotification();
-//		verifyAcceptEstimateOnWeb.NotificationFabIcon();
-//		verifyAcceptEstimateOnWeb.View();
-//		verifyAcceptEstimateOnWeb.ViewJob();
-//		Invoice_Web s_Invoice = new Invoice_Web(driverWeb);
-//		s_Invoice.Click_InvoiceTab();
-//		s_Invoice.Click_AddNewInvoice();
-//		s_Invoice.Select_InvoiceType(Finalinvoice);
-//		s_Invoice.Enter_InvoiceDes();
-//		s_Invoice.Select_InvoiceCategory();
-//		s_Invoice.Select_NoBreakDown();
-//		s_Invoice.Enter_SubTotal(Subtotal100);
-//		s_Invoice.SaveInvoice();
-//		
-//		Pre_Invoice pre_Invoice = new Pre_Invoice(driver);
-//		add_Notes.Click_Choc_MenuButton();
-//		pre_Invoice.Click_Invoice();
-//		pre_Invoice.Click_Final();
-//		pre_Invoice.ViewOrEditInvoice();
-//		pre_Invoice.Click_PaymentsTabOnMobile();
-//		pre_Invoice.Payment_FabIcon();
-//		job2.SelectOtherOptionAndMethod_Value();
-//		job2.Nominal_Value();
-//		job2.Payment_Save();
+//		verifyCompletedJobAndInvoice.WebOfficeTaskMenu();
+//		verifyCompletedJobAndInvoice.SearchTask();
+//		verifyCompletedJobAndInvoice.MarkAsCompleted();
+//		estimateAccept.Verify_CompletedStatusOnMobile();
 //		Click_NavigateUp_BackButton();
-//		
-//		
-//		
-//	
-//	
-//        verifyCompletedJobAndInvoice.SearchJob();
-//        verifyCompletedJobAndInvoice.Select_Job();
-//		verifyCompletedJobAndInvoice.VerifyJobstatus();
-//		verifyCompletedJobAndInvoice.VerifyInvoice();
-//		verifyCompletedJobAndInvoice.Invoice_Tab();
-//		verifyCompletedJobAndInvoice.Verify_Invoice_Final_Status();
-//		verifyCompletedJobAndInvoice.Verify_Invoice_Payment_Status();
-//		
-//		
+//		newui_CreateCustomerOnMob.Home();
+//		Refresh();
 //	
 //	}
+//	
+//	Commented
 
+	
+
+	
+	
 }

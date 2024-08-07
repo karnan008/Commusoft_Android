@@ -203,23 +203,26 @@ public class Assets extends Wrapper{
 	}
 	public void Make() 
 	{
-		ExplicitWait_PresenceOfEle("(//*[@resource-id='com.commusoft.v4:id/spinner'])[3]");
-		click("(//*[@resource-id='com.commusoft.v4:id/spinner'])[3]");// Click dropdown
+		ExplicitWait_PresenceOfEle("(//*[@resource-id='com.commusoft.v4:id/spinner'])[3]");// 
+		click("(//*[@resource-id='com.commusoft.v4:id/spinner'])[3]");// Click dropdown 
 		ExplicitWait_PresenceOfEle("(//*[@resource-id='android:id/text1'])[2]");
 		click("(//*[@resource-id='android:id/text1'])[2]");//Select item
 	}
 	
-	public void Model() 
+	public void Model() throws InterruptedException 
 	{
+		ScrollDown24Contains("Add Model");
 		ExplicitWait_PresenceOfEle("(//*[@resource-id='com.commusoft.v4:id/spinner'])[4]");
 		click("(//*[@resource-id='com.commusoft.v4:id/spinner'])[4]");// Click dropdown
 		ExplicitWait_PresenceOfEle("(//*[@resource-id='android:id/text1'])[2]");
 		click("(//*[@resource-id='android:id/text1'])[2]");//Select item
 	}
-	public void Location() 
+	public void Location() throws InterruptedException 
 	{
-		ExplicitWait_PresenceOfEle("(//*[@resource-id='com.commusoft.v4:id/spinner'])[5]");
-		click("(//*[@resource-id='com.commusoft.v4:id/spinner'])[5]");// Click dropdown
+		
+		ScrollDown24Contains("Add Location");
+		ExplicitWait_PresenceOfEle("(//*[@text='Tap to select'])[1]");
+		click("(//*[@text='Tap to select'])[1]");// Click dropdown
 		ExplicitWait_PresenceOfEle("(//*[@resource-id='android:id/text1'])[2]");
 		click("(//*[@resource-id='android:id/text1'])[2]");//Select item
 	}

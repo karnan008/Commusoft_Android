@@ -149,6 +149,8 @@ public class Job extends Wrapper{
 		
 		try 
 		{
+			
+			
 			ExplicitWait_PresenceOfEle("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText");
 			type("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText", leaveanswer);
             
@@ -158,6 +160,7 @@ public class Job extends Wrapper{
 		}catch(Exception e)
 		
 		{
+
 			ExplicitWait_PresenceOfEle("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]");
 			type("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]", leaveanswer);
 			 
@@ -428,10 +431,10 @@ public class Job extends Wrapper{
 	public void ExceptionHandling_For_DataNotLoad_InInvoiceScreen() throws InterruptedException 
 	{
 		TwoSec();
-		ExplicitWait_ElementToBeClickable("//*[@text='Sub total�*']");
+		ExplicitWait_ElementToBeClickable("//*[contains(@text,'Sub total')]");
 		try 
 		{
-			if(driver.findElement(By.xpath("//*[@text='Sub total�*']")).isDisplayed()) 
+			if(driver.findElement(By.xpath("//*[contains(@text,'Sub total')]")).isDisplayed()) 
 			{
 				System.out.println("Data is visible in invoice screen");
 			}

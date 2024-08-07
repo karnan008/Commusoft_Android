@@ -76,15 +76,36 @@ public class Job extends Wrapper{
 
 	public void Next() //Next
 	{
-		ExplicitWait_ElementToBeClickable("//*[@text='Next']");
-		click("//*[@text='Next']");
+		
+		try 
+		{
+			
+			
+			ExplicitWait_ElementToBeClickable("//*[@text='Next']");
+			click("//*[@text='Next']");
+		}catch(Exception e) 
+		{
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
+			click("//*[@resource-id='com.commusoft.v4:id/save']");
+		}
 	}
 //	//signature(250, 1380, 550, 1220);
 //	signature(310, 1248, 700, 1200);//simulator
 	public void Finish() throws InterruptedException
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
-		click("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
+		
+		try 
+		{
+			
+			
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
+			click("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
+		}catch(Exception e) 
+		{
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
+			click("//*[@resource-id='com.commusoft.v4:id/save']");
+		}
+		
 //		Thread.sleep(2000);
 	}
 

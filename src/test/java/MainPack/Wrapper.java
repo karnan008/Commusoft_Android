@@ -12,6 +12,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
+import java.util.Arrays;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.math3.stat.descriptive.moment.SemiVariance.Direction;
@@ -43,6 +46,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.TapOptions;
@@ -578,13 +582,23 @@ public class Wrapper extends WrapperForWeb
 //		.moveTo(PointOption.point(x1,y1)).release().perform();
 //		Thread.sleep(2000);
 //	}
-	public void scrolltothedown(int x, int y, int x1, int y1) throws InterruptedException
+	public void scrolltothedown(int startX, int startY, int endX, int endY) throws InterruptedException
 	{
-		Thread.sleep(3000);
-		(new TouchAction(driver)).press(PointOption.point(x,y))
-		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
-		.moveTo(PointOption.point(x1,y1)).release().perform();
-		Thread.sleep(2000);
+//		Thread.sleep(3000);
+//		(new TouchAction(driver)).press(PointOption.point(x,y))
+//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
+//		.moveTo(PointOption.point(x1,y1)).release().perform();
+//		Thread.sleep(2000);
+		
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+	    Sequence swipe = new Sequence(finger, 1);
+
+	    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+	    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+	    swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+	    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+	    driver.perform(Arrays.asList(swipe));
 	}
 
 
@@ -599,13 +613,28 @@ public class Wrapper extends WrapperForWeb
 
 	public void ScrollToText(String text) 
 	{
-		driver.findElementByAndroidUIAutomator("new UiScrollable(new    UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("+text+").instance(0))");
+		driver.findElementByAndroidUIAutomator("new UiScrollable(newï¿½ ï¿½ UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("+text+").instance(0))");
 	}
 	public void clickpoint(int Horizontal, int Vertical) throws InterruptedException
 	{
+//		Thread.sleep(3000);
+//		(new TouchAction(driver)).tap(PointOption.point(Horizontal,Vertical)).perform();
+//		Thread.sleep(2000);
+		
+		
 		Thread.sleep(3000);
-		(new TouchAction(driver)).tap(PointOption.point(Horizontal,Vertical)).perform();
-		Thread.sleep(2000);
+
+	    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+	    Sequence click = new Sequence(finger, 1);
+
+	    click.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), Horizontal, Vertical));
+	    click.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+	    click.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+	    driver.perform(Arrays.asList(click));
+
+	    Thread.sleep(2000);
+		
 
 	}
 	public void doubleclickpoint(int Horizontal, int Vertical) throws InterruptedException
@@ -696,28 +725,50 @@ public class Wrapper extends WrapperForWeb
 
 		ScrollDown24("Sign here");
 		OneSec();
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+	    Sequence swipe = new Sequence(finger, 1);
+
+	    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+	    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+	    swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+	    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+	    driver.perform(Arrays.asList(swipe));
 		
-		new TouchAction((AppiumDriver<MobileElement>)(driver))
-		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
-		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
-		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
-		.release()
-		.perform();
-		Thread.sleep(2000);
+		
+//		new TouchAction((AppiumDriver<MobileElement>)(driver))
+//		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
+//		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
+//		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
+//		.release()
+//		.perform();
+//		Thread.sleep(2000);
 	}
-	public void Estimatesignature(int startX, int startY, int endX, int endY) throws InterruptedException
+	public void  Estimatesignature(int startX, int startY, int endX, int endY) throws InterruptedException
 	{
 
 		
 		OneSec();
 		
-		new TouchAction((AppiumDriver<MobileElement>)(driver))
-		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
-		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
-		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
-		.release()
-		.perform();
-		Thread.sleep(2000);
+//		new TouchAction((AppiumDriver<MobileElement>)(driver))
+//		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
+//		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
+//		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
+//		.release()
+//		.perform();
+//		Thread.sleep(2000);
+		
+		
+		
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+	    Sequence swipe = new Sequence(finger, 1);
+
+	    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+	    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+	    swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+	    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+	    driver.perform(Arrays.asList(swipe));
 	}
 	public void Ongoing_EstimateNo() throws InterruptedException
 	{
@@ -2415,7 +2466,7 @@ public class Wrapper extends WrapperForWeb
 
 		DesiredCapabilities caps2 = new DesiredCapabilities();
 		caps2.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps2.setCapability(MobileCapabilityType.VERSION, "9");
+		caps2.setCapability(MobileCapabilityType.VERSION, "9");//VERSION
 		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
 		caps2.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
 		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ"); 
@@ -2424,7 +2475,7 @@ public class Wrapper extends WrapperForWeb
 		caps2.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
 		caps2.setCapability(MobileCapabilityType.NO_RESET, true);
 		caps2.setCapability("automationName", "UiAutomator2");//UiAutomator2  espresso
-		caps2.setCapability(MobileCapabilityType.APPLICATION_NAME, "Stock room");
+		caps2.setCapability(MobileCapabilityType.APPLICATION_NAME, "Stock room");//APPLICATION_NAME
 		caps2.setCapability("clearDeviceLogsOnStart", true);
 		caps2.setCapability("appPackage", "warehouse.commusoft.com.commusoftwarehouse");
 		caps2.setCapability("appActivity", "warehouse.commusoft.com.commusoftwarehouse.V2.MainActivityV2");
@@ -2434,47 +2485,16 @@ public class Wrapper extends WrapperForWeb
 	
 	public void SwitchToV4() throws MalformedURLException 
 	{
-		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps.setCapability(MobileCapabilityType.VERSION, "9");
-		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
-		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
-		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ"); 
-		caps.setCapability(MobileCapabilityType.UDID, udid);//jrd6hmy5mzhihihu  192.168.100.93:5555
-		//caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
-		caps.setCapability(MobileCapabilityType.NO_RESET, true);
-		caps.setCapability("automationName", "UiAutomator2");//UiAutomator2  espresso
-		caps.setCapability(MobileCapabilityType.APPLICATION_NAME, "Commusoft");
-		caps.setCapability("clearDeviceLogsOnStart", true);
-		caps.setCapability("appPackage", "com.commusoft.v4"); //-----> Live pointed 
 		
-//		caps.setCapability("appPackage", "com.commusoft.v4.couchdb"); //-------> Stage build
-//		caps.setCapability("appPackage", "com.commusoft.v4.dev");//--------> Dev build
-		caps.setCapability("appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");// appActivity  com.commusoft.v4.Setup.Activities.SplashScreen
-		
-		
-		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+		driver.startActivity(new Activity("com.commusoft.v4", "com.commusoft.v4.Setup.Activities.SplashScreen"));
+
 	}
 	
 	public void SwitchToGmailApp() throws MalformedURLException 
 	{
-		DesiredCapabilities caps2 = new DesiredCapabilities();
-		caps2.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps2.setCapability(MobileCapabilityType.VERSION, "9");
-		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
-		caps2.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
-		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ"); 
-		caps2.setCapability(MobileCapabilityType.UDID, udid);//jrd6hmy5mzhihihu  192.168.100.93:5555
-		//caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-		caps2.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
-		caps2.setCapability(MobileCapabilityType.NO_RESET, true);
-		caps2.setCapability("automationName", "UiAutomator2");//UiAutomator2  espresso
-		caps2.setCapability(MobileCapabilityType.APPLICATION_NAME, "Stock room");
-		caps2.setCapability("clearDeviceLogsOnStart", true);
-		caps2.setCapability("appPackage", "com.google.android.gm");
-		caps2.setCapability("appActivity", "com.google.android.gm.ConversationListActivityGmail");
-		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps2);
+		
+		driver.startActivity(new Activity("com.google.android.gm", "com.google.android.gm.ConversationListActivityGmail"));
+
 	}
 	
 	
@@ -2506,8 +2526,8 @@ public class Wrapper extends WrapperForWeb
 		OneSec();
 		try 
 		{
-			if(driver.findElement(By.xpath("//*[@content-desc='Menu closed']")).isDisplayed())
-				ActionClick("//*[@content-desc='Menu closed']");
+			if(driver.findElement(By.xpath("//*[@content-desc='Navigate up']")).isDisplayed()) ////*[@content-desc='Menu closed']
+				ActionClick("//*[@content-desc='Navigate up']");//*[@content-desc='Menu closed']
 			
 		}catch(Exception e) 
 		{

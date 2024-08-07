@@ -233,13 +233,13 @@ public class Customer extends MainPack.Wrapper{
 		
 		try 
 		{
-			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");//com.commusoft.v4:id/fab_expand_menu_button
-			click("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");
 			
-		}catch(Exception e) 
-		{
 			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/fab_expand_menu_button']");//com.commusoft.v4:id/fab_expand_menu_button
 			click("//*[@resource-id='com.commusoft.v4:id/fab_expand_menu_button']");
+		}catch(Exception e) 
+		{
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");//com.commusoft.v4:id/fab_expand_menu_button
+			click("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");
 		}
 	
 	}
@@ -274,8 +274,8 @@ public class Customer extends MainPack.Wrapper{
 	{
 		Thread.sleep(3000);
 		//		click("#com.commusoft.v4:id/spinnersendToView");
-		ExplicitWait_ElementToBeClickable("//*[@text='Send to�*']/following-sibling::*[@class='android.widget.Spinner']");
-		click("//*[@text='Send to�*']/following-sibling::*[@class='android.widget.Spinner']");
+		ExplicitWait_ElementToBeClickable("//*[contains(@text,'Send to')]/following-sibling::*[@class='android.widget.Spinner']");
+		click("//*[contains(@text,'Send to')]/following-sibling::*[@class='android.widget.Spinner']");
 		ExplicitWait_ElementToBeClickable("//*[contains(@text,'"+title+" "+editname+" "+surname+"')]");
 
 		click("//*[contains(@text,'"+title+" "+editname+" "+surname+"')]");
@@ -566,8 +566,19 @@ public class Customer extends MainPack.Wrapper{
 
 	public void profile() 
 	{
-		ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/mli_letter']");
-		click("//*[@resource-id='com.commusoft.v4:id/mli_letter']");
+			
+		String pageTexts=driver.getPageSource();
+		System.out.println(pageTexts);
+		 
+		if(pageTexts.contains("com.commusoft.v4:id/mli_letter")) 
+		{
+			ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/mli_letter']");
+			click("//*[@resource-id='com.commusoft.v4:id/mli_letter']");
+		}else if (pageTexts.contains("com.commusoft.v4:id/iv_image")) 
+		{
+			ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/iv_image']");
+			click("//*[@resource-id='com.commusoft.v4:id/iv_image']");
+		}
 	}
 
 
