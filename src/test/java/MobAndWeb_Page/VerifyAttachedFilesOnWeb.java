@@ -1,8 +1,11 @@
 package MobAndWeb_Page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import MainPack.WrapperForWeb;
+import io.appium.java_client.MobileElement;
 
 public class VerifyAttachedFilesOnWeb extends WrapperForWeb{
 	
@@ -34,6 +37,22 @@ public class VerifyAttachedFilesOnWeb extends WrapperForWeb{
 		AssertTrueWeb("//td[text()='"+videofilename+"']");
 	}
 	
+	public void VerifyFilesOnWeb() 
+	{
+		ExplicitWait_PresenceOfEle2("(//tbody/tr[@class='odd'])[1]");
+	
+		
+		WebElement file1 = driverWeb.findElement(By.xpath("(//tbody/tr[@class='odd'])[1]"));
+		Verify_AssertTrueWeb(file1);
+		WebElement file2 = driverWeb.findElement(By.xpath("(//tbody/tr[@class='even'])[1]"));
+		Verify_AssertTrueWeb(file2);
+		WebElement file3 = driverWeb.findElement(By.xpath("(//tbody/tr[@class='odd'])[2]"));
+		Verify_AssertTrueWeb(file3);
+		WebElement file4 = driverWeb.findElement(By.xpath("(//tbody/tr[@class='even'])[2]"));
+		Verify_AssertTrueWeb(file4);
+		WebElement file5 = driverWeb.findElement(By.xpath("(//tbody/tr[@class='odd'])[3]"));
+		Verify_AssertTrueWeb(file5);
+	}
 	
 	
 }

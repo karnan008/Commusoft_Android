@@ -85,41 +85,24 @@ public class Newui_CreateCustomerOnMob extends Wrapper{
 
 	public void SearchCustomerByNumber() throws AWTException, InterruptedException 
 	{
-//		ExplicitWait_PresenceOfEle("(//*[@class='android.view.View'])[7]");
-//		click("(//*[@class='android.view.View'])[7]");
-//		TwoSec();
-//
-//		Robot robot = new Robot();
-//
-//		customernumber = System.getProperty("customernumber");
-//		String inputString = customernumber;
-//
-//		char[] characters = inputString.toCharArray();
-//
-//		for (char c : characters) {
-//			int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
-//			if (KeyEvent.CHAR_UNDEFINED == keyCode) {
-//				// Handle undefined key codes
-//			} else {
-//				robot.keyPress(keyCode);
-//				robot.keyRelease(keyCode);
-//			}
-//		}
-//
-//		        
-//
-//		click("(//*[@class='android.widget.ImageView'])[1]");  
 		
 		ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");
+		clear("//*[@class='android.widget.EditText']");
 		customernumber = System.getProperty("customernumber");
 		MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
 		num.sendKeys(customernumber);
 		Thread.sleep(2000);
-//		TouchAction touchAction = new TouchAction(driver);
-//		MobileElement element = driver.findElement(By.xpath("(//*[@class='android.widget.ImageView'])[1]"));
-//		touchAction.tap(TapOptions.tapOptions().withElement(ElementOption.element(element))).perform();
 		click("(//*[@class='android.widget.ImageView'])[1]");
 
+	}
+	public void PassCustomerNumber(String passcustomernumber) throws InterruptedException 
+	{
+		ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");
+//		type("//*[@resource-id='com.commusoft.v4:id/search_src_text']", editname+" "+surname);
+		
+		type("//*[@class='android.widget.EditText']", passcustomernumber);
+		Thread.sleep(2000);
+		click("(//*[@class='android.widget.ImageView'])[1]");
 	}
 
 	public void SelectCustomer() 

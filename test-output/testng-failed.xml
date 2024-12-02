@@ -3,21 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="New_ui_Testclass.Commusoft_WebAndMobile">
+      <class name="New_ui_Testclass.BasicSmoke_MobAndWeb">
         <methods>
           <include name="teardown"/>
           <include name="teardown"/>
           <include name="ConnectWeb"/>
-          <include name="CommunicationForWebCustomer"/>
-          <include name="SelectCompletedJobFromWebNotificationAndCreateFinalInvoiceForJobInWeb_ThenCompleteInvoiceFromMobile_FinallyVerifyOnBothMobileAndWeb"/>
-          <include name="CreatePrefinalInvoiceOnMobile_Verify_PrefinalInvoiceOnWebAndMobile_Then_VerifyFinalInvoiceOnBothPlatform_AfterJobCompletion"/>
-          <include name="setup"/>
           <include name="CurrentClassName"/>
+          <include name="setup"/>
           <include name="initial"/>
           <include name="tearDownWeb"/>
-          <include name="CreateJobWithDefaultPrefinalInvoice_AndVerifyItOnMobileAndCompleteJob_FinallyVerifyConvertedFinalInvoiceOnBothMobileAndWeb"/>
+          <include name="Demo"/>
         </methods>
-      </class> <!-- New_ui_Testclass.Commusoft_WebAndMobile -->
+      </class> <!-- New_ui_Testclass.BasicSmoke_MobAndWeb -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

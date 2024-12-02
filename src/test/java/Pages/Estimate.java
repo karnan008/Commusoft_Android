@@ -211,13 +211,13 @@ public class Estimate extends Wrapper {
 	public void Breakdown_value(String value) throws InterruptedException
 	{
 		type("#com.commusoft.v4:id/totalValue", value);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 	}
 	public void save() throws InterruptedException
 	{
 		ExplicitWait_ElementToBeClickable("//*[@content-desc='Save'] ");
 		click("//*[@content-desc='Save'] ");
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 	}
 	public void Invoice_Schedule() throws InterruptedException
 	{
@@ -244,15 +244,30 @@ public class Estimate extends Wrapper {
 		click("//*[@text='ACCEPT']");
 		
 	}
+	public void Estimate_PriceReject() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='REJECT']");
+		click("//*[@text='REJECT']");
+	}
+	public void Reject_Reasons() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='android:id/text1']");
+		click("//*[@resource-id='android:id/text1']");
+		ExplicitWait_ElementToBeClickable("(//*[@resource-id='android:id/text1'])[2]");
+		click("(//*[@resource-id='android:id/text1'])[2]");
+		ExplicitWait_ElementToBeClickable("//*[@text='REJECT']");
+		click("//*[@text='REJECT']");
+	}
+	
 	public void Estimate_AcceptORReject(String status) throws InterruptedException
 	{
 		click("//android.widget.TextView[@text='"+status+"']");
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 	}
 	public void Estimate_Reject() throws InterruptedException
 	{
 		click("//*[@text='REJECT']");
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 	}
 	public void YES() throws InterruptedException
 	{
@@ -270,7 +285,7 @@ public class Estimate extends Wrapper {
 	public void Estimate_Rejectbtn() throws InterruptedException
 	{
 		click("//android.widget.Button[@text='REJECT']");
-		Thread.sleep(4000);
+//		Thread.sleep(4000);
 	}
 	public void Estimate_Leave() throws InterruptedException
 	{

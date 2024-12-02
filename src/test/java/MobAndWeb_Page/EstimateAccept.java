@@ -120,7 +120,7 @@ public class EstimateAccept extends Wrapper{
 	{
 		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
 		clickpoint(275, 1189);//OK
-		ThreeSec();
+//		ThreeSec();
 		click("//*[@text='OK']");
 	}
 	public void EndTime() 
@@ -133,9 +133,9 @@ public class EstimateAccept extends Wrapper{
 	{
 		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
 		clickpoint(275, 1189);
-		ThreeSec();
+//		ThreeSec();
 		clickpoint(788, 1192);
-		ThreeSec();
+//		ThreeSec();
 		click("//*[@text='OK']");
 	}
 
@@ -159,7 +159,7 @@ public class EstimateAccept extends Wrapper{
 		
 		MobileElement num = driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/searchText']"));
 
-		num.sendKeys("4191");
+		num.sendKeys("4700");
 
 		ThreeSec();
 		click("//*[@resource-id='com.commusoft.v4:id/searchButtonView']");
@@ -480,5 +480,6 @@ public class EstimateAccept extends Wrapper{
 	}
 	
 
+	
 
 }

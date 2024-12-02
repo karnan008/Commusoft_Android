@@ -272,17 +272,13 @@ public class Customer extends MainPack.Wrapper{
 	}
 	public void Sendto(String title,String editname,String surname) throws InterruptedException
 	{
-		Thread.sleep(3000);
-		//		click("#com.commusoft.v4:id/spinnersendToView");
+		
 		ExplicitWait_ElementToBeClickable("//*[contains(@text,'Send to')]/following-sibling::*[@class='android.widget.Spinner']");
 		click("//*[contains(@text,'Send to')]/following-sibling::*[@class='android.widget.Spinner']");
-		ExplicitWait_ElementToBeClickable("//*[contains(@text,'"+title+" "+editname+" "+surname+"')]");
+		ExplicitWait_ElementToBeClickable("(//*[@resource-id='android:id/text1'])[2]");
 
-		click("//*[contains(@text,'"+title+" "+editname+" "+surname+"')]");
-		Thread.sleep(4000);
-
-		//		ExplicitWait_ElementToBeClickable("//*[@text='Mr & Mrs "+editname+" "+surname+"']");
-		//		click("(//*[@text='Mr & Mrs "+editname+" "+surname+"'])[1]");
+		click("(//*[@resource-id='android:id/text1'])[2]");
+		
 	}
 	public void Tick() throws InterruptedException 
 	{
@@ -593,6 +589,11 @@ public class Customer extends MainPack.Wrapper{
 		
 	}
 
+	public void Back_Profile() 
+	{
+		ExplicitWait_PresenceOfEle("//*[@class='android.widget.Button']");
+		click("//*[@class='android.widget.Button']");
+	}
 
 
 }

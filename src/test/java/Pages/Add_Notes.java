@@ -100,6 +100,22 @@ public class Add_Notes extends Wrapper{
 	    click("//*[@resource-id='com.commusoft.v4:id/fab_expand_menu_button']");
 	}
 	
+	public void Click_FabIcon_NewUI() 
+	{
+//		String getCoseButton=driver.getPageSource();
+//		System.out.println(getCoseButton);
+////		String getCloseText = driver.findElement(By.xpath("//*[@text='Close']")).getText();
+//		if(getCoseButton.equals("Close"))
+//			click("//*[@text='Close']");
+//		else
+//			System.out.println("Close button is not visible");
+		FourSec();
+		
+		ExplicitWait_ElementToBeClickable("//*[@class='android.widget.Button']");//com.commusoft.v4:id/fab_expand_menu_button
+	    click("//*[@class='android.widget.Button']");
+	    
+	}
+	
 	public void Click_Addnewnote() 
 	{
 		ExplicitWait_ElementToBeClickable("//*[@text='Add new note']");//Add new note
