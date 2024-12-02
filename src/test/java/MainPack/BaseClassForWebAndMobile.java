@@ -152,8 +152,9 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
             caps.setCapability(MobileCapabilityType.NO_RESET, true);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
             caps.setCapability("appium:clearDeviceLogsOnStart", true);
-            caps.setCapability("appPackage", "com.commusoft.v4");
-            caps.setCapability("appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
+            caps.setCapability("appium:appPackage", "com.commusoft.v4");
+            caps.setCapability("appium:appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
+            caps.setCapability("appium:autoGrantPermissions", true); // To fix the switching app issues
             //--------------------------------------------------------------------------
 //            caps.setCapability("appWaitActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
 //            caps.setCapability("autoGrantPermissions", true);
@@ -170,6 +171,19 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
                 System.out.println("App has successfully launched!");
             } else {
                 System.out.println("App did not launch correctly.");
+                
+                try {
+    	            Process process = Runtime.getRuntime().exec("adb shell am start -n com.commusoft.v4/com.commusoft.v4.Setup.Activities.SplashScreen");
+    	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+    	            String line;
+    	            while ((line = reader.readLine()) != null) {
+    	                System.out.println(line);
+    	            }
+    	            process.waitFor();
+    	        } catch (Exception e) {
+    	            e.printStackTrace();
+    	        }
+                
             }
 
         } catch (Exception exp) {
@@ -248,10 +262,10 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 	    ExcelReader excelReader = new ExcelReader(driverWeb);
 	  
         
-        if(simpleName.contains("Commusoft_WebAndMobile") &&  Running_UserName.contains("saravanan")) 
+        if(simpleName.contains("Commusoft_WebAndMobile") &&  Running_UserName.contains("sarav")) 
         {
         	excelReader.OfficeStaff();
-        }else if(simpleName.contains("BasicSmoke_MobAndWeb") &&  Running_UserName.contains("saravanan")) 
+        }else if(simpleName.contains("BasicSmoke_MobAndWeb") &&  Running_UserName.contains("sarav")) 
         {
         	excelReader.Owner();
         	

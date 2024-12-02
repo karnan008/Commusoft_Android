@@ -75,7 +75,7 @@ public class NewUI_Notes extends Wrapper{
 //		ExplicitWait_PresenceOfEle("//*[@text='Inbound call']");
 //		click("//*[@text='Inbound call']");    -------> Comment this two lines bcoz of the element is not there 
 		
-		 FiveSec();
+		 ThreeSec();
 		// Coordinates of the button
 //		 int x = 228;  // Replace with actual x-coordinate
 //	        int y = 840;  // Replace with actual y-coordinate
@@ -89,7 +89,7 @@ public class NewUI_Notes extends Wrapper{
 //	        touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(x, y))).perform();
 
 	        
-	        clickpoint(228, 840);
+	        clickpoint(217, 697);
 
 	}
 	

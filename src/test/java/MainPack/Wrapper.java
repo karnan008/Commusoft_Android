@@ -10,8 +10,13 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
+
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import java.util.Arrays;
@@ -23,7 +28,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.interactions.Actions;
@@ -55,6 +61,7 @@ import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -97,26 +104,47 @@ public class Wrapper extends WrapperForWeb
 	public static String Red;
 	public static String Green;
 	public static String Blue;
-//	public static MobileElement ColorOfEstimates;
+	public static String firstRed;
+	public static String firstGreen;
+	public static String firstBlue;
+	//	public static MobileElement ColorOfEstimates;
 	public static String name;
 	public static String accountnumweb;
 	public static String webcustomer;
 	public static String webemail;
 	public static String username;
 	public static String randomAlphabetic;
-	
-	
-	 public String CustomerName;
-	 public String AccountNumber;
-	 public String WAName;
-	 public String WAAccountNumber;
-	 public static String arrive_Answer;
-	 public static String leave_Answer;
-	 
-	
+
+
+	public String CustomerName;
+	public String AccountNumber;
+	public String WAName;
+	public String WAAccountNumber;
+	public static String arrive_Answer;
+	public static String leave_Answer;
+	public String JobImage = "Job image file";
+	public String JobVideo = "Job video file";
+	public String JobDocument = "Job Document";
+	public String Cus_Audio = "Customer audio file";
+	public String JobAudio = "Job audio file";
+	public String JobUploadedImage = "Job upload";
+	public String Abort = "Abort event";
+	public String Cancel = "Cancel event";
+	public String NoAccess = "No Access event";
+	public String Left = "Left event";
+	public String Asset_Type = "Z_Automation Type";
+	public String Fuel1 = "Fuel1";
+	public String Make1 = "Make1";
+	public String Model1 = "Model1";
+	public String Location1 = "Location1";
+	public String Fuel2 = "Fuel2";
+	public String Make2 = "Make2";
+	public String Model2 = "Model2";
+	public String Location2 = "Location2";
+
 	public final Logger log4j = LogManager.getLogger(BaseClassForWebAndMobile.class);
-   
-	
+
+
 
 
 	//	public Wrapper()
@@ -126,7 +154,7 @@ public class Wrapper extends WrapperForWeb
 
 	public void type(String xpath, String value)
 	{
-		
+
 		//----------------------------> NORMAL TYPE <--------------------------------
 		{
 			if(xpath.contains("$"))
@@ -150,161 +178,161 @@ public class Wrapper extends WrapperForWeb
 				driver.findElement(By.xpath(xpath)).sendKeys(value);
 			}
 		}
-		
+
 		//------------------------------------------> RETRY TYPE BY USING WHILE LOOP <--------------------------
-//        String elementLocator =xpath;
-//
-//        retryType(driver, elementLocator, 3, 1000, value);
+		//        String elementLocator =xpath;
+		//
+		//        retryType(driver, elementLocator, 3, 1000, value);
 		//------------------------------------------> RETRY TYPE BY USING DO-WHILE LOOP <---------------------
-//        int attempt = 1;
-//        String message = null;
-//
-//        do {
-//        	
-//            try {
-//                MobileElement enter = driver.findElement(By.xpath(xpath));
-//                try {
-//                    Thread.sleep(1000);
-//                    }catch(Exception e) 
-//                    {
-//                    	
-//                    }
-//                enter.sendKeys(value);
-//                
-//            } catch (Exception e) {
-//                
-//                System.err.println("Attempt " + attempt + ": Exception caught - " + e.getMessage());
-////                System.out.println("ATTEMPT "+attempt+ " FAILED. RETRYING....");
-//                message = e.getMessage();
-//
-//                
-//                attempt++;
-//            }
-//            
-//        } while (message !=null && message.contains("no such element"));
-		
+		//        int attempt = 1;
+		//        String message = null;
+		//
+		//        do {
+		//        	
+		//            try {
+		//                MobileElement enter = driver.findElement(By.xpath(xpath));
+		//                try {
+		//                    Thread.sleep(1000);
+		//                    }catch(Exception e) 
+		//                    {
+		//                    	
+		//                    }
+		//                enter.sendKeys(value);
+		//                
+		//            } catch (Exception e) {
+		//                
+		//                System.err.println("Attempt " + attempt + ": Exception caught - " + e.getMessage());
+		////                System.out.println("ATTEMPT "+attempt+ " FAILED. RETRYING....");
+		//                message = e.getMessage();
+		//
+		//                
+		//                attempt++;
+		//            }
+		//            
+		//        } while (message !=null && message.contains("no such element"));
+
 	}
-    private static MobileElement retryType(AndroidDriver driver, String xpath, int maxAttempts, long intervalMillis,String sendKeys) {
-        int attempts = 0;
-        MobileElement element = null;
+	private static MobileElement retryType(AndroidDriver driver, String xpath, int maxAttempts, long intervalMillis,String sendKeys) {
+		int attempts = 0;
+		MobileElement element = null;
 
-        while (attempts < maxAttempts) {
-            try {
-                // Find the element
-                element = (MobileElement) driver.findElement(By.xpath(xpath));
+		while (attempts < maxAttempts) {
+			try {
+				// Find the element
+				element = (MobileElement) driver.findElement(By.xpath(xpath));
 
-                // Click the element
-                element.sendKeys(sendKeys);
+				// Click the element
+				element.sendKeys(sendKeys);
 
-                // If the click is successful, break out of the loop
-                break;
-            } catch (Exception e) {
-                // Print any exception (for debugging purposes)
-            	System.err.println("Attempt " + attempts + ": Exception caught - " + e.getMessage());
+				// If the click is successful, break out of the loop
+				break;
+			} catch (Exception e) {
+				// Print any exception (for debugging purposes)
+				System.err.println("Attempt " + attempts + ": Exception caught - " + e.getMessage());
 
-                // Increment the attempts counter
-                attempts++;
-                // Wait for the specified interval before retrying
-                try {
-                    Thread.sleep(intervalMillis);
-                } catch (InterruptedException ignored) {
-                }
-            }
-        }
+				// Increment the attempts counter
+				attempts++;
+				// Wait for the specified interval before retrying
+				try {
+					Thread.sleep(intervalMillis);
+				} catch (InterruptedException ignored) {
+				}
+			}
+		}
 
-        return element;
-    }
+		return element;
+	}
 	public void click(String option)
 	{
 		//----------------------------> NORMAL CLICK <--------------------------------
-		{
-			if(option.contains("$"))
-			{
-				option = option.replace("$", "");
-				driver.findElement(By.name(option)).click();
+//		{
+//			if(option.contains("$"))
+//			{
+//				option = option.replace("$", "");
+//				driver.findElement(By.name(option)).click();
+//
+//			}
+//			else if(option.contains("#"))
+//			{
+//				option = option.replace("#", "");
+//				driver.findElement(By.id(option)).click(); 
+//			}
+//			else if(option.contains("~"))
+//			{
+//				option = option.replace("~", "");
+//				driver.findElement(By.className(option)).click();
+//			}
+//			else
+//			{
+//				//option = option.replace("//", "");
+//				driver.findElement(By.xpath(option)).click();
+//			}
+//		}
 
-			}
-			else if(option.contains("#"))
-			{
-				option = option.replace("#", "");
-				driver.findElement(By.id(option)).click(); 
-			}
-			else if(option.contains("~"))
-			{
-				option = option.replace("~", "");
-				driver.findElement(By.className(option)).click();
-			}
-			else
-			{
-				//option = option.replace("//", "");
-				driver.findElement(By.xpath(option)).click();
-			}
-		}
-		
 		//------------------------------------------> RETRY CLICK BY USING WHILE LOOP <--------------------------
-//        String elementLocator =option;
-//
-//        retryClick(driver, elementLocator, 3, 1000);
+		        String elementLocator =option;
 		
+		        retryClick(driver, elementLocator, 3, 1000);
+
 		//------------------------------------------> RETRY CLICK BY USING DO-WHILE LOOP <---------------------
-//        int attempt = 1;
-//        String message = null;
-//
-//        do {
-//        	
-//            try {
-//                MobileElement button = driver.findElement(By.xpath(option));
-//                try {
-//                    Thread.sleep(1000);
-//                    }catch(Exception e) 
-//                    {
-//                    	
-//                    }
-//                button.click();
-//                
-//            } catch (Exception e) {
-//                
-//                System.out.println("Attempt " + attempt + ": Exception caught - " + e.getMessage());
-////                System.out.println("ATTEMPT "+attempt+ " FAILED. RETRYING....");
-//                message = e.getMessage();
-//
-//                
-//                attempt++;
-//            }
-//            
-//        } while (message !=null && message.contains("no such element"));
+//		        int attempt = 1;
+//		        String message = null;
+//		
+//		        do {
+//		        	
+//		            try {
+//		                MobileElement button = driver.findElement(By.xpath(option));
+//		                try {
+//		                    Thread.sleep(1000);
+//		                    }catch(Exception e) 
+//		                    {
+//		                    	
+//		                    }
+//		                button.click();
+//		                
+//		            } catch (Exception e) {
+//		                
+//		                System.out.println("Attempt " + attempt + ": Exception caught - " + e.getMessage());
+//		//                System.out.println("ATTEMPT "+attempt+ " FAILED. RETRYING....");
+//		                message = e.getMessage();
+//		
+//		                
+//		                attempt++;
+//		            }
+//		            
+//		        } while (message !=null && message.contains("no such element"));
 	}
 	// Retry click function
-    private static MobileElement retryClick(AndroidDriver driver, String xpath, int maxAttempts, long intervalMillis) {
-        int attempts = 0;
-        MobileElement element = null;
+	private static MobileElement retryClick(AndroidDriver driver, String xpath, int maxAttempts, long intervalMillis) {
+		int attempts = 0;
+		MobileElement element = null;
 
-        while (attempts < maxAttempts) {
-            try {
-                // Find the element
-                element = (MobileElement) driver.findElement(By.xpath(xpath));
+		while (attempts < maxAttempts) {
+			try {
+				// Find the element
+				element = (MobileElement) driver.findElement(By.xpath(xpath));
 
-                // Click the element
-                element.click();
+				// Click the element
+				element.click();
 
-                // If the click is successful, break out of the loop
-                break;
-            } catch (Exception e) {
-                // Print any exception (for debugging purposes)
-            	 System.err.println("Attempt " + attempts + ": Exception caught - " + e.getMessage());
+				// If the click is successful, break out of the loop
+				break;
+			} catch (Exception e) {
+				// Print any exception (for debugging purposes)
+				System.err.println("Attempt " + attempts + ": Exception caught - " + e.getMessage());
 
-                // Increment the attempts counter
-                attempts++;
-                // Wait for the specified interval before retrying
-                try {
-                    Thread.sleep(intervalMillis);
-                } catch (InterruptedException ignored) {
-                }
-            }
-        }
+				// Increment the attempts counter
+				attempts++;
+				// Wait for the specified interval before retrying
+				try {
+					Thread.sleep(intervalMillis);
+				} catch (InterruptedException ignored) {
+				}
+			}
+		}
 
-        return element;
-    }
+		return element;
+	}
 
 	public void clear(String xpath)
 	{
@@ -574,42 +602,42 @@ public class Wrapper extends WrapperForWeb
 		.moveTo(PointOption.point(0,scrollEnd))
 		.release().perform();
 	}
-//	public void scrolltothetop(int x, int y, int x1, int y1) throws InterruptedException
-//	{
-//		Thread.sleep(3000);
-//		(new TouchAction(driver)).press(PointOption.point(x,y))
-//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
-//		.moveTo(PointOption.point(x1,y1)).release().perform();
-//		Thread.sleep(2000);
-//	}
+	//	public void scrolltothetop(int x, int y, int x1, int y1) throws InterruptedException
+	//	{
+	//		Thread.sleep(3000);
+	//		(new TouchAction(driver)).press(PointOption.point(x,y))
+	//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
+	//		.moveTo(PointOption.point(x1,y1)).release().perform();
+	//		Thread.sleep(2000);
+	//	}
 	public void scrolltothedown(int startX, int startY, int endX, int endY) throws InterruptedException
 	{
-//		Thread.sleep(3000);
-//		(new TouchAction(driver)).press(PointOption.point(x,y))
-//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
-//		.moveTo(PointOption.point(x1,y1)).release().perform();
-//		Thread.sleep(2000);
-		
+		//		Thread.sleep(3000);
+		//		(new TouchAction(driver)).press(PointOption.point(x,y))
+		//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
+		//		.moveTo(PointOption.point(x1,y1)).release().perform();
+		//		Thread.sleep(2000);
+
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-	    Sequence swipe = new Sequence(finger, 1);
+		Sequence swipe = new Sequence(finger, 1);
 
-	    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
-	    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-	    swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
-	    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-	    driver.perform(Arrays.asList(swipe));
+		driver.perform(Arrays.asList(swipe));
 	}
 
 
-//	public void scrolltotheright(int x, int y, int x1, int y1) throws InterruptedException
-//	{
-//		Thread.sleep(3000);
-//		(new TouchAction(driver)).press(PointOption.point(x,y))
-//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
-//		.moveTo(PointOption.point(x1,y1)).release().perform();
-//		Thread.sleep(2000);
-//	}
+	//	public void scrolltotheright(int x, int y, int x1, int y1) throws InterruptedException
+	//	{
+	//		Thread.sleep(3000);
+	//		(new TouchAction(driver)).press(PointOption.point(x,y))
+	//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
+	//		.moveTo(PointOption.point(x1,y1)).release().perform();
+	//		Thread.sleep(2000);
+	//	}
 
 	public void ScrollToText(String text) 
 	{
@@ -617,24 +645,24 @@ public class Wrapper extends WrapperForWeb
 	}
 	public void clickpoint(int Horizontal, int Vertical) throws InterruptedException
 	{
-//		Thread.sleep(3000);
-//		(new TouchAction(driver)).tap(PointOption.point(Horizontal,Vertical)).perform();
-//		Thread.sleep(2000);
-		
-		
+		//		Thread.sleep(3000);
+		//		(new TouchAction(driver)).tap(PointOption.point(Horizontal,Vertical)).perform();
+		//		Thread.sleep(2000);
+
+
 		Thread.sleep(3000);
 
-	    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-	    Sequence click = new Sequence(finger, 1);
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+		Sequence click = new Sequence(finger, 1);
 
-	    click.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), Horizontal, Vertical));
-	    click.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-	    click.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		click.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), Horizontal, Vertical));
+		click.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		click.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-	    driver.perform(Arrays.asList(click));
+		driver.perform(Arrays.asList(click));
 
-	    Thread.sleep(2000);
-		
+		Thread.sleep(2000);
+
 
 	}
 	public void doubleclickpoint(int Horizontal, int Vertical) throws InterruptedException
@@ -726,49 +754,63 @@ public class Wrapper extends WrapperForWeb
 		ScrollDown24("Sign here");
 		OneSec();
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-	    Sequence swipe = new Sequence(finger, 1);
+		Sequence swipe = new Sequence(finger, 1);
 
-	    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
-	    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-	    swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
-	    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-	    driver.perform(Arrays.asList(swipe));
-		
-		
-//		new TouchAction((AppiumDriver<MobileElement>)(driver))
-//		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
-//		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
-//		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
-//		.release()
-//		.perform();
-//		Thread.sleep(2000);
+		driver.perform(Arrays.asList(swipe));
+
+
+		//		new TouchAction((AppiumDriver<MobileElement>)(driver))
+		//		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
+		//		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
+		//		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
+		//		.release()
+		//		.perform();
+		//		Thread.sleep(2000);
+	}
+
+	public void Swipe(int startX, int startY, int endX, int endY) 
+	{
+		ThreeSec();
+		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+		Sequence swipe = new Sequence(finger, 1);
+
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+		driver.perform(Arrays.asList(swipe));
 	}
 	public void  Estimatesignature(int startX, int startY, int endX, int endY) throws InterruptedException
 	{
 
-		
+
 		OneSec();
-		
-//		new TouchAction((AppiumDriver<MobileElement>)(driver))
-//		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
-//		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
-//		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
-//		.release()
-//		.perform();
-//		Thread.sleep(2000);
-		
-		
-		
+
+		//		new TouchAction((AppiumDriver<MobileElement>)(driver))
+		//		.press(new PointOption<>().withCoordinates(startX, startY))//startX, startY - 200, 1300
+		//		.moveTo(new PointOption<>().withCoordinates(endX, endY))//endX, endY - 500, 900
+		//		.moveTo(new PointOption<>().withCoordinates(endX+50, endY+50))
+		//		.release()
+		//		.perform();
+		//		Thread.sleep(2000);
+
+
+
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-	    Sequence swipe = new Sequence(finger, 1);
+		Sequence swipe = new Sequence(finger, 1);
 
-	    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
-	    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-	    swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
-	    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
+		swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+		swipe.addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY));
+		swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-	    driver.perform(Arrays.asList(swipe));
+		driver.perform(Arrays.asList(swipe));
 	}
 	public void Ongoing_EstimateNo() throws InterruptedException
 	{
@@ -846,7 +888,7 @@ public class Wrapper extends WrapperForWeb
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void TenSec() 
 	{
 
@@ -881,16 +923,16 @@ public class Wrapper extends WrapperForWeb
 	{
 		Assert.assertTrue(ele.isDisplayed());
 	}
-	
+
 	public void Verify_AssertEquals(String currentString, String ActualString) 
 	{
 		String Expected = driver.findElement(By.xpath(currentString)).getText();
 		String Actual= ActualString;
 		assertEquals(Actual, Expected);
-		
+
 	}
-	
-	
+
+
 
 	public void S1(String exacttext) 
 	{
@@ -912,16 +954,16 @@ public class Wrapper extends WrapperForWeb
 	}
 
 
-	
+
 	public void DemoWrapper4(String ExactText) throws InterruptedException 
 	{
-//		MobileElement text = driver.findElement(By.xpath("//*[@text='"+ExactText+"']"));
+		//		MobileElement text = driver.findElement(By.xpath("//*[@text='"+ExactText+"']"));
 
 		while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=true) 
 		{
 			//			System.err.println("Exact Text Is Not Presented In That Page");
 			scrolltothedown(294, 735, 297, 532);
-//			ele.isDisplayed();
+			//			ele.isDisplayed();
 
 
 		}
@@ -935,12 +977,12 @@ public class Wrapper extends WrapperForWeb
 		do 
 		{
 			scrolltothedown(294, 735, 297, 532);
-//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+			//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
 
 			try {
 				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()) 
 				{
-//					scrolltothedown(294, 735, 297, 532);
+					//					scrolltothedown(294, 735, 297, 532);
 					System.out.println("Case Pass1");
 				}
 
@@ -950,20 +992,20 @@ public class Wrapper extends WrapperForWeb
 				do 
 				{
 					scrolltothedown(294, 735, 297, 532);
-					
+
 					try 
 					{
 						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 							System.out.println("Case Pass2");
-							
+
 					}catch(Exception e1) 
 					{
 						e1.printStackTrace();
 					}
-					
+
 				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 			}
-			
+
 			System.out.println("Outside of the catch block");
 
 
@@ -980,12 +1022,12 @@ public class Wrapper extends WrapperForWeb
 		do 
 		{
 			scrolltothedown(294, 735, 297, 532);
-//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+			//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
 
 			try {
 				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()) 
 				{
-//					scrolltothedown(294, 735, 297, 532);
+					//					scrolltothedown(294, 735, 297, 532);
 					System.out.println("Case Pass1");
 				}
 
@@ -995,108 +1037,108 @@ public class Wrapper extends WrapperForWeb
 				do 
 				{
 					scrolltothedown(294, 735, 297, 532);
-					
+
 					try 
 					{
 						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 							System.out.println("Case Pass2");
-							
+
 					}catch(Exception e1) 
 					{
 
 						do 
 						{
 							scrolltothedown(294, 735, 297, 532);
-							
+
 							try 
 							{
 								if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 									System.out.println("Case Pass3");
-									
+
 							}catch(Exception e2) 
 							{
 
 								do 
 								{
 									scrolltothedown(294, 735, 297, 532);
-									
+
 									try 
 									{
 										if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 											System.out.println("Case Pass4");
-											
+
 									}catch(Exception e3) 
 									{
 
 										do 
 										{
 											scrolltothedown(294, 735, 297, 532);
-											
+
 											try 
 											{
 												if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 													System.out.println("Case Pass5");
-													
+
 											}catch(Exception e4) 
 											{
 
 												do 
 												{
 													scrolltothedown(294, 735, 297, 532);
-													
+
 													try 
 													{
 														if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 															System.out.println("Case Pass6");
-															
+
 													}catch(Exception e5) 
 													{
 
 														do 
 														{
 															scrolltothedown(294, 735, 297, 532);
-															
+
 															try 
 															{
 																if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																	System.out.println("Case Pass7");
-																	
+
 															}catch(Exception e6) 
 															{
 
 																do 
 																{
 																	scrolltothedown(294, 735, 297, 532);
-																	
+
 																	try 
 																	{
 																		if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																			System.out.println("Case Pass8");
-																			
+
 																	}catch(Exception e7) 
 																	{
 
 																		do 
 																		{
 																			scrolltothedown(294, 735, 297, 532);
-																			
+
 																			try 
 																			{
 																				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																					System.out.println("Case Pass9");
-																					
+
 																			}catch(Exception e8) 
 																			{
 
 																				do 
 																				{
 																					scrolltothedown(294, 735, 297, 532);
-																					
+
 																					try 
 																					{
 																						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																							System.out.println("Case Pass10");
-																							
+
 																					}catch(Exception e9) 
 																					{
 
@@ -1104,12 +1146,12 @@ public class Wrapper extends WrapperForWeb
 																						do 
 																						{
 																							scrolltothedown(294, 735, 297, 532);
-																							
+
 																							try 
 																							{
 																								if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																									System.out.println("Case Pass11");
-																									
+
 																							}catch(Exception e10) 
 																							{
 
@@ -1117,12 +1159,12 @@ public class Wrapper extends WrapperForWeb
 																								do 
 																								{
 																									scrolltothedown(294, 735, 297, 532);
-																									
+
 																									try 
 																									{
 																										if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																											System.out.println("Case Pass12");
-																											
+
 																									}catch(Exception e11) 
 																									{
 
@@ -1130,12 +1172,12 @@ public class Wrapper extends WrapperForWeb
 																										do 
 																										{
 																											scrolltothedown(294, 735, 297, 532);
-																											
+
 																											try 
 																											{
 																												if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																													System.out.println("Case Pass13");
-																													
+
 																											}catch(Exception e12) 
 																											{
 
@@ -1143,12 +1185,12 @@ public class Wrapper extends WrapperForWeb
 																												do 
 																												{
 																													scrolltothedown(294, 735, 297, 532);
-																													
+
 																													try 
 																													{
 																														if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																															System.out.println("Case Pass14");
-																															
+
 																													}catch(Exception e13) 
 																													{
 
@@ -1156,12 +1198,12 @@ public class Wrapper extends WrapperForWeb
 																														do 
 																														{
 																															scrolltothedown(294, 735, 297, 532);
-																															
+
 																															try 
 																															{
 																																if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																	System.out.println("Case Pass15");
-																																	
+
 																															}catch(Exception e14) 
 																															{
 
@@ -1169,12 +1211,12 @@ public class Wrapper extends WrapperForWeb
 																																do 
 																																{
 																																	scrolltothedown(294, 735, 297, 532);
-																																	
+
 																																	try 
 																																	{
 																																		if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																			System.out.println("Case Pass16");
-																																			
+
 																																	}catch(Exception e15) 
 																																	{
 
@@ -1182,12 +1224,12 @@ public class Wrapper extends WrapperForWeb
 																																		do 
 																																		{
 																																			scrolltothedown(294, 735, 297, 532);
-																																			
+
 																																			try 
 																																			{
 																																				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																					System.out.println("Case Pass17");
-																																					
+
 																																			}catch(Exception e16) 
 																																			{
 
@@ -1195,12 +1237,12 @@ public class Wrapper extends WrapperForWeb
 																																				do 
 																																				{
 																																					scrolltothedown(294, 735, 297, 532);
-																																					
+
 																																					try 
 																																					{
 																																						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																							System.out.println("Case Pass18");
-																																							
+
 																																					}catch(Exception e17) 
 																																					{
 
@@ -1208,12 +1250,12 @@ public class Wrapper extends WrapperForWeb
 																																						do 
 																																						{
 																																							scrolltothedown(294, 735, 297, 532);
-																																							
+
 																																							try 
 																																							{
 																																								if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																									System.out.println("Case Pass19");
-																																									
+
 																																							}catch(Exception e18) 
 																																							{
 
@@ -1221,12 +1263,12 @@ public class Wrapper extends WrapperForWeb
 																																								do 
 																																								{
 																																									scrolltothedown(294, 735, 297, 532);
-																																									
+
 																																									try 
 																																									{
 																																										if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																											System.out.println("Case Pass20");
-																																											
+
 																																									}catch(Exception e19) 
 																																									{
 
@@ -1234,12 +1276,12 @@ public class Wrapper extends WrapperForWeb
 																																										do 
 																																										{
 																																											scrolltothedown(294, 735, 297, 532);
-																																											
+
 																																											try 
 																																											{
 																																												if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																													System.out.println("Case Pass21");
-																																													
+
 																																											}catch(Exception e20) 
 																																											{
 
@@ -1247,92 +1289,92 @@ public class Wrapper extends WrapperForWeb
 																																												do 
 																																												{
 																																													scrolltothedown(294, 735, 297, 532);
-																																													
+
 																																													try 
 																																													{
 																																														if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																															System.out.println("Case Pass22");
-																																															
+
 																																													}catch(Exception e21) 
 																																													{
 																																														e1.printStackTrace();
 																																													}
-																																													
+
 																																												}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																											
+
 																																											}
-																																											
+
 																																										}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																									
+
 																																									}
-																																									
+
 																																								}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																							
+
 																																							}
-																																							
+
 																																						}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																					
+
 																																					}
-																																					
+
 																																				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																			
+
 																																			}
-																																			
+
 																																		}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																	
+
 																																	}
-																																	
+
 																																}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																															
+
 																															}
-																															
+
 																														}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																													
+
 																													}
-																													
+
 																												}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																											
+
 																											}
-																											
+
 																										}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																									
+
 																									}
-																									
+
 																								}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																							
+
 																							}
-																							
+
 																						}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																					
+
 																					}
-																					
+
 																				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																			}
-																			
+
 																		}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																	}
-																	
+
 																}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 															}
-															
+
 														}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 													}
-													
+
 												}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 											}
-											
+
 										}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 									}
-									
+
 								}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 							}
-							
+
 						}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 					}
-					
+
 				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 			}
-			
+
 			System.out.println("Outside of the catch block");
 
 
@@ -1341,7 +1383,7 @@ public class Wrapper extends WrapperForWeb
 
 
 		System.err.println("Outside of the do block");
-	
+
 	}
 	public void ScrollDown24Contains(String ContainsExactText) throws InterruptedException 
 	{
@@ -1350,12 +1392,12 @@ public class Wrapper extends WrapperForWeb
 		do 
 		{
 			scrolltothedown(294, 735, 297, 532);
-//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+			//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
 
 			try {
 				if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()) 
 				{
-//					scrolltothedown(294, 735, 297, 532);
+					//					scrolltothedown(294, 735, 297, 532);
 					System.out.println("Case Pass1");
 				}
 
@@ -1365,108 +1407,108 @@ public class Wrapper extends WrapperForWeb
 				do 
 				{
 					scrolltothedown(294, 735, 297, 532);
-					
+
 					try 
 					{
 						if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 							System.out.println("Case Pass2");
-							
+
 					}catch(Exception e1) 
 					{
 
 						do 
 						{
 							scrolltothedown(294, 735, 297, 532);
-							
+
 							try 
 							{
 								if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 									System.out.println("Case Pass3");
-									
+
 							}catch(Exception e2) 
 							{
 
 								do 
 								{
 									scrolltothedown(294, 735, 297, 532);
-									
+
 									try 
 									{
 										if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 											System.out.println("Case Pass4");
-											
+
 									}catch(Exception e3) 
 									{
 
 										do 
 										{
 											scrolltothedown(294, 735, 297, 532);
-											
+
 											try 
 											{
 												if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 													System.out.println("Case Pass5");
-													
+
 											}catch(Exception e4) 
 											{
 
 												do 
 												{
 													scrolltothedown(294, 735, 297, 532);
-													
+
 													try 
 													{
 														if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 															System.out.println("Case Pass6");
-															
+
 													}catch(Exception e5) 
 													{
 
 														do 
 														{
 															scrolltothedown(294, 735, 297, 532);
-															
+
 															try 
 															{
 																if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 																	System.out.println("Case Pass7");
-																	
+
 															}catch(Exception e6) 
 															{
 
 																do 
 																{
 																	scrolltothedown(294, 735, 297, 532);
-																	
+
 																	try 
 																	{
 																		if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 																			System.out.println("Case Pass8");
-																			
+
 																	}catch(Exception e7) 
 																	{
 
 																		do 
 																		{
 																			scrolltothedown(294, 735, 297, 532);
-																			
+
 																			try 
 																			{
 																				if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 																					System.out.println("Case Pass9");
-																					
+
 																			}catch(Exception e8) 
 																			{
 
 																				do 
 																				{
 																					scrolltothedown(294, 735, 297, 532);
-																					
+
 																					try 
 																					{
 																						if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed()!=false)
 																							System.out.println("Case Pass10");
-																							
+
 																					}catch(Exception e9) 
 																					{
 
@@ -1474,12 +1516,12 @@ public class Wrapper extends WrapperForWeb
 																						do 
 																						{
 																							scrolltothedown(294, 735, 297, 532);
-																							
+
 																							try 
 																							{
 																								if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																									System.out.println("Case Pass11");
-																									
+
 																							}catch(Exception e10) 
 																							{
 
@@ -1487,12 +1529,12 @@ public class Wrapper extends WrapperForWeb
 																								do 
 																								{
 																									scrolltothedown(294, 735, 297, 532);
-																									
+
 																									try 
 																									{
 																										if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																											System.out.println("Case Pass12");
-																											
+
 																									}catch(Exception e11) 
 																									{
 
@@ -1500,12 +1542,12 @@ public class Wrapper extends WrapperForWeb
 																										do 
 																										{
 																											scrolltothedown(294, 735, 297, 532);
-																											
+
 																											try 
 																											{
 																												if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																													System.out.println("Case Pass13");
-																													
+
 																											}catch(Exception e12) 
 																											{
 
@@ -1513,12 +1555,12 @@ public class Wrapper extends WrapperForWeb
 																												do 
 																												{
 																													scrolltothedown(294, 735, 297, 532);
-																													
+
 																													try 
 																													{
 																														if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																															System.out.println("Case Pass14");
-																															
+
 																													}catch(Exception e13) 
 																													{
 
@@ -1526,12 +1568,12 @@ public class Wrapper extends WrapperForWeb
 																														do 
 																														{
 																															scrolltothedown(294, 735, 297, 532);
-																															
+
 																															try 
 																															{
 																																if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																	System.out.println("Case Pass15");
-																																	
+
 																															}catch(Exception e14) 
 																															{
 
@@ -1539,12 +1581,12 @@ public class Wrapper extends WrapperForWeb
 																																do 
 																																{
 																																	scrolltothedown(294, 735, 297, 532);
-																																	
+
 																																	try 
 																																	{
 																																		if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																			System.out.println("Case Pass16");
-																																			
+
 																																	}catch(Exception e15) 
 																																	{
 
@@ -1552,12 +1594,12 @@ public class Wrapper extends WrapperForWeb
 																																		do 
 																																		{
 																																			scrolltothedown(294, 735, 297, 532);
-																																			
+
 																																			try 
 																																			{
 																																				if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																					System.out.println("Case Pass17");
-																																					
+
 																																			}catch(Exception e16) 
 																																			{
 
@@ -1565,12 +1607,12 @@ public class Wrapper extends WrapperForWeb
 																																				do 
 																																				{
 																																					scrolltothedown(294, 735, 297, 532);
-																																					
+
 																																					try 
 																																					{
 																																						if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																							System.out.println("Case Pass18");
-																																							
+
 																																					}catch(Exception e17) 
 																																					{
 
@@ -1578,12 +1620,12 @@ public class Wrapper extends WrapperForWeb
 																																						do 
 																																						{
 																																							scrolltothedown(294, 735, 297, 532);
-																																							
+
 																																							try 
 																																							{
 																																								if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																									System.out.println("Case Pass19");
-																																									
+
 																																							}catch(Exception e18) 
 																																							{
 
@@ -1591,12 +1633,12 @@ public class Wrapper extends WrapperForWeb
 																																								do 
 																																								{
 																																									scrolltothedown(294, 735, 297, 532);
-																																									
+
 																																									try 
 																																									{
 																																										if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																											System.out.println("Case Pass20");
-																																											
+
 																																									}catch(Exception e19) 
 																																									{
 
@@ -1604,12 +1646,12 @@ public class Wrapper extends WrapperForWeb
 																																										do 
 																																										{
 																																											scrolltothedown(294, 735, 297, 532);
-																																											
+
 																																											try 
 																																											{
 																																												if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																													System.out.println("Case Pass21");
-																																													
+
 																																											}catch(Exception e20) 
 																																											{
 
@@ -1617,92 +1659,92 @@ public class Wrapper extends WrapperForWeb
 																																												do 
 																																												{
 																																													scrolltothedown(294, 735, 297, 532);
-																																													
+
 																																													try 
 																																													{
 																																														if(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed())
 																																															System.out.println("Case Pass22");
-																																															
+
 																																													}catch(Exception e21) 
 																																													{
 																																														e1.printStackTrace();
 																																													}
-																																													
+
 																																												}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																											
+
 																																											}
-																																											
+
 																																										}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																									
+
 																																									}
-																																									
+
 																																								}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																							
+
 																																							}
-																																							
+
 																																						}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																					
+
 																																					}
-																																					
+
 																																				}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																			
+
 																																			}
-																																			
+
 																																		}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																	
+
 																																	}
-																																	
+
 																																}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																															
+
 																															}
-																															
+
 																														}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																													
+
 																													}
-																													
+
 																												}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																											
+
 																											}
-																											
+
 																										}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																									
+
 																									}
-																									
+
 																								}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																							
+
 																							}
-																							
+
 																						}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																					
+
 																					}
-																					
+
 																				}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																			}
-																			
+
 																		}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																	}
-																	
+
 																}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 															}
-															
+
 														}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 													}
-													
+
 												}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 											}
-											
+
 										}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 									}
-									
+
 								}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 							}
-							
+
 						}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 					}
-					
+
 				}while(driver.findElement(By.xpath("//*[contains(@text,'"+ContainsExactText+"')]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 			}
-			
+
 			System.out.println("Outside of the catch block");
 
 
@@ -1711,9 +1753,9 @@ public class Wrapper extends WrapperForWeb
 
 
 		System.err.println("Outside of the do block");
-	
+
 	}
-	
+
 	public void ScrollDown24LastText(String ExactLastText) throws InterruptedException 
 	{
 
@@ -1722,12 +1764,12 @@ public class Wrapper extends WrapperForWeb
 		do 
 		{
 			scrolltothedown(294, 735, 297, 532);
-//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+			//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
 
 			try {
 				if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()) 
 				{
-//					scrolltothedown(294, 735, 297, 532);
+					//					scrolltothedown(294, 735, 297, 532);
 					System.out.println("Case Pass1");
 				}
 
@@ -1737,108 +1779,108 @@ public class Wrapper extends WrapperForWeb
 				do 
 				{
 					scrolltothedown(294, 735, 297, 532);
-					
+
 					try 
 					{
 						if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 							System.out.println("Case Pass2");
-							
+
 					}catch(Exception e1) 
 					{
 
 						do 
 						{
 							scrolltothedown(294, 735, 297, 532);
-							
+
 							try 
 							{
 								if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 									System.out.println("Case Pass3");
-									
+
 							}catch(Exception e2) 
 							{
 
 								do 
 								{
 									scrolltothedown(294, 735, 297, 532);
-									
+
 									try 
 									{
 										if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 											System.out.println("Case Pass4");
-											
+
 									}catch(Exception e3) 
 									{
 
 										do 
 										{
 											scrolltothedown(294, 735, 297, 532);
-											
+
 											try 
 											{
 												if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 													System.out.println("Case Pass5");
-													
+
 											}catch(Exception e4) 
 											{
 
 												do 
 												{
 													scrolltothedown(294, 735, 297, 532);
-													
+
 													try 
 													{
 														if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 															System.out.println("Case Pass6");
-															
+
 													}catch(Exception e5) 
 													{
 
 														do 
 														{
 															scrolltothedown(294, 735, 297, 532);
-															
+
 															try 
 															{
 																if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 																	System.out.println("Case Pass7");
-																	
+
 															}catch(Exception e6) 
 															{
 
 																do 
 																{
 																	scrolltothedown(294, 735, 297, 532);
-																	
+
 																	try 
 																	{
 																		if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 																			System.out.println("Case Pass8");
-																			
+
 																	}catch(Exception e7) 
 																	{
 
 																		do 
 																		{
 																			scrolltothedown(294, 735, 297, 532);
-																			
+
 																			try 
 																			{
 																				if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 																					System.out.println("Case Pass9");
-																					
+
 																			}catch(Exception e8) 
 																			{
 
 																				do 
 																				{
 																					scrolltothedown(294, 735, 297, 532);
-																					
+
 																					try 
 																					{
 																						if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed()!=false)
 																							System.out.println("Case Pass10");
-																							
+
 																					}catch(Exception e9) 
 																					{
 
@@ -1846,12 +1888,12 @@ public class Wrapper extends WrapperForWeb
 																						do 
 																						{
 																							scrolltothedown(294, 735, 297, 532);
-																							
+
 																							try 
 																							{
 																								if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																									System.out.println("Case Pass11");
-																									
+
 																							}catch(Exception e10) 
 																							{
 
@@ -1859,12 +1901,12 @@ public class Wrapper extends WrapperForWeb
 																								do 
 																								{
 																									scrolltothedown(294, 735, 297, 532);
-																									
+
 																									try 
 																									{
 																										if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																											System.out.println("Case Pass12");
-																											
+
 																									}catch(Exception e11) 
 																									{
 
@@ -1872,12 +1914,12 @@ public class Wrapper extends WrapperForWeb
 																										do 
 																										{
 																											scrolltothedown(294, 735, 297, 532);
-																											
+
 																											try 
 																											{
 																												if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																													System.out.println("Case Pass13");
-																													
+
 																											}catch(Exception e12) 
 																											{
 
@@ -1885,12 +1927,12 @@ public class Wrapper extends WrapperForWeb
 																												do 
 																												{
 																													scrolltothedown(294, 735, 297, 532);
-																													
+
 																													try 
 																													{
 																														if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																															System.out.println("Case Pass14");
-																															
+
 																													}catch(Exception e13) 
 																													{
 
@@ -1898,12 +1940,12 @@ public class Wrapper extends WrapperForWeb
 																														do 
 																														{
 																															scrolltothedown(294, 735, 297, 532);
-																															
+
 																															try 
 																															{
 																																if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																	System.out.println("Case Pass15");
-																																	
+
 																															}catch(Exception e14) 
 																															{
 
@@ -1911,12 +1953,12 @@ public class Wrapper extends WrapperForWeb
 																																do 
 																																{
 																																	scrolltothedown(294, 735, 297, 532);
-																																	
+
 																																	try 
 																																	{
 																																		if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																			System.out.println("Case Pass16");
-																																			
+
 																																	}catch(Exception e15) 
 																																	{
 
@@ -1924,12 +1966,12 @@ public class Wrapper extends WrapperForWeb
 																																		do 
 																																		{
 																																			scrolltothedown(294, 735, 297, 532);
-																																			
+
 																																			try 
 																																			{
 																																				if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																					System.out.println("Case Pass17");
-																																					
+
 																																			}catch(Exception e16) 
 																																			{
 
@@ -1937,12 +1979,12 @@ public class Wrapper extends WrapperForWeb
 																																				do 
 																																				{
 																																					scrolltothedown(294, 735, 297, 532);
-																																					
+
 																																					try 
 																																					{
 																																						if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																							System.out.println("Case Pass18");
-																																							
+
 																																					}catch(Exception e17) 
 																																					{
 
@@ -1950,12 +1992,12 @@ public class Wrapper extends WrapperForWeb
 																																						do 
 																																						{
 																																							scrolltothedown(294, 735, 297, 532);
-																																							
+
 																																							try 
 																																							{
 																																								if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																									System.out.println("Case Pass19");
-																																									
+
 																																							}catch(Exception e18) 
 																																							{
 
@@ -1963,12 +2005,12 @@ public class Wrapper extends WrapperForWeb
 																																								do 
 																																								{
 																																									scrolltothedown(294, 735, 297, 532);
-																																									
+
 																																									try 
 																																									{
 																																										if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																											System.out.println("Case Pass20");
-																																											
+
 																																									}catch(Exception e19) 
 																																									{
 
@@ -1976,12 +2018,12 @@ public class Wrapper extends WrapperForWeb
 																																										do 
 																																										{
 																																											scrolltothedown(294, 735, 297, 532);
-																																											
+
 																																											try 
 																																											{
 																																												if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																													System.out.println("Case Pass21");
-																																													
+
 																																											}catch(Exception e20) 
 																																											{
 
@@ -1989,92 +2031,92 @@ public class Wrapper extends WrapperForWeb
 																																												do 
 																																												{
 																																													scrolltothedown(294, 735, 297, 532);
-																																													
+
 																																													try 
 																																													{
 																																														if(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed())
 																																															System.out.println("Case Pass22");
-																																															
+
 																																													}catch(Exception e21) 
 																																													{
 																																														e1.printStackTrace();
 																																													}
-																																													
+
 																																												}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																											
+
 																																											}
-																																											
+
 																																										}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																									
+
 																																									}
-																																									
+
 																																								}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																							
+
 																																							}
-																																							
+
 																																						}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																					
+
 																																					}
-																																					
+
 																																				}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																			
+
 																																			}
-																																			
+
 																																		}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																	
+
 																																	}
-																																	
+
 																																}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																															
+
 																															}
-																															
+
 																														}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																													
+
 																													}
-																													
+
 																												}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																											
+
 																											}
-																											
+
 																										}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																									
+
 																									}
-																									
+
 																								}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																							
+
 																							}
-																							
+
 																						}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																					
+
 																					}
-																					
+
 																				}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																			}
-																			
+
 																		}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																	}
-																	
+
 																}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 															}
-															
+
 														}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 													}
-													
+
 												}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 											}
-											
+
 										}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 									}
-									
+
 								}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 							}
-							
+
 						}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 					}
-					
+
 				}while(driver.findElement(By.xpath("(//*[@text='"+ExactLastText+"'])[last()]")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 			}
-			
+
 			System.out.println("Outside of the catch block");
 
 
@@ -2083,24 +2125,24 @@ public class Wrapper extends WrapperForWeb
 
 
 		System.err.println("Outside of the do block");
-	
-	
+
+
 	}
-	
+
 	public void ScrollTop24(String ExactText) throws InterruptedException 
 	{
 
 
-		
+
 		do 
 		{
 			scrolltothedown(297, 532, 294, 735);//294, 735, 297, 532
-//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
+			//			String GetText = driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).getText();
 
 			try {
 				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()) 
 				{
-//					scrolltothedown(294, 735, 297, 532);
+					//					scrolltothedown(294, 735, 297, 532);
 					System.out.println("Case Pass1");
 				}
 
@@ -2110,108 +2152,108 @@ public class Wrapper extends WrapperForWeb
 				do 
 				{
 					scrolltothedown(297, 532, 294, 735);
-					
+
 					try 
 					{
 						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 							System.out.println("Case Pass2");
-							
+
 					}catch(Exception e1) 
 					{
 
 						do 
 						{
 							scrolltothedown(297, 532, 294, 735);
-							
+
 							try 
 							{
 								if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 									System.out.println("Case Pass3");
-									
+
 							}catch(Exception e2) 
 							{
 
 								do 
 								{
 									scrolltothedown(297, 532, 294, 735);
-									
+
 									try 
 									{
 										if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 											System.out.println("Case Pass4");
-											
+
 									}catch(Exception e3) 
 									{
 
 										do 
 										{
 											scrolltothedown(297, 532, 294, 735);
-											
+
 											try 
 											{
 												if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 													System.out.println("Case Pass5");
-													
+
 											}catch(Exception e4) 
 											{
 
 												do 
 												{
 													scrolltothedown(297, 532, 294, 735);
-													
+
 													try 
 													{
 														if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 															System.out.println("Case Pass6");
-															
+
 													}catch(Exception e5) 
 													{
 
 														do 
 														{
 															scrolltothedown(297, 532, 294, 735);
-															
+
 															try 
 															{
 																if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																	System.out.println("Case Pass7");
-																	
+
 															}catch(Exception e6) 
 															{
 
 																do 
 																{
 																	scrolltothedown(297, 532, 294, 735);
-																	
+
 																	try 
 																	{
 																		if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																			System.out.println("Case Pass8");
-																			
+
 																	}catch(Exception e7) 
 																	{
 
 																		do 
 																		{
 																			scrolltothedown(297, 532, 294, 735);
-																			
+
 																			try 
 																			{
 																				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																					System.out.println("Case Pass9");
-																					
+
 																			}catch(Exception e8) 
 																			{
 
 																				do 
 																				{
 																					scrolltothedown(297, 532, 294, 735);
-																					
+
 																					try 
 																					{
 																						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed()!=false)
 																							System.out.println("Case Pass10");
-																							
+
 																					}catch(Exception e9) 
 																					{
 
@@ -2219,12 +2261,12 @@ public class Wrapper extends WrapperForWeb
 																						do 
 																						{
 																							scrolltothedown(297, 532, 294, 735);
-																							
+
 																							try 
 																							{
 																								if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																									System.out.println("Case Pass11");
-																									
+
 																							}catch(Exception e10) 
 																							{
 
@@ -2232,12 +2274,12 @@ public class Wrapper extends WrapperForWeb
 																								do 
 																								{
 																									scrolltothedown(297, 532, 294, 735);
-																									
+
 																									try 
 																									{
 																										if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																											System.out.println("Case Pass12");
-																											
+
 																									}catch(Exception e11) 
 																									{
 
@@ -2245,12 +2287,12 @@ public class Wrapper extends WrapperForWeb
 																										do 
 																										{
 																											scrolltothedown(297, 532, 294, 735);
-																											
+
 																											try 
 																											{
 																												if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																													System.out.println("Case Pass13");
-																													
+
 																											}catch(Exception e12) 
 																											{
 
@@ -2258,12 +2300,12 @@ public class Wrapper extends WrapperForWeb
 																												do 
 																												{
 																													scrolltothedown(297, 532, 294, 735);
-																													
+
 																													try 
 																													{
 																														if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																															System.out.println("Case Pass14");
-																															
+
 																													}catch(Exception e13) 
 																													{
 
@@ -2271,12 +2313,12 @@ public class Wrapper extends WrapperForWeb
 																														do 
 																														{
 																															scrolltothedown(297, 532, 294, 735);
-																															
+
 																															try 
 																															{
 																																if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																	System.out.println("Case Pass15");
-																																	
+
 																															}catch(Exception e14) 
 																															{
 
@@ -2284,12 +2326,12 @@ public class Wrapper extends WrapperForWeb
 																																do 
 																																{
 																																	scrolltothedown(297, 532, 294, 735);
-																																	
+
 																																	try 
 																																	{
 																																		if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																			System.out.println("Case Pass16");
-																																			
+
 																																	}catch(Exception e15) 
 																																	{
 
@@ -2297,12 +2339,12 @@ public class Wrapper extends WrapperForWeb
 																																		do 
 																																		{
 																																			scrolltothedown(297, 532, 294, 735);
-																																			
+
 																																			try 
 																																			{
 																																				if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																					System.out.println("Case Pass17");
-																																					
+
 																																			}catch(Exception e16) 
 																																			{
 
@@ -2310,12 +2352,12 @@ public class Wrapper extends WrapperForWeb
 																																				do 
 																																				{
 																																					scrolltothedown(297, 532, 294, 735);
-																																					
+
 																																					try 
 																																					{
 																																						if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																							System.out.println("Case Pass18");
-																																							
+
 																																					}catch(Exception e17) 
 																																					{
 
@@ -2323,12 +2365,12 @@ public class Wrapper extends WrapperForWeb
 																																						do 
 																																						{
 																																							scrolltothedown(297, 532, 294, 735);
-																																							
+
 																																							try 
 																																							{
 																																								if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																									System.out.println("Case Pass19");
-																																									
+
 																																							}catch(Exception e18) 
 																																							{
 
@@ -2336,12 +2378,12 @@ public class Wrapper extends WrapperForWeb
 																																								do 
 																																								{
 																																									scrolltothedown(297, 532, 294, 735);
-																																									
+
 																																									try 
 																																									{
 																																										if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																											System.out.println("Case Pass20");
-																																											
+
 																																									}catch(Exception e19) 
 																																									{
 
@@ -2349,12 +2391,12 @@ public class Wrapper extends WrapperForWeb
 																																										do 
 																																										{
 																																											scrolltothedown(297, 532, 294, 735);
-																																											
+
 																																											try 
 																																											{
 																																												if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																													System.out.println("Case Pass21");
-																																													
+
 																																											}catch(Exception e20) 
 																																											{
 
@@ -2362,92 +2404,92 @@ public class Wrapper extends WrapperForWeb
 																																												do 
 																																												{
 																																													scrolltothedown(297, 532, 294, 735);
-																																													
+
 																																													try 
 																																													{
 																																														if(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed())
 																																															System.out.println("Case Pass22");
-																																															
+
 																																													}catch(Exception e21) 
 																																													{
 																																														e1.printStackTrace();
 																																													}
-																																													
+
 																																												}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																											
+
 																																											}
-																																											
+
 																																										}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																									
+
 																																									}
-																																									
+
 																																								}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																							
+
 																																							}
-																																							
+
 																																						}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																					
+
 																																					}
-																																					
+
 																																				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																			
+
 																																			}
-																																			
+
 																																		}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																																	
+
 																																	}
-																																	
+
 																																}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																															
+
 																															}
-																															
+
 																														}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																													
+
 																													}
-																													
+
 																												}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																											
+
 																											}
-																											
+
 																										}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																									
+
 																									}
-																									
+
 																								}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																							
+
 																							}
-																							
+
 																						}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
-																					
+
 																					}
-																					
+
 																				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																			}
-																			
+
 																		}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 																	}
-																	
+
 																}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 															}
-															
+
 														}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 													}
-													
+
 												}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 											}
-											
+
 										}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 									}
-									
+
 								}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 							}
-							
+
 						}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 					}
-					
+
 				}while(driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true);//driver.findElement(By.xpath("//*[@text='"+ExactText+"']")).isDisplayed() != true
 			}
-			
+
 			System.out.println("Outside of the catch block");
 
 
@@ -2456,10 +2498,10 @@ public class Wrapper extends WrapperForWeb
 
 
 		System.err.println("Outside of the do block");
-	
-	
+
+
 	}
-	
+
 
 	public void SwitchToStockRoom() throws MalformedURLException 
 	{
@@ -2480,29 +2522,36 @@ public class Wrapper extends WrapperForWeb
 		caps2.setCapability("appPackage", "warehouse.commusoft.com.commusoftwarehouse");
 		caps2.setCapability("appActivity", "warehouse.commusoft.com.commusoftwarehouse.V2.MainActivityV2");
 		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps2);
-	
+
 	}
-	
+
 	public void SwitchToV4() throws MalformedURLException 
 	{
-		
+
 		driver.startActivity(new Activity("com.commusoft.v4", "com.commusoft.v4.Setup.Activities.SplashScreen"));
 
-	}
-	
-	public void SwitchToGmailApp() throws MalformedURLException 
-	{
-		
-		driver.startActivity(new Activity("com.google.android.gm", "com.google.android.gm.ConversationListActivityGmail"));
 
 	}
-	
-	
+
+	public void SwitchToGmailApp() throws MalformedURLException 
+	{
+
+		driver.startActivity(new Activity("com.google.android.gm", "com.google.android.gm.ConversationListActivityGmail"));
+
+
+	}
+
+	public void CloseCommusoftApp() 
+	{
+		driver.terminateApp("com.commusoft.v4");
+	}
+
+
 	public void SwitchToStockWarehouseApp() 
 	{
 		ThreeSec();
 		driver.executeScript("mobile: startActivity", ImmutableMap.of("intent","warehouse.commusoft.com.commusoftwarehouse/warehouse.commusoft.com.commusoftwarehouse.V2.MainActivityV2"));
-		                                                                        
+
 
 	}
 	public void SwitchToV4App() 
@@ -2516,56 +2565,81 @@ public class Wrapper extends WrapperForWeb
 
 		ThreeSec();
 		driver.executeScript("mobile: startActivity", ImmutableMap.of("intent","com.google.android.gm/com.google.android.gm.ConversationListActivityGmail"));
-	
+
 	}
-	
-	
+
+
 	public void Click_MenuClosed_BackButton() 
 	{
-//		FourSec();
-		OneSec();
+		//		FourSec();
+		TwoSec();
 		try 
 		{
 			if(driver.findElement(By.xpath("//*[@content-desc='Navigate up']")).isDisplayed()) ////*[@content-desc='Menu closed']
 				ActionClick("//*[@content-desc='Navigate up']");//*[@content-desc='Menu closed']
-			
+
 		}catch(Exception e) 
 		{
 			System.out.println("Menu Closed Button Is Not Displayed");
 		}
+
+
+		//		String backButton = driver.getPageSource();
+		//		if(backButton.contains("Customer") || backButton.contains("Job") || backButton.contains("Estimate"))
+		//			ActionClick("//*[@content-desc='Navigate up']");
+		//		else
+		//			System.out.println("Menu Closed Button Is Not Displayed");
+
+
+
 	}
 
+	public void demo() 
+	{
+		OneSec();
+		String pageSource = driver.getPageSource();
+		if(pageSource.contains("Navigate up"))
+			System.out.println("Navigate up not disolayed");
+		else
+			ActionClick("//*[@content-desc='Navigate up']");
+
+		String pageSource2 = driver.getPageSource();
+		if(pageSource2.contains("Customer") || pageSource2.contains("Job") || pageSource2.contains("Estimate"))
+			System.out.println("Navigate up not disolayed");
+		else
+			ActionClick("//*[@content-desc='Navigate up']");
+	}
 	public void Click_NavigateUp_BackButton() 
 	{
-//		FiveSec();
+		//		FiveSec();
 		OneSec();
 		try 
 		{
 			if(driver.findElement(By.xpath("//*[@content-desc='Navigate up']")).isDisplayed()) 
 			{
 				ActionClick("//*[@content-desc='Navigate up']");
-				
 
 
-				
+
+
 				boolean navigateup1 = driver.findElement(By.xpath("//*[@content-desc='Navigate up']")).isDisplayed();
 				do 
 				{
-//					ThreeSec();
+					//					ThreeSec();
 					ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 					driver.findElement(By.xpath("//*[@content-desc='Navigate up']")).click();
-					
+
 					try 
 					{
-						
+
 						if(driver.findElement(By.xpath("//*[@content-desc='Navigate up']")).isDisplayed())
 							ActionClick("//*[@content-desc='Navigate up']");
-						
+
 					}catch(Exception e13) 
 					{
 						do 
 						{
-//							TwoSec();
+							//							TwoSec();
 							ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 							ActionClick("//*[@content-desc='Navigate up']");
 							try 
@@ -2577,7 +2651,7 @@ public class Wrapper extends WrapperForWeb
 
 								do 
 								{
-//									TwoSec();
+									//									TwoSec();
 									ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 									ActionClick("//*[@content-desc='Navigate up']");
 									try 
@@ -2588,7 +2662,7 @@ public class Wrapper extends WrapperForWeb
 									{
 										do 
 										{
-//											TwoSec();
+											//											TwoSec();
 											ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 											ActionClick("//*[@content-desc='Navigate up']");
 											try 
@@ -2600,7 +2674,7 @@ public class Wrapper extends WrapperForWeb
 
 												do 
 												{
-//													TwoSec();
+													//													TwoSec();
 													ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 													ActionClick("//*[@content-desc='Navigate up']");
 													try 
@@ -2611,7 +2685,7 @@ public class Wrapper extends WrapperForWeb
 													{
 														do 
 														{
-//															TwoSec();
+															//															TwoSec();
 															ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 															ActionClick("//*[@content-desc='Navigate up']");
 															try 
@@ -2623,7 +2697,7 @@ public class Wrapper extends WrapperForWeb
 
 																do 
 																{
-//																	TwoSec();
+																	//																	TwoSec();
 																	ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 																	ActionClick("//*[@content-desc='Navigate up']");
 																	try 
@@ -2634,7 +2708,7 @@ public class Wrapper extends WrapperForWeb
 																	{
 																		do 
 																		{
-//																			TwoSec();
+																			//																			TwoSec();
 																			ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 																			ActionClick("//*[@content-desc='Navigate up']");
 																			try 
@@ -2646,7 +2720,7 @@ public class Wrapper extends WrapperForWeb
 
 																				do 
 																				{
-//																					TwoSec();
+																					//																					TwoSec();
 																					ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 																					ActionClick("//*[@content-desc='Navigate up']");
 																					try 
@@ -2657,7 +2731,7 @@ public class Wrapper extends WrapperForWeb
 																					{
 																						do 
 																						{
-//																							TwoSec();
+																							//																							TwoSec();
 																							ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 																							ActionClick("//*[@content-desc='Navigate up']");
 																							try 
@@ -2669,7 +2743,7 @@ public class Wrapper extends WrapperForWeb
 
 																								do 
 																								{
-//																									TwoSec();
+																									//																									TwoSec();
 																									ExplicitWait_PresenceOfEle("//*[@content-desc='Navigate up']");
 																									ActionClick("//*[@content-desc='Navigate up']");
 																									try 
@@ -2678,69 +2752,69 @@ public class Wrapper extends WrapperForWeb
 																											ActionClick("//*[@content-desc='Navigate up']");
 																									}catch(Exception e10) 
 																									{
-																										
+
 																									}
-																									
+
 																								}while(navigateup1!=true);
-																							
+
 																							}
-																							
+
 																						}while(navigateup1!=true);
 																					}
-																					
+
 																				}while(navigateup1!=true);
-																			
+
 																			}
-																			
+
 																		}while(navigateup1!=true);
 																	}
-																	
+
 																}while(navigateup1!=true);
-															
+
 															}
-															
+
 														}while(navigateup1!=true);
 													}
-													
+
 												}while(navigateup1!=true);
-											
+
 											}
-											
+
 										}while(navigateup1!=true);
 									}
-									
+
 								}while(navigateup1!=true);
-							
+
 							}
-							
+
 						}while(navigateup1!=true);
 					}
-					
+
 				}while(navigateup1!=true);//!(navigateup.equals(navigateup1)) , navigateup1=true
-				
-			
-				
-			
-			
-				
+
+
+
+
+
+
 			}
-				
-			
+
+
 		}catch(Exception e) 
 		{
-			
+
 			System.out.println("Now the navigate up button is not displayed");
 		}
 	}
 
-	
+
 	public void ActionClick(String xpath) 
 	{
 		Actions actions = new Actions(driver);
 		MobileElement findElement = driver.findElement(By.xpath(xpath));
 		actions.moveToElement(findElement).click(findElement).build().perform();
 	}
-	
+
 	public void DoubleClick(String xpath) 
 	{
 		Actions actions = new Actions(driver);
@@ -2754,35 +2828,37 @@ public class Wrapper extends WrapperForWeb
 		MobileElement findElement = driver.findElement(By.xpath(xpath));
 		js.executeScript("arguments[0].click",findElement);
 	}
-	
+
 	public void Navigate_Home() 
 	{
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();
 	}
 
+
+
 	public void OpenChrome(String url) 
 	{
 		WebDriverManager.chromedriver().setup();
-//		 chromeDriver = new ChromeDriver();
-//		chromeDriver.get(url);
-//		chromeDriver.manage().window().maximize();
-//		chromeDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		
-//		Set<String> contextNames = driver.getContextHandles();
-//		for (String contextName : contextNames) {
-//		    System.out.println(contextName); //prints out something like NATIVE_APP \n WEBVIEW_1
-//		}
-////		driver.context(contextNames.toArray()[1]);
-//		driver.context("NATIVE_APP");
+		//		 chromeDriver = new ChromeDriver();
+		//		chromeDriver.get(url);
+		//		chromeDriver.manage().window().maximize();
+		//		chromeDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+		//		Set<String> contextNames = driver.getContextHandles();
+		//		for (String contextName : contextNames) {
+		//		    System.out.println(contextName); //prints out something like NATIVE_APP \n WEBVIEW_1
+		//		}
+		////		driver.context(contextNames.toArray()[1]);
+		//		driver.context("NATIVE_APP");
 	}
-	
-//	public void WebScroll(String xpath) 
-//	{
-//		JavascriptExecutor js=(JavascriptExecutor)driverWeb;
-//		WebElement findElement = driver.findElement(By.xpath(xpath));
-//		js.executeScript("arguments[0].scrollIntoView()",findElement);
-//	}
+
+	//	public void WebScroll(String xpath) 
+	//	{
+	//		JavascriptExecutor js=(JavascriptExecutor)driverWeb;
+	//		WebElement findElement = driver.findElement(By.xpath(xpath));
+	//		js.executeScript("arguments[0].scrollIntoView()",findElement);
+	//	}
 	@FindBy(xpath="//android.widget.TextView[@text='Book event']")
 	public WebElement Book_Event;
 
@@ -2790,9 +2866,106 @@ public class Wrapper extends WrapperForWeb
 	public MobileElement Menu;
 
 	//------------------------------------------------------------------------------------------------------
-	
-	
-   
 
+	public void Remove_AllDiaryEvents() throws InterruptedException, IOException 
+	{
+
+
+		ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/status_color']");
+
+		List<MobileElement> allColors = driver.findElements(By.xpath("//*[@resource-id='com.commusoft.v4:id/status_color']"));
+		for ( MobileElement onGoingColor : allColors) {
+
+			org.openqa.selenium.Point point = onGoingColor.getCenter();
+
+			int centerx = point.getX();
+			int centerY = point.getY();
+
+			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+			BufferedImage image = ImageIO.read(scrFile);
+			int clr=  image.getRGB(centerx,centerY); 
+			int  red   = (clr & 0x00ff0000) >> 16;
+			int  green = (clr & 0x0000ff00) >> 8;
+			int  blue  =  clr & 0x000000ff;
+
+			firstRed = Integer.toString(red);
+			firstGreen = Integer.toString(green);
+			firstBlue = Integer.toString(blue);	
+		
+			while (firstRed.equals("218")&& firstGreen.equals("210")&& firstBlue.equals("203")) {
+				
+				do {
+
+					List<MobileElement> estcolor = driver.findElements(By.xpath("//*[@resource-id='com.commusoft.v4:id/status_color']"));
+
+
+					for ( MobileElement ColorOfEstimates : estcolor) {
+
+						org.openqa.selenium.Point point2 = ColorOfEstimates.getCenter();
+
+						int centerx2 = point2.getX();
+						int centerY2 = point2.getY();
+
+						File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+						BufferedImage image2 = ImageIO.read(scrFile2);
+						int clr2=  image2.getRGB(centerx2,centerY2); 
+						int  red2   = (clr2 & 0x00ff0000) >> 16;
+						int  green2 = (clr2 & 0x0000ff00) >> 8;
+						int  blue2  =  clr2 & 0x000000ff;
+
+						Red = Integer.toString(red2);
+						Green = Integer.toString(green2);
+						Blue = Integer.toString(blue2);
+
+						if(Red.equals("218")&&Green.equals("210")&&Blue.equals("203")) //Red.equals("218")&&Green.equals("210")&&Blue.equals("203")
+						{
+							
+							ColorOfEstimates.click();
+							//Reject diary event code
+							ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/statustexttwo']");
+							click("//*[@resource-id='com.commusoft.v4:id/statustexttwo']");
+							ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/feedback']");
+							type("//*[@resource-id='com.commusoft.v4:id/feedback']", "Reject Estimate Automation");
+							ExplicitWait_ElementToBeClickable("//*[@content-desc='Save'] ");
+							click("//*[@content-desc='Save'] ");
+							break;
+							
+						}
+						
+					}
+
+					if(Red.equals("218")&&Green.equals("210")&&Blue.equals("203")) //Red.equals("218")&&Green.equals("210")&&Blue.equals("203")
+					{
+						System.err.println("");
+
+					}else 
+					{
+						scrolltothedown(500, 1626, 500, 1230); 
+						break;
+
+					}
+
+					
+					
+				} while (!(Red.equals("218")&&Green.equals("210")&&Blue.equals("203")));
+				
+				
+			}
+		
+
+			
+		}
+
+
+
+	
+		
+	}
+
+	
+	
+	
 }
 
