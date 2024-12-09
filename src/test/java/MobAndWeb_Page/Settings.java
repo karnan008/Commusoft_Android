@@ -306,7 +306,7 @@ public class Settings extends Wrapper{
 	{
 		ExplicitWait_PresenceOfEle2("//select[@formcontrolname='email']");
 
-		SelectByVisibileText("//select[@formcontrolname='email']", "Don’t email");
+		SelectByVisibileText("//select[@formcontrolname='email']", "Donâ€™t email");
 	}
 	
 	public void DefaultNominalValue(String others) throws InterruptedException 
@@ -390,8 +390,8 @@ public class Settings extends Wrapper{
 	public void CloseTemplate() 
 	{
 		WebOneSec();
-		ExplicitWait_ElementToBeClickable2("//strong[text()='×']");
-		Webclick("//strong[text()='×']");
+		ExplicitWait_ElementToBeClickable2("//strong[text()='Ã—']");
+		Webclick("//strong[text()='Ã—']");
 	}
 	
 	public void DeletePricingItem() 

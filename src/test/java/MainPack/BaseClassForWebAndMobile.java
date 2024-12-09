@@ -1,7 +1,10 @@
 package MainPack;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -110,7 +113,7 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 	public String Address="Address1";
 	public String EditWebCustomerName="EditWebAutomation";
 	public String WebEmailSub="WebEmailSub";
-	public String AllFieldsCertificate="All fields (Added Normal List Screen)";
+	public String AllFieldsCertificate="All fields (Added Normal List Screen edit)";
 	public String AutomationCertificate="Automation";
 	public String ComposeEmail="ComposeEmail";
 	public String CertificateInput="Certificate";
@@ -137,51 +140,114 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 	@BeforeTest(alwaysRun = true)
 	public void setup()
 	{
-
+	
+		
 		try {
-			
-		DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps.setCapability(MobileCapabilityType.VERSION, "9");//VERSION
-		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
-		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
-		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ");      
-		caps.setCapability(MobileCapabilityType.UDID, "jrd6hmy5mzhihihu");//jrd6hmy5mzhihihu  192.168.100.93:5555   adb-jrd6hmy5mzhihihu-v6tb4X._adb-tls-connect._tcp.
-		//caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
-		caps.setCapability(MobileCapabilityType.NO_RESET, true);
-		caps.setCapability("automationName", "UiAutomator2");//UiAutomator2  espresso
-		caps.setCapability(MobileCapabilityType.APPLICATION_NAME, "Commusoft");//APPLICATION_NAME
-		caps.setCapability("clearDeviceLogsOnStart", true);
-		caps.setCapability("appPackage", "com.commusoft.v4"); //-----> Live pointed 
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
+            caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi Note 8 Pro");
+            caps.setCapability(MobileCapabilityType.UDID, "jrd6hmy5mzhihihu"); //jrd6hmy5mzhihihu   192.168.100.93:5555
+            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
+            caps.setCapability(MobileCapabilityType.NO_RESET, true);
+            caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+            caps.setCapability("appium:clearDeviceLogsOnStart", true);
+            caps.setCapability("appium:appPackage", "com.commusoft.v4");
+            caps.setCapability("appium:appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
+            caps.setCapability("appium:autoGrantPermissions", true); // To fix the switching app issues
+            //--------------------------------------------------------------------------
+//            caps.setCapability("appWaitActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
+//            caps.setCapability("autoGrantPermissions", true);
+//            caps.setCapability(MobileCapabilityType.FULL_RESET, true);
+//            caps.setCapability("noSign", true);
+
+            driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723"), caps);
+
+            String udid = driver.getCapabilities().getCapability("udid").toString();
+            System.out.println("Mobile UDID is: " + udid);
+
+            // Add a simple check to see if the app has launched
+            if (driver.currentActivity().contains("SplashScreen")) {
+                System.out.println("App has successfully launched!");
+            } else {
+                System.out.println("App did not launch correctly.");
+                
+                try {
+    	            Process process = Runtime.getRuntime().exec("adb shell am start -n com.commusoft.v4/com.commusoft.v4.Setup.Activities.SplashScreen");
+    	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+    	            String line;
+    	            while ((line = reader.readLine()) != null) {
+    	                System.out.println(line);
+    	            }
+    	            process.waitFor();
+    	        } catch (Exception e) {
+    	            e.printStackTrace();
+    	        }
+                
+            }
+
+        } catch (Exception exp) {
+            System.out.println("Cause is: " + exp.getCause());
+            System.out.println("Message is: " + exp.getMessage());
+            exp.printStackTrace();
+        }
+	
+//		try {
+//            DesiredCapabilities caps = new DesiredCapabilities();
+//            caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+//            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
+//            caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi Note 8 Pro");
+//            caps.setCapability(MobileCapabilityType.UDID, "192.168.100.93:5555");
+//            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
+//            caps.setCapability(MobileCapabilityType.NO_RESET, true);
+//            caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+//            caps.setCapability("appium:clearDeviceLogsOnStart", true);
+//            caps.setCapability("appPackage", "com.commusoft.v4");
+//            caps.setCapability("appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
+//            caps.setCapability("appWaitActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");
+//            caps.setCapability("autoGrantPermissions", true);
+//            caps.setCapability(MobileCapabilityType.FULL_RESET, false); // Use false to avoid full reset
+//            caps.setCapability("noSign", true);
+//
+//            // Start Appium driver
+//            System.out.println("Starting Appium driver...");
+//            driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+//
+//            // Print device UDID
+//            String udid = driver.getCapabilities().getCapability("udid").toString();
+//            System.out.println("Mobile UDID is: " + udid);
+//
+//            // Add a simple check to see if the app has launched
+//            String currentActivity = driver.currentActivity();
+//            System.out.println("Current Activity: " + currentActivity);
+//
+//            if (currentActivity.contains("SplashScreen")) {
+//                System.out.println("App has successfully launched!");
+//            } else {
+//                System.out.println("App did not launch correctly.");
+//            }
+//
+//        } catch (Exception exp) {
+//            System.out.println("Cause is: " + exp.getCause());
+//            System.out.println("Message is: " + exp.getMessage());
+//            exp.printStackTrace();
+//        }
 		
-//		caps.setCapability("appPackage", "com.commusoft.v4.couchdb"); //-------> Stage build
-//		caps.setCapability("appPackage", "com.commusoft.v4.dev");//--------> Dev build
-		caps.setCapability("appActivity", "com.commusoft.v4.Setup.Activities.SplashScreen");// appActivity  com.commusoft.v4.Setup.Activities.SplashScreen
-		
-		
-		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);// http://0.0.0.0:4723/wd/hub
-		
-		udid = driver.getCapabilities().getCapability("udid").toString();
-		System.out.println("Mobile UDID is: "+udid);
-		
-		
-		}catch(Exception exp) {
-			System.out.println("Cause is: "+ exp.getCause());
-			System.out.println("Message is :"+exp.getMessage());
-			exp.printStackTrace();
-		}
 	}
-	@BeforeTest
+    
+
+    @BeforeTest
 	
 	public void ConnectWeb() throws InterruptedException, IOException 
 	{
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--headless=new");// Chrome browser doesn't open, it will run on the background
-		chromeOptions.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"} ); // It will hide 'Chrome browser is being controlled by automated test software'
-		chromeOptions.addArguments("--remote-allow-origins=*");
+//		chromeOptions.addArguments("--headless=new");// Chrome browser doesn't open, it will run on the background
+//		chromeOptions.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"} ); // It will hide 'Chrome browser is being controlled by automated test software'
+//		chromeOptions.addArguments("--remote-allow-origins=*");
+		chromeOptions.addArguments("--start-maximized");
 		WebDriverManager.chromedriver().setup();
-		driverWeb=new ChromeDriver();
+//		WebDriverManager.chromedriver().driverVersion("127.0.6533.43").setup(); 
+		driverWeb=new ChromeDriver(chromeOptions);
 		
 		webEventListener = new WebEventListener();
 	    eventFiringWebDriver = new EventFiringWebDriver(driverWeb);
@@ -196,10 +262,10 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 	    ExcelReader excelReader = new ExcelReader(driverWeb);
 	  
         
-        if(simpleName.contains("Commusoft_WebAndMobile") &&  Running_UserName.contains("ssara")) 
+        if(simpleName.contains("Commusoft_WebAndMobile") &&  Running_UserName.contains("sarav")) 
         {
         	excelReader.OfficeStaff();
-        }else if(simpleName.contains("BasicSmoke_MobAndWeb") &&  Running_UserName.contains("ssara")) 
+        }else if(simpleName.contains("BasicSmoke_MobAndWeb") &&  Running_UserName.contains("sarav")) 
         {
         	excelReader.Owner();
         	

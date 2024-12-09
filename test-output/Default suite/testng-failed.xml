@@ -5,14 +5,19 @@
     <classes>
       <class name="New_ui_Testclass.BasicSmoke_MobAndWeb">
         <methods>
+          <include name="EstimateAcceptWithPrice_InMobile"/>
           <include name="teardown"/>
           <include name="teardown"/>
+          <include name="EmailCertificateFromMobileAndVerifyOnTheGmailApp"/>
           <include name="ConnectWeb"/>
-          <include name="VerifyCustomerFilesInWeb"/>
           <include name="CurrentClassName"/>
           <include name="setup"/>
+          <include name="Job_PropetyHistory_AllSection_View_Verification"/>
           <include name="initial"/>
+          <include name="Add_Draft_Delete_Clone_CustomFormNewUI"/>
+          <include name="Add_Edit_Delete_CustomerAssetNewUI"/>
           <include name="tearDownWeb"/>
+          <include name="JobAppointment_StatusVerification_PropertyHistory"/>
         </methods>
       </class> <!-- New_ui_Testclass.BasicSmoke_MobAndWeb -->
     </classes>
