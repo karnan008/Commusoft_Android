@@ -229,7 +229,7 @@ public class Assets extends Wrapper{
 	public void SerialNumber() throws InterruptedException 
 	{
 		TwoSec();
-		ScrollDown24Contains("Serial number");
+		ScrollDown24Contains("Serial Number");
 		TwoSec();
 		type("//*[@resource-id='com.commusoft.v4:id/simple_answer']", "Serial");
 	}
