@@ -147,7 +147,7 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
             caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi Note 8 Pro");
-            caps.setCapability(MobileCapabilityType.UDID, "192.168.100.93:5555"); //jrd6hmy5mzhihihu   192.168.100.93:5555
+            caps.setCapability(MobileCapabilityType.UDID, "jrd6hmy5mzhihihu"); //jrd6hmy5mzhihihu   192.168.100.93:5555
             caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
             caps.setCapability(MobileCapabilityType.NO_RESET, true);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
@@ -247,7 +247,7 @@ public class BaseClassForWebAndMobile extends Wrapper implements ITestListener{
 		chromeOptions.addArguments("--start-maximized");
 		WebDriverManager.chromedriver().setup();
 //		WebDriverManager.chromedriver().driverVersion("127.0.6533.43").setup(); 
-		driverWeb=new ChromeDriver();
+		driverWeb=new ChromeDriver(chromeOptions);
 		
 		webEventListener = new WebEventListener();
 	    eventFiringWebDriver = new EventFiringWebDriver(driverWeb);

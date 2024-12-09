@@ -1,5 +1,8 @@
 package MobAndWeb_Page;
 
+import java.util.List;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 
 import MainPack.Wrapper;
@@ -57,7 +60,7 @@ public class RemoveEngineerEvents extends Wrapper{
 			//			TwoSec();
 			OneSec();
 			emptyPage = driver.getPageSource();
-//			System.out.println(emptyPage);
+			//			System.out.println(emptyPage);
 
 
 			while(emptyPage.contains("Estimate No:") || emptyPage.contains("Job No:")) {
@@ -87,34 +90,68 @@ public class RemoveEngineerEvents extends Wrapper{
 						click("//*[@text='Diary history']");
 					}
 					else{
-						//Diary card click
+
 						ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
-						click("//*[contains(@text,'am')]");
-						
-						//
-						ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
-						pageSource = driver.getPageSource();
-						if(pageSource.contains("Diary time tracking")) 
-						{
-							click("//*[@text='View diary event']");
-						}
-						else 
-						{
-							//Click edit
-							ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
-							click("//*[@text='Edit']");
+						List<MobileElement> elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
 
-							//Click Delete 
-							ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
-							click("(//*[@class='android.widget.Button'])[2]");
+						for (int i = 0; i < elements.size(); i++) {
+							// Re-fetch the list to avoid stale elements after any action
 
-							//click confirm Delete
-							ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
-							click("//*[@text='Delete']");
+							System.out.println("How many cards are appeared? "+elements.size());
+							elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
+
+							try {
+								MobileElement ListOfElements = elements.get(i);
+								ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
+								String attribute = ListOfElements.getAttribute("class");
+
+
+								ListOfElements.click();
+
+								ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
+								pageSource = driver.getPageSource();
+								if (pageSource.contains("Diary time tracking")) {
+
+									click("//*[@text='View diary event']");
+
+
+								} else {
+									ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
+									click("//*[@text='Edit']");
+
+									// Click Delete
+									ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
+									click("(//*[@class='android.widget.Button'])[2]");
+
+									// Click confirm Delete
+									ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
+									click("//*[@text='Delete']");
+									TwoSec();
+									Swipe(452, 298, 446, 94);
+
+
+									i--;
+
+								}
+							}catch(Exception e) 
+							{
+								ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
+								click("//*[@text='Diary history']");
+							}
 						}
-						//Diary hoistory back
+						//========================================================================
+					}
+
+					OneSec();
+					pageSource = driver.getPageSource();
+
+					if(pageSource.contains("Diary history")) 
+					{
 						ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
 						click("//*[@text='Diary history']");
+					}else 
+					{
+						System.out.println("");
 					}
 
 					ExplicitWait_ElementToBeClickable("//*[@text='Abort job']");
@@ -149,36 +186,59 @@ public class RemoveEngineerEvents extends Wrapper{
 						click("//*[@text='Diary history']");
 					}
 					else{
-						//Diary card click
+
 						ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
-						click("//*[contains(@text,'am')]");
-						
-						//
-						ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
-						pageSource = driver.getPageSource();
-						if(pageSource.contains("Diary time tracking")) 
-						{
-							click("//*[@text='View diary event']");
-						}
-						else 
-						{
-							//Click edit
-							ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
-							click("//*[@text='Edit']");
+						List<MobileElement> elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
 
-							//Click Delete 
-							ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
-							click("(//*[@class='android.widget.Button'])[2]");
+						for (int i = 0; i < elements.size(); i++) {
+							// Re-fetch the list to avoid stale elements after any action
 
-							//click confirm Delete
-							ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
-							click("//*[@text='Delete']");
+							System.out.println("How many cards are appeared? "+elements.size());
+							elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
+
+							try {
+								MobileElement ListOfElements = elements.get(i);
+								ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
+								String attribute = ListOfElements.getAttribute("class");
+
+
+								ListOfElements.click();
+
+								ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
+								pageSource = driver.getPageSource();
+								if (pageSource.contains("Diary time tracking")) {
+
+									click("//*[@text='View diary event']");
+
+
+								} else {
+									ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
+									click("//*[@text='Edit']");
+
+									// Click Delete
+									ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
+									click("(//*[@class='android.widget.Button'])[2]");
+
+									// Click confirm Delete
+									ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
+									click("//*[@text='Delete']");
+									TwoSec();
+									Swipe(452, 298, 446, 94);
+
+
+									i--;
+
+								}
+							}catch(Exception e) 
+							{
+								ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
+								click("//*[@text='Diary history']");
+							}
 						}
-						//Diary hoistory back
-						ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
-						click("//*[@text='Diary history']");
+						//========================================================================
 					}
 
+					ExplicitWait_PresenceOfEle("//*[contains(@text,'Tap on the green bar for further actions')]");
 					click("//*[contains(@text,'Tap on the green bar for further actions')]");
 					ExplicitWait_ElementToBeClickable("//*[@text='Free of charge job']");
 					click("//*[@text='Free of charge job']");
@@ -212,34 +272,56 @@ public class RemoveEngineerEvents extends Wrapper{
 					}
 					else
 					{
-						//Diary card click
+
 						ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
-						click("//*[contains(@text,'am')]");
-						
-						//
-						ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
-						pageSource = driver.getPageSource();
-						if(pageSource.contains("Diary time tracking")) 
-						{
-							click("//*[@text='View diary event']");
-						}
-						else 
-						{
-							//Click edit
-							ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
-							click("//*[@text='Edit']");
+						List<MobileElement> elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
 
-							//Click Delete 
-							ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
-							click("(//*[@class='android.widget.Button'])[2]");
+						for (int i = 0; i < elements.size(); i++) {
+							// Re-fetch the list to avoid stale elements after any action
 
-							//click confirm Delete
-							ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
-							click("//*[@text='Delete']");
+							System.out.println("How many cards are appeared? "+elements.size());
+							elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
+
+							try {
+								MobileElement ListOfElements = elements.get(i);
+								ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
+								String attribute = ListOfElements.getAttribute("class");
+
+
+								ListOfElements.click();
+
+								ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
+								pageSource = driver.getPageSource();
+								if (pageSource.contains("Diary time tracking")) {
+
+									click("//*[@text='View diary event']");
+
+
+								} else {
+									ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
+									click("//*[@text='Edit']");
+
+									// Click Delete
+									ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
+									click("(//*[@class='android.widget.Button'])[2]");
+
+									// Click confirm Delete
+									ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
+									click("//*[@text='Delete']");
+									TwoSec();
+									Swipe(452, 298, 446, 94);
+
+
+									i--;
+
+								}
+							}catch(Exception e) 
+							{
+								ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
+								click("//*[@text='Diary history']");
+							}
 						}
-						//Diary hoistory back
-						ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
-						click("//*[@text='Diary history']");
+						//========================================================================
 					}
 					FiveSec();
 					OneSec();
@@ -279,7 +361,7 @@ public class RemoveEngineerEvents extends Wrapper{
 				//				TwoSec();
 				OneSec();
 				emptyPage = driver.getPageSource();
-//				System.out.println(emptyPage);
+				//				System.out.println(emptyPage);
 			}
 
 			//Menu
@@ -289,7 +371,7 @@ public class RemoveEngineerEvents extends Wrapper{
 			click("//*[@text='On going work']");
 			OneSec();
 			emptyPage = driver.getPageSource();
-//			System.out.println(emptyPage);
+			//			System.out.println(emptyPage);
 
 		}while(emptyPage.contains("Estimate No:") || emptyPage.contains("Job No:")) ;
 
@@ -304,7 +386,6 @@ public class RemoveEngineerEvents extends Wrapper{
 
 	public void Demo() throws InterruptedException 
 	{
-
 
 		do {
 
@@ -321,20 +402,26 @@ public class RemoveEngineerEvents extends Wrapper{
 			click("//*[@text='Search']"); 
 
 			//Search customer
-//			ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");
-//			clear("//*[@class='android.widget.EditText']");
-//			customernumber = System.getProperty("customernumber");
-//			MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
-//			num.sendKeys(customernumber);
-//			ExplicitWait_PresenceOfEle("(//*[@class='android.widget.ImageView'])[1]");
-//			click("(//*[@class='android.widget.ImageView'])[1]");
-			
+			ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");
+			clear("//*[@class='android.widget.EditText']");
+			//			customernumber = System.getProperty("customernumber");
+			//			MobileElement num = driver.findElement(By.xpath("//*[@class='android.widget.EditText']"));
+			//			num.sendKeys(customernumber);
+			//			ExplicitWait_PresenceOfEle("(//*[@class='android.widget.ImageView'])[1]");
+			//			click("(//*[@class='android.widget.ImageView'])[1]");
+
+			//======================================
+			//Pass Customer
 			ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");			
-			type("//*[@class='android.widget.EditText']", "4720");
+			type("//*[@class='android.widget.EditText']", "4743");
+			Thread.sleep(2000);
+			ExplicitWait_PresenceOfEle("(//*[@class='android.widget.ImageView'])[1]");
 			click("(//*[@class='android.widget.ImageView'])[1]");
 
+			//======================================
+
 			//Select customer
-			OneSec();
+			ThreeSec();
 			ExplicitWait_PresenceOfEle("(//*[@class='android.view.View'])[4]");
 			click("(//*[@class='android.view.View'])[4]");
 
@@ -348,7 +435,7 @@ public class RemoveEngineerEvents extends Wrapper{
 			//			TwoSec();
 			OneSec();
 			emptyPage = driver.getPageSource();
-//			System.out.println(emptyPage);
+			//			System.out.println(emptyPage);
 
 
 			while(emptyPage.contains("Estimate No:") || emptyPage.contains("Job No:")) {
@@ -378,34 +465,68 @@ public class RemoveEngineerEvents extends Wrapper{
 						click("//*[@text='Diary history']");
 					}
 					else{
-						//Diary card click
+
 						ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
-						click("//*[contains(@text,'am')]");
-						
-						//
-						ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
-						pageSource = driver.getPageSource();
-						if(pageSource.contains("Diary time tracking")) 
-						{
-							click("//*[@text='View diary event']");
-						}
-						else 
-						{
-							//Click edit
-							ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
-							click("//*[@text='Edit']");
+						List<MobileElement> elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
 
-							//Click Delete 
-							ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
-							click("(//*[@class='android.widget.Button'])[2]");
+						for (int i = 0; i < elements.size(); i++) {
+							// Re-fetch the list to avoid stale elements after any action
 
-							//click confirm Delete
-							ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
-							click("//*[@text='Delete']");
+							System.out.println("How many cards are appeared? "+elements.size());
+							elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
+
+							try {
+								MobileElement ListOfElements = elements.get(i);
+								ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
+								String attribute = ListOfElements.getAttribute("class");
+
+
+								ListOfElements.click();
+
+								ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
+								pageSource = driver.getPageSource();
+								if (pageSource.contains("Diary time tracking")) {
+
+									click("//*[@text='View diary event']");
+
+
+								} else {
+									ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
+									click("//*[@text='Edit']");
+
+									// Click Delete
+									ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
+									click("(//*[@class='android.widget.Button'])[2]");
+
+									// Click confirm Delete
+									ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
+									click("//*[@text='Delete']");
+									TwoSec();
+									Swipe(452, 298, 446, 94);
+
+
+									i--;
+
+								}
+							}catch(Exception e) 
+							{
+								ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
+								click("//*[@text='Diary history']");
+							}
 						}
-						//Diary hoistory back
+						//========================================================================
+					}
+
+					OneSec();
+					pageSource = driver.getPageSource();
+
+					if(pageSource.contains("Diary history")) 
+					{
 						ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
 						click("//*[@text='Diary history']");
+					}else 
+					{
+						System.out.println("");
 					}
 
 					ExplicitWait_ElementToBeClickable("//*[@text='Abort job']");
@@ -440,36 +561,59 @@ public class RemoveEngineerEvents extends Wrapper{
 						click("//*[@text='Diary history']");
 					}
 					else{
-						//Diary card click
+
 						ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
-						click("//*[contains(@text,'am')]");
-						
-						//
-						ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
-						pageSource = driver.getPageSource();
-						if(pageSource.contains("Diary time tracking")) 
-						{
-							click("//*[@text='View diary event']");
-						}
-						else 
-						{
-							//Click edit
-							ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
-							click("//*[@text='Edit']");
+						List<MobileElement> elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
 
-							//Click Delete 
-							ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
-							click("(//*[@class='android.widget.Button'])[2]");
+						for (int i = 0; i < elements.size(); i++) {
+							// Re-fetch the list to avoid stale elements after any action
 
-							//click confirm Delete
-							ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
-							click("//*[@text='Delete']");
+							System.out.println("How many cards are appeared? "+elements.size());
+							elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
+
+							try {
+								MobileElement ListOfElements = elements.get(i);
+								ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
+								String attribute = ListOfElements.getAttribute("class");
+
+
+								ListOfElements.click();
+
+								ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
+								pageSource = driver.getPageSource();
+								if (pageSource.contains("Diary time tracking")) {
+
+									click("//*[@text='View diary event']");
+
+
+								} else {
+									ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
+									click("//*[@text='Edit']");
+
+									// Click Delete
+									ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
+									click("(//*[@class='android.widget.Button'])[2]");
+
+									// Click confirm Delete
+									ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
+									click("//*[@text='Delete']");
+									TwoSec();
+									Swipe(452, 298, 446, 94);
+
+
+									i--;
+
+								}
+							}catch(Exception e) 
+							{
+								ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
+								click("//*[@text='Diary history']");
+							}
 						}
-						//Diary hoistory back
-						ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
-						click("//*[@text='Diary history']");
+						//========================================================================
 					}
 
+					ExplicitWait_PresenceOfEle("//*[contains(@text,'Tap on the green bar for further actions')]");
 					click("//*[contains(@text,'Tap on the green bar for further actions')]");
 					ExplicitWait_ElementToBeClickable("//*[@text='Free of charge job']");
 					click("//*[@text='Free of charge job']");
@@ -503,34 +647,56 @@ public class RemoveEngineerEvents extends Wrapper{
 					}
 					else
 					{
-						//Diary card click
+
 						ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
-						click("//*[contains(@text,'am')]");
-						
-						//
-						ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
-						pageSource = driver.getPageSource();
-						if(pageSource.contains("Diary time tracking")) 
-						{
-							click("//*[@text='View diary event']");
-						}
-						else 
-						{
-							//Click edit
-							ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
-							click("//*[@text='Edit']");
+						List<MobileElement> elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
 
-							//Click Delete 
-							ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
-							click("(//*[@class='android.widget.Button'])[2]");
+						for (int i = 0; i < elements.size(); i++) {
+							// Re-fetch the list to avoid stale elements after any action
 
-							//click confirm Delete
-							ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
-							click("//*[@text='Delete']");
+							System.out.println("How many cards are appeared? "+elements.size());
+							elements = driver.findElements(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View"));
+
+							try {
+								MobileElement ListOfElements = elements.get(i);
+								ExplicitWait_PresenceOfEle("//*[contains(@text,'am')]");
+								String attribute = ListOfElements.getAttribute("class");
+
+
+								ListOfElements.click();
+
+								ExplicitWait_PresenceOfEle("//*[@text='View diary event']");
+								pageSource = driver.getPageSource();
+								if (pageSource.contains("Diary time tracking")) {
+
+									click("//*[@text='View diary event']");
+
+
+								} else {
+									ExplicitWait_ElementToBeClickable("//*[@text='Edit']");
+									click("//*[@text='Edit']");
+
+									// Click Delete
+									ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.Button'])[2]");
+									click("(//*[@class='android.widget.Button'])[2]");
+
+									// Click confirm Delete
+									ExplicitWait_ElementToBeClickable("//*[@text='Delete']");
+									click("//*[@text='Delete']");
+									TwoSec();
+									Swipe(452, 298, 446, 94);
+
+
+									i--;
+
+								}
+							}catch(Exception e) 
+							{
+								ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
+								click("//*[@text='Diary history']");
+							}
 						}
-						//Diary hoistory back
-						ExplicitWait_PresenceOfEle("//*[@text='Diary history']");
-						click("//*[@text='Diary history']");
+						//========================================================================
 					}
 					FiveSec();
 					OneSec();
@@ -570,7 +736,7 @@ public class RemoveEngineerEvents extends Wrapper{
 				//				TwoSec();
 				OneSec();
 				emptyPage = driver.getPageSource();
-//				System.out.println(emptyPage);
+				//				System.out.println(emptyPage);
 			}
 
 			//Menu
@@ -580,7 +746,7 @@ public class RemoveEngineerEvents extends Wrapper{
 			click("//*[@text='On going work']");
 			OneSec();
 			emptyPage = driver.getPageSource();
-//			System.out.println(emptyPage);
+			//			System.out.println(emptyPage);
 
 		}while(emptyPage.contains("Estimate No:") || emptyPage.contains("Job No:")) ;
 
@@ -590,8 +756,14 @@ public class RemoveEngineerEvents extends Wrapper{
 
 
 
-	
 	}
-	
+
+
+	public void CloseTheAppWhenItWasCrashed() 
+	{
+		ExplicitWait_PresenceOfEle("//*[@text='Wait']");
+		click("//*[@text='OK']");
+	}
+
 
 }

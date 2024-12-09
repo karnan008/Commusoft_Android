@@ -36,7 +36,7 @@ public class OnGoingWork extends Wrapper{
 	
 	public void Click_FirstJob() 
 	{
-		ThreeSec();
+		FourSec();
 		ExplicitWait_PresenceOfEle("//*[contains(@text,'Job No:')]");
 		click("//*[contains(@text,'Job No:')]");
 	}

@@ -38,13 +38,13 @@ public class AssetNewUIMob extends Wrapper{
 //	assets.Click_Assets();
 //	add_Notes.Click_FabIcon_NewUI();
 
-	public void Search_Asset() 
+	public void SearchNewUI() 
 	{
 		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.ImageView'])[2]");
 		click("(//*[@class='android.widget.ImageView'])[2]");
 	}
 
-	public void Type_AssetType(String type) 
+	public void TypeNewUI(String type) 
 	{
 		ExplicitWait_PresenceOfEle("//*[@class='android.widget.EditText']");
 		type("//*[@class='android.widget.EditText']", type);

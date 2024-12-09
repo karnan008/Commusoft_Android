@@ -10,12 +10,14 @@ import org.testng.annotations.Test;
 import MainPack.BaseClassForWebAndMobile;
 import MobAndWeb_Page.AddContactsForCustomerInMob;
 import MobAndWeb_Page.AssetNewUIMob;
+import MobAndWeb_Page.CustomFormNewUIMob;
 import MobAndWeb_Page.DiaryHistory;
 import MobAndWeb_Page.EditCustomerInWebAndVerifyInMob;
 import MobAndWeb_Page.EditWorkAddressOnMob;
 import MobAndWeb_Page.EstimateAccept;
 import MobAndWeb_Page.EstimateReject;
 import MobAndWeb_Page.Job;
+import MobAndWeb_Page.NewUIElements;
 import MobAndWeb_Page.NewUI_AddWorkAddress;
 import MobAndWeb_Page.NewUI_EditCustomerOnMob;
 import MobAndWeb_Page.Newui_CreateCustomerOnMob;
@@ -1165,8 +1167,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		propertyHistoiry.Select_Job_PropertyHistory();
 		propertyHistoiry.CustomerInformation_Section();
 		propertyHistoiry.JobDetails_Section();
-		ScrollDown24("Appointment history");
 		propertyHistoiry.OtherJobDetails_Section();
+		ScrollDown24("Appointment history");		
 		propertyHistoiry.AppointmentHistory_Section();
 		ScrollDown24("Attachments");
 		propertyHistoiry.InstalledParts_Section();
@@ -1544,8 +1546,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		//Add
 		assets.Click_Assets();
 		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.Search_Asset();
-		assetNewUIMob.Type_AssetType(Asset_Type);
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(Asset_Type);
 		assetNewUIMob.Select_Asset(Asset_Type);
 		assetNewUIMob.Fuel();
 		assetNewUIMob.Select_Fuel(Fuel1);
@@ -1575,8 +1577,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		assetNewUIMob.Verify_DeletedCustomerAsset();
 		//Add
 		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.Search_Asset();
-		assetNewUIMob.Type_AssetType(Asset_Type);
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(Asset_Type);
 		assetNewUIMob.Select_Asset(Asset_Type);
 		assetNewUIMob.Fuel();
 		assetNewUIMob.Select_Fuel(Fuel1);
@@ -1591,19 +1593,243 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();
 	}
+	
+	@Test(priority=42, retryAnalyzer = RerunTestCase.class)
+	public void Add_Draft_Delete_Clone_CustomFormNewUI() throws AWTException, InterruptedException, IOException 
+	{
+		
 
-	@Test (enabled=false)
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
+		Assets assets = new Assets(driver);
+		AssetNewUIMob assetNewUIMob = new AssetNewUIMob(driver);
+		Customer customer = new Customer(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		Reminder_Mob reminder = new Reminder_Mob(driver);
+		CustomFormNewUIMob customFormNewUIMob = new CustomFormNewUIMob(driver);
+		OnGoingWork onGoingWork = new OnGoingWork(driver);
+		Job job = new Job(driver);
+		Certificate certificate = new Certificate(driver);
+		NewUIElements newUIElements = new NewUIElements(driver);
+
+		newui_CreateCustomerOnMob.Home();
+		customer.profile();
+		assetNewUIMob.Labs();
+		customFormNewUIMob.EnableNewCustomForms();
+		attached_Files.Click_Save_NewUI();
+		customer.Back_Profile();
+		newui_CreateCustomerOnMob.Home();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		onGoingWork.CustomerOnGoing();
+		onGoingWork.FabIcon_OnGoing();
+		onGoingWork.AddNewJob();
+		job.JobDescription();
+		job.SaveJob();
+		onGoingWork.Click_FirstJob();
+		job.StoreJobNumber_CustomerOnGoing();
+		add_Notes.Click_Choc_MenuButton();
+		certificate.Click_Certificate();
+		//Draft
+		add_Notes.Click_FabIcon_NewUI();
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
+		assetNewUIMob.Select_Asset(AllFieldsCertificate);
+		customFormNewUIMob.Click_Next();
+		customFormNewUIMob.BackForDraft();
+		
+		//Delete
+		customFormNewUIMob.WaitForCertificate();
+		assetNewUIMob.Swipe_Asset();
+		reminder.Delete();
+		reminder.Delete();
+		customFormNewUIMob.Verify_DeletedCustomForm();
+		
+		//Add
+		add_Notes.Click_FabIcon_NewUI();
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
+		assetNewUIMob.Select_Asset(AllFieldsCertificate);
+		customFormNewUIMob.Next_InputType(CertificateInput);
+		attached_Files.Click_Save_NewUI();
+		customFormNewUIMob.Close_NotSync_BottomSheet();
+		customFormNewUIMob.Verify_CertificateNumber();
+		
+		//Clone
+		customFormNewUIMob.Click_FirstCertificate();
+		customFormNewUIMob.Clone();
+		customFormNewUIMob.Verify_ClonedCertificate();
+		newUIElements.BackArrowButton();
+		
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
+	
+	}
+
+	@Test (enabled=true)
 	public void Demo() throws AWTException, InterruptedException, IOException 
 	{
 		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
+		Customer customer = new Customer(driver);
+		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
 		
-		RemoveEngineerEvents removeEngineerEvents = new RemoveEngineerEvents(driver);
-		removeEngineerEvents.Demo();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.FabIcon();
+		newui_CreateCustomerOnMob.AddProperty();
+		newui_CreateCustomerOnMob.Typeofproperty();
+		newui_CreateCustomerOnMob.Click_Customer();
+		newui_CreateCustomerOnMob.TypeofCustomer();
+		newui_CreateCustomerOnMob.Click_PrivateCustomer();
+		customer.Customer_title(Title);
+		customer.Customer_Name(Name);
+		customer.Customer_SurName(Surname);
+		customer.Customer_Telephone("8248724397");
+		customer.Customer_Mobile("8248724397");
+		customer.Customer_email("ssaravanan@commusoft.com");
+		customer.Customer_AddressLine1("Address line 1");
+		customer.Customer_Save();
+		ThreeSec();
+		customer.StoreCustomerNumber();
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
+		//Asset new UI
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Assets assets = new Assets(driver);
+		AssetNewUIMob assetNewUIMob = new AssetNewUIMob(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		Reminder_Mob reminder = new Reminder_Mob(driver);
+
+		newui_CreateCustomerOnMob.Home();
+		customer.profile();
+		assetNewUIMob.Labs();
+		assetNewUIMob.EnableNewAssets();
+		attached_Files.Click_Save_NewUI();
+		customer.Back_Profile();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		//Add
+		assets.Click_Assets();
+		add_Notes.Click_FabIcon_NewUI();
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(Asset_Type);
+		assetNewUIMob.Select_Asset(Asset_Type);
+		assetNewUIMob.Fuel();
+		assetNewUIMob.Select_Fuel(Fuel1);
+		assetNewUIMob.Make();
+		assetNewUIMob.Select_Make(Make1);
+		assetNewUIMob.Model();
+		assetNewUIMob.Select_Model(Model1);
+		assetNewUIMob.Location();
+		assetNewUIMob.Select_Location(Location1);
+		attached_Files.Click_Save_NewUI();
+		//Edit
+		assetNewUIMob.Click_CustomerAsset(Asset_Type);
+		assetNewUIMob.Edit();
+		assetNewUIMob.Fuel();
+		assetNewUIMob.Select_Fuel(Fuel2);
+		assetNewUIMob.Make();
+		assetNewUIMob.Select_Make(Make2);
+		assetNewUIMob.Model();
+		assetNewUIMob.Select_Model(Model2);
+		assetNewUIMob.Location();
+		assetNewUIMob.Select_Location(Location2);
+		attached_Files.Click_Save_NewUI();
+		//Delete
+		assetNewUIMob.Swipe_Asset();
+		reminder.Delete();
+		reminder.Delete();
+		assetNewUIMob.Verify_DeletedCustomerAsset();
+		//Add
+		add_Notes.Click_FabIcon_NewUI();
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(Asset_Type);
+		assetNewUIMob.Select_Asset(Asset_Type);
+		assetNewUIMob.Fuel();
+		assetNewUIMob.Select_Fuel(Fuel1);
+		assetNewUIMob.Make();
+		assetNewUIMob.Select_Make(Make1);
+		assetNewUIMob.Model();
+		assetNewUIMob.Select_Model(Model1);
+		assetNewUIMob.Location();
+		assetNewUIMob.Select_Location(Location1);
+		attached_Files.Click_Save_NewUI();
+		assetNewUIMob.Back_AssetNewUI();
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
+		//Custom form New UI
+		CustomFormNewUIMob customFormNewUIMob = new CustomFormNewUIMob(driver);
+		OnGoingWork onGoingWork = new OnGoingWork(driver);
+		Job job = new Job(driver);
+		Certificate certificate = new Certificate(driver);
+		NewUIElements newUIElements = new NewUIElements(driver);
+
+		newui_CreateCustomerOnMob.Home();
+		customer.profile();
+		assetNewUIMob.Labs();
+		customFormNewUIMob.EnableNewCustomForms();
+		attached_Files.Click_Save_NewUI();
+		customer.Back_Profile();
+		newui_CreateCustomerOnMob.Home();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		onGoingWork.CustomerOnGoing();
+		onGoingWork.FabIcon_OnGoing();
+		onGoingWork.AddNewJob();
+		job.JobDescription();
+		job.SaveJob();
+		onGoingWork.Click_FirstJob();
+		job.StoreJobNumber_CustomerOnGoing();
+		add_Notes.Click_Choc_MenuButton();
+		certificate.Click_Certificate();
+		//Draft
+		add_Notes.Click_FabIcon_NewUI();
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
+		assetNewUIMob.Select_Asset(AllFieldsCertificate);
+		customFormNewUIMob.Click_Next();
+		customFormNewUIMob.BackForDraft();
+		
+		//Delete
+		customFormNewUIMob.WaitForCertificate();
+		assetNewUIMob.Swipe_Asset();
+		reminder.Delete();
+		reminder.Delete();
+		customFormNewUIMob.Verify_DeletedCustomForm();
+		
+		//Add
+		add_Notes.Click_FabIcon_NewUI();
+		assetNewUIMob.SearchNewUI();
+		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
+		assetNewUIMob.Select_Asset(AllFieldsCertificate);
+		customFormNewUIMob.Next_InputType(CertificateInput);
+		attached_Files.Click_Save_NewUI();
+		customFormNewUIMob.Close_NotSync_BottomSheet();
+		customFormNewUIMob.Verify_CertificateNumber();
+		
+		//Clone
+		customFormNewUIMob.Click_FirstCertificate();
+		customFormNewUIMob.Clone();
+		customFormNewUIMob.Verify_ClonedCertificate();
+		newUIElements.BackArrowButton();
+		
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
 	}
 	
 	
-// 41 Cases Completed
 	
 
-
 }
+
