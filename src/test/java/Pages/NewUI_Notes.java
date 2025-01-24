@@ -1,10 +1,17 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.touch.offset.PointOption;
 
 import MainPack.Wrapper;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+
+;
 
 public class NewUI_Notes extends Wrapper{
 	
@@ -61,14 +68,38 @@ public class NewUI_Notes extends Wrapper{
 		click("//*[@text='Add new phone call']");
 	}
 	
-	public void Call_Type() 
+	public void Call_Type() throws InterruptedException 
 	{
 		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.EditText'])[1]");
 		click("(//*[@class='android.widget.EditText'])[1]");
-		ExplicitWait_PresenceOfEle("//*[@text='Inbound call']");
-		click("//*[@text='Inbound call']");
+//		ExplicitWait_PresenceOfEle("//*[@text='Inbound call']");
+//		click("//*[@text='Inbound call']");    -------> Comment this two lines bcoz of the element is not there 
+		
+		 ThreeSec();
+		// Coordinates of the button
+//		 int x = 228;  // Replace with actual x-coordinate
+//	        int y = 840;  // Replace with actual y-coordinate
+//	        
+////	        Actions actions = new Actions(driver);
+////	        actions.moveToElement(null, x, y).click().perform();
+//	        
+//	        
+////	        // Perform tap action using TouchAction
+//	        TouchAction touchAction = new TouchAction(driver);
+//	        touchAction.tap(TapOptions.tapOptions().withPosition(PointOption.point(x, y))).perform();
+
+	        
+	        clickpoint(217, 697);
+
 	}
 	
+	public void Call_TypeDemo() throws InterruptedException 
+	{
+		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.EditText'])[1]");
+		click("(//*[@class='android.widget.EditText'])[1]");
+		clickpoint(228, 840);
+	}
+ 
 	public void ContactNameSearch() 
 	{
 		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.ImageView'])[1]");
@@ -103,8 +134,8 @@ public class NewUI_Notes extends Wrapper{
 	
 	public void Search_To() 
 	{
-		ExplicitWait_PresenceOfEle("(//*[@class='android.view.View'])[last()-1]");
-		click("(//*[@class='android.view.View'])[last()-1]");
+		ExplicitWait_PresenceOfEle("//*[@content-desc='email_search_icon']");//(//*[@class='android.view.View'])[last()-1]
+		click("//*[@content-desc='email_search_icon']");//(//*[@class='android.view.View'])[last()-1]
 		ExplicitWait_PresenceOfEle("(//*[@class='android.view.View'])[last()-1]");
 		click("(//*[@class='android.view.View'])[last()-1]");
 		ExplicitWait_PresenceOfEle("//*[@class='android.widget.Button']");
@@ -130,8 +161,8 @@ public class NewUI_Notes extends Wrapper{
 	
 	public void sendEmail() 
 	{
-		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.ImageView'])[4]");
-		click("(//*[@class='android.widget.ImageView'])[4]");
+		ExplicitWait_PresenceOfEle("(//*[@class='android.widget.ImageView'])[5]");
+		click("(//*[@class='android.widget.ImageView'])[5]");
 	}
 	
 	public void Verify_Email() 

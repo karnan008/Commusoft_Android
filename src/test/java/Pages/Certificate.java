@@ -38,8 +38,17 @@ public class Certificate extends Wrapper{
 	
 	public void Click_Fab() 
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/add']");
-		click("//*[@resource-id='com.commusoft.v4:id/add']");
+		
+		
+		try 
+		{
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']"); 
+			click("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");
+		}catch(Exception e) 
+		{
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/add']"); //*[@resource-id='com.commusoft.v4:id/addFloatingButton']
+			click("//*[@resource-id='com.commusoft.v4:id/add']");
+		}
 	}
 	
 	public void Search_Certificate(String typecertificate) //com.commusoft.v4:id/searchText
@@ -71,10 +80,10 @@ public class Certificate extends Wrapper{
 			
 			try 
 			{
-				MobileElement displayed = driver.findElement(By.xpath("//*[ends-with(@text,'put')]"));
+				MobileElement displayed = driver.findElement(By.xpath("(//*[contains(@text,'put')])[1]"));
 				boolean input = displayed.isDisplayed();
 				System.out.println("Input Field is displayed: "+input);
-				type("//*[@text='Tap To Enter�']", certificateinput);
+				type("(//*[@text='Tap To Enter…'])[1]", certificateinput);
 			}catch(Exception e) 
 			{
 				

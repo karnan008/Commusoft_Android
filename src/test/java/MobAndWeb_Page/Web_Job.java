@@ -45,9 +45,13 @@ public class Web_Job extends Wrapper{
 		Webclick("//input[@name='bookDiaryEvent']");
 	}
 	
-	public void SaveJob() 
+	public void SaveJob() throws InterruptedException 
 	{
-		ExplicitWait_PresenceOfEle2("//span[text()='Add job']");
+		
+		Thread.sleep(2000);
+//		ExplicitWait_PresenceOfEle2("//span[text()='Add job']");
+		ScrollWeb("//span[text()='Add job']");
+		ExplicitWait_ElementToBeClickable2("//span[text()='Add job']");
 		Webclick("//span[text()='Add job']");
 		
 	}

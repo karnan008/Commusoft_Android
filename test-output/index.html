@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,12 +21,11 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>testng-customsuite.xml</span>
+                    <span>C:\Users\sarav\AppData\Local\Temp\testng-eclipse-2135922357\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,40 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,  2 skipped,  </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="CreateCustomerAndVerifyInWeb">CreateCustomerAndVerifyInWeb</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="Demo">Demo</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Retried methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content skipped suite-Default_suite">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="CreateCustomerAndVerifyInWeb">CreateCustomerAndVerifyInWeb</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="New_ui_Testclass.BasicSmoke_MobAndWeb" class="method navigator-link" hash-for-method="CreateCustomerAndVerifyInWeb">CreateCustomerAndVerifyInWeb</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -138,232 +118,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">New_ui_Testclass.BasicSmoke_MobAndWeb</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CreateCustomerAndVerifyInWeb">
-                  </a> <!-- CreateCustomerAndVerifyInWeb -->
-                  <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of any elements located by By.xpath: //input[@type=&apos;search&apos;] (tried for 40 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;karnans-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:1806:5e00:4599:7c36%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.support.events.EventFiringWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.119, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: /var/folders/lm/6yyjzpm17l1...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59538}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d70810c983d499a6e6025b688e3d2abe
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.WrapperForWeb.ExplicitWait_PresenceOfEle2(WrapperForWeb.java:307)
-	at MobAndWeb_Page.VerifyCustomerOnWeb.SearchCustomer(VerifyCustomerOnWeb.java:35)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.CreateCustomerAndVerifyInWeb(BasicSmoke_MobAndWeb.java:84)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
+                  <a name="Demo">
+                  </a> <!-- Demo -->
+                  <span class="method-name">Demo</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
-          <div class="suite-Default_suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">New_ui_Testclass.BasicSmoke_MobAndWeb</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="CreateCustomerAndVerifyInWeb">
-                  </a> <!-- CreateCustomerAndVerifyInWeb -->
-                  <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//*[@text=&apos;Add Property&apos;]/following-sibling::*[@class=&apos;android.view.View&apos;])[1] (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:826)
-	at MobAndWeb_Page.Newui_CreateCustomerOnMob.AddProperty(Newui_CreateCustomerOnMob.java:44)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.CreateCustomerAndVerifyInWeb(BasicSmoke_MobAndWeb.java:69)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;karnans-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:1806:5e00:4599:7c36%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;21.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: 127.0.0.1:6555, newCommandTimeout: 10000, noReset: true, platformName: android, platformVersion: 13.0}, deviceApiLevel: 33, deviceManufacturer: Genymobile, deviceModel: Pixel 6, deviceName: 127.0.0.1:6555, deviceScreenDensity: 411, deviceScreenSize: 1080x2400, deviceUDID: 127.0.0.1:6555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.5687501, platform: LINUX, platformName: Android, platformVersion: 13, statBarHeight: 62, takesScreenshot: true, viewportRect: {height: 2338, left: 0, top: 62, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 93b18ea9-09d1-4911-a667-cfc46e27b254
-*** Element info: {Using=xpath, value=(//*[@text=&apos;Add Property&apos;]/following-sibling::*[@class=&apos;android.view.View&apos;])[1]}
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 29 more
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="CreateCustomerAndVerifyInWeb">
-                  </a> <!-- CreateCustomerAndVerifyInWeb -->
-                  <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@text=&apos;Search&apos;] (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at MainPack.Wrapper.ExplicitWait_ElementToBeClickable(Wrapper.java:826)
-	at MobAndWeb_Page.Newui_CreateCustomerOnMob.Search_Tab(Newui_CreateCustomerOnMob.java:28)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.CreateCustomerAndVerifyInWeb(BasicSmoke_MobAndWeb.java:67)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;karnans-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:1806:5e00:4599:7c36%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;21.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: 127.0.0.1:6555, newCommandTimeout: 10000, noReset: true, platformName: android, platformVersion: 13.0}, deviceApiLevel: 33, deviceManufacturer: Genymobile, deviceModel: Pixel 6, deviceName: 127.0.0.1:6555, deviceScreenDensity: 411, deviceScreenSize: 1080x2400, deviceUDID: 127.0.0.1:6555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.5687501, platform: LINUX, platformName: Android, platformVersion: 13, statBarHeight: 62, takesScreenshot: true, viewportRect: {height: 2338, left: 0, top: 62, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 93b18ea9-09d1-4911-a667-cfc46e27b254
-*** Element info: {Using=xpath, value=//*[@text=&apos;Search&apos;]}
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 29 more
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/lm/6yyjzpm17l1dr4crhvsmpxzh0000gn/T/testng-eclipse--1473632658/testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\sarav\AppData\Local\Temp\testng-eclipse-2135922357\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -374,7 +147,7 @@ Session ID: 93b18ea9-09d1-4911-a667-cfc46e27b254
     &lt;classes&gt;
       &lt;class name=&quot;New_ui_Testclass.BasicSmoke_MobAndWeb&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;CreateCustomerAndVerifyInWeb&quot;/&gt;
+          &lt;include name=&quot;Demo&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- New_ui_Testclass.BasicSmoke_MobAndWeb --&gt;
     &lt;/classes&gt;
@@ -416,24 +189,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CreateCustomerAndVerifyInWeb')
+data.setCell(0, 1, 'Demo')
 data.setCell(0, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(0, 3, 71370);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'CreateCustomerAndVerifyInWeb')
-data.setCell(1, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(1, 3, 60224);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'CreateCustomerAndVerifyInWeb')
-data.setCell(2, 2, 'New_ui_Testclass.BasicSmoke_MobAndWeb')
-data.setCell(2, 3, 40563);
+data.setCell(0, 3, 217383);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -448,69 +213,97 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">29 ignored methods</span>
+            <span class="header-content">43 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">New_ui_Testclass.BasicSmoke_MobAndWeb</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">Abort_Job_InMobile</span>
+                <span class="ignored-method-name">Reject_JobDiaryEvent_InMobile</span>
                 <br/>
-                <span class="ignored-method-name">EditWorkAddressAndVerifyinWeb</span>
+                <span class="ignored-method-name">Customer_PropertyHistory_EstimateAcceptedStatusCheck</span>
                 <br/>
-                <span class="ignored-method-name">Verify_AcceptedEstimate_OnWeb</span>
-                <br/>
-                <span class="ignored-method-name">Abort_Estimate_InMobile</span>
+                <span class="ignored-method-name">Verify_JobReminder_OnWeb</span>
                 <br/>
                 <span class="ignored-method-name">Assets_ForCustomer</span>
                 <br/>
-                <span class="ignored-method-name">Reject_Estimate_InMobile</span>
+                <span class="ignored-method-name">AddCommunicationsForCustomer_InMobile</span>
                 <br/>
-                <span class="ignored-method-name">Verify_AbortedEstimateInWeb</span>
+                <span class="ignored-method-name">JobAppointment_StatusVerification_PropertyHistory</span>
                 <br/>
-                <span class="ignored-method-name">VerifyCustomerNotesInWeb</span>
-                <br/>
-                <span class="ignored-method-name">EstimateAcceptWithPrice_InMobile</span>
-                <br/>
-                <span class="ignored-method-name">VerifyCustomerFilesInWeb</span>
-                <br/>
-                <span class="ignored-method-name">Verify_CompletedJobWithFinalInvoice_OnWeb</span>
-                <br/>
-                <span class="ignored-method-name">Verify_RejectedJobInWeb</span>
-                <br/>
-                <span class="ignored-method-name">GenerateCertificateForJob_And_VerifyInMobile</span>
-                <br/>
-                <span class="ignored-method-name">Verify_AbortedJobInWeb</span>
-                <br/>
-                <span class="ignored-method-name">AddWorkaddressAndVerifyInWeb</span>
+                <span class="ignored-method-name">Customer_PropertyHistory_JobInvoicedStatusCheck</span>
                 <br/>
                 <span class="ignored-method-name">Add_AttachedFiles_ForCustomer_InMobile</span>
                 <br/>
-                <span class="ignored-method-name">AddCommunicationsForCustomer_InMobile</span>
+                <span class="ignored-method-name">Reject_EstimateDiaryEvent_InMobile</span>
                 <br/>
-                <span class="ignored-method-name">EmailCertificateFromMobileAndVerifyOnTheGmailApp</span>
+                <span class="ignored-method-name">Customer_PropertyHistory_EstimateRejectedStatusCheck</span>
                 <br/>
-                <span class="ignored-method-name">Add_Reminders_ForCustomer_InMobile</span>
+                <span class="ignored-method-name">VerifyCustomerNotesInWeb</span>
                 <br/>
-                <span class="ignored-method-name">EditCustomerAndVerifyInWeb</span>
+                <span class="ignored-method-name">Add_Edit_Delete_CustomerAssetNewUI</span>
                 <br/>
-                <span class="ignored-method-name">VerifyCustomerContactOnWeb</span>
+                <span class="ignored-method-name">Job_PropetyHistory_AllSection_View_Verification</span>
                 <br/>
                 <span class="ignored-method-name">AddCustomerContactsInMob</span>
                 <br/>
-                <span class="ignored-method-name">CompleteJobWithInvoiceAndPayment_InMobile</span>
+                <span class="ignored-method-name">VerifyCustomerContactOnWeb</span>
+                <br/>
+                <span class="ignored-method-name">GenerateCertificateForJob_And_VerifyInMobile</span>
+                <br/>
+                <span class="ignored-method-name">Add_Edit_Delete_ReminderForJob</span>
+                <br/>
+                <span class="ignored-method-name">Add_Reminders_ForCustomer_InMobile</span>
+                <br/>
+                <span class="ignored-method-name">Abort_Estimate_InMobile</span>
+                <br/>
+                <span class="ignored-method-name">EditCustomerAndVerifyInWeb</span>
+                <br/>
+                <span class="ignored-method-name">RejectEstimatePriceInMob</span>
+                <br/>
+                <span class="ignored-method-name">CreateCustomerAndVerifyInWeb</span>
+                <br/>
+                <span class="ignored-method-name">Verify_CompletedJobWithFinalInvoice_OnWeb</span>
+                <br/>
+                <span class="ignored-method-name">Job_FreeOfCharge_VerifyStatusOnThePropertHistoryList</span>
                 <br/>
                 <span class="ignored-method-name">Verify_CompletedCertificateInWeb</span>
                 <br/>
-                <span class="ignored-method-name">WorkAddressEditInWebAndVerifyInMob</span>
+                <span class="ignored-method-name">EstimateAcceptWithPrice_InMobile</span>
+                <br/>
+                <span class="ignored-method-name">Verify_AbortedJob_DiaryEvent_InWeb</span>
+                <br/>
+                <span class="ignored-method-name">VerifyCustomerFilesInWeb</span>
+                <br/>
+                <span class="ignored-method-name">PropertyHistory_SectionVerification</span>
+                <br/>
+                <span class="ignored-method-name">Verify_RejectedEstimateDiaryEventInWeb</span>
+                <br/>
+                <span class="ignored-method-name">Verify_RejectedJobDiaryEvent_InWeb</span>
                 <br/>
                 <span class="ignored-method-name">CustomerEditInWebAndVerifyInMob</span>
                 <br/>
+                <span class="ignored-method-name">CompleteJobWithInvoiceAndPayment_InMobile</span>
+                <br/>
+                <span class="ignored-method-name">Verify_AcceptedEstimate_OnWeb</span>
+                <br/>
+                <span class="ignored-method-name">Verify_AbortedEstimateInWeb</span>
+                <br/>
+                <span class="ignored-method-name">Add_Edit_Delete_Complete_OfficeTask_VerifyBothMobAndWeb</span>
+                <br/>
+                <span class="ignored-method-name">WorkAddressEditInWebAndVerifyInMob</span>
+                <br/>
+                <span class="ignored-method-name">AddWorkaddressAndVerifyInWeb</span>
+                <br/>
                 <span class="ignored-method-name">VerifyCustomerRemindersOnWeb</span>
                 <br/>
-                <span class="ignored-method-name">Verify_RejectedEstimateInWeb</span>
+                <span class="ignored-method-name">Abort_Job_DiaryEvent_InMobile</span>
                 <br/>
-                <span class="ignored-method-name">Reject_Job_InMobile</span>
+                <span class="ignored-method-name">Add_Draft_Delete_Clone_CustomFormNewUI</span>
+                <br/>
+                <span class="ignored-method-name">EditWorkAddressAndVerifyinWeb</span>
+                <br/>
+                <span class="ignored-method-name">EmailCertificateFromMobileAndVerifyOnTheGmailApp</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -529,49 +322,31 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">CurrentClassName</span>
-                <span class="method-start">163 ms</span>
+                <span class="method-start">120 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">ConnectWeb</span>
-                <span class="method-start">168 ms</span>
+                <span class="method-start">126 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">59633 ms</span>
+                <span class="method-start">8803 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                <span class="method-start">70094 ms</span>
+                <span class="method-name">Demo</span>
+                <span class="method-start">15833 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=CreateCustomerAndVerifyInWeb status=SKIP method=BasicSmoke_MobAndWeb.CreateCustomer...)</span>
-                <span class="method-start">112691 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                <span class="method-start">113114 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=CreateCustomerAndVerifyInWeb status=SKIP method=BasicSmoke_MobAndWeb.CreateCustomer...)</span>
-                <span class="method-start">175381 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">CreateCustomerAndVerifyInWeb</span>
-                <span class="method-start">175550 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown([TestResult name=CreateCustomerAndVerifyInWeb status=FAILURE method=BasicSmoke_MobAndWeb.CreateCusto...)</span>
-                <span class="method-start">248942 ms</span>
+                <span class="method-name">teardown([TestResult name=Demo status=SUCCESS method=BasicSmoke_MobAndWeb.Demo()[pri:0, instance:New_ui_Testc...)</span>
+                <span class="method-start">233221 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDownWeb</span>
-                <span class="method-start">254121 ms</span>
+                <span class="method-start">233415 ms</span>
               </div> <!-- configuration-suite after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">254140 ms</span>
+                <span class="method-start">233425 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

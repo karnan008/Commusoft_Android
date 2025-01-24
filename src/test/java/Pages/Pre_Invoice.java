@@ -22,8 +22,8 @@ public class Pre_Invoice extends Wrapper{
 	
 	public void Click_Invoice_Fabicon() 
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/add']");
-		click("//*[@resource-id='com.commusoft.v4:id/add']");
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']"); 
+		click("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");
 	}
 	
 	public void Type_InvoiceDes(String preinvoice) 
@@ -110,8 +110,8 @@ public class Pre_Invoice extends Wrapper{
 	}
 	public void Payment_FabIcon() 
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/add']");
-		click("//*[@resource-id='com.commusoft.v4:id/add']");
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");
+		click("//*[@resource-id='com.commusoft.v4:id/addFloatingButton']");
 	}
 	public void Method() 
 	{

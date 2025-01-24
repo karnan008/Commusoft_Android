@@ -33,7 +33,37 @@ public class Attached_Files extends Wrapper{
 		ExplicitWait_ElementToBeClickable("//*[@text='Take photo']");
 		click("//*[@text='Take photo']");
 	}
+	
+	public void Click_RecordVideo() //Take Photo
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Record video']");
+		click("//*[@text='Record video']");
+	}
+	
+	public void Click_ScanDocument() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Scan document']");
+		click("//*[@text='Scan document']");
+	}
 
+	public void Capture_Document() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/cameraCaptureButton']");
+		click("//*[@resource-id='com.commusoft.v4:id/cameraCaptureButton']");
+	}
+	public void ConfirmScan() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/confirmButton']");
+		click("//*[@resource-id='com.commusoft.v4:id/confirmButton']");
+	}
+	
+	public void Capture_SingleVideo() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/im_videocapture']");
+		click("//*[@resource-id='com.commusoft.v4:id/im_videocapture']");
+		FiveSec();
+		click("//*[@resource-id='com.commusoft.v4:id/im_videocapture']");
+	}
 	public void Exception_Handling() 
 	{
 		TwoSec();
@@ -55,25 +85,41 @@ public class Attached_Files extends Wrapper{
 		type("//*[@resource-id='com.commusoft.v4:id/filenameValue']", photofilename);
 	}
 
-	public void Click_Save() //com.commusoft.v4:id/save
+	public void Capture_SingleImage() 
 	{
-
-		//		try 
-		//		{
-		//			if(driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/save']")).isDisplayed()) 
-		//				ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
-		//			    click("//*[@resource-id='com.commusoft.v4:id/save']");
-		//			
-		//		}catch(Exception e) 
-		//		{
-		//			System.out.println("Save Button Is Not Appeared");
-		//		}
-		;	
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
-		click("//*[@resource-id='com.commusoft.v4:id/save']");
-
+		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.ImageView'])[2]");
+		click("(//*[@class='android.widget.ImageView'])[2]");
+	}
+	
+	public void Click_Save_OldUI() //com.commusoft.v4:id/save
+	{
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
+			click("//*[@resource-id='com.commusoft.v4:id/save']");
+	}
+	
+	public void Click_Save_NewUI() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Save']");
+		click("//*[@text='Save']");
+	}
+	public void Upload_Save() 
+	{
+		ThreeSec();
+		ExplicitWait_ElementToBeClickable("//*[@text='Save']");
+		click("//*[@text='Save']");
 	}
 
+	public void Click_PhotoNext() 
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.TextView'])[6]");
+		click("(//*[@class='android.widget.TextView'])[6]");
+	}
+	public void Click_VideoNext() 
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.TextView'])[2]");
+		click("(//*[@class='android.widget.TextView'])[2]");
+	}
+	
 	public void Take_Photo() //com.google.android.GoogleCamera:id/shutter_button
 	{
 		try 
@@ -152,26 +198,33 @@ public class Attached_Files extends Wrapper{
 		
 
 	}
+	
+	public void Click_ChooseFromGallery() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Choose from gallery']");
+		click("//*[@text='Choose from gallery']");
+	}
 
 	public void SelectFromCameraRoll() 
 	{
 		
 		ExplicitWait_PresenceOfEle("//*[@class='android.widget.ImageButton']");
 		ActionClick("//*[@class='android.widget.ImageButton']");
+//		click("//*[@class='android.widget.ImageButton']");
 		FiveSec();
-		ExplicitWait_PresenceOfEle("//*[@text='Images']");//Images
-		ActionClick("//*[@text='Images']");//Image
+		ExplicitWait_ElementToBeClickable("(//*[@text='Images'])[2]");//Images
+		ActionClick("(//*[@text='Images'])[2]");//Image
 		TwoSec();
-		try 
-		{
-			ExplicitWait_PresenceOfEle("//*[@text='Images']");
-			if(driver.findElement(By.xpath("//*[@text='Images']")).isDisplayed())
-				ActionClick("//*[@text='Images']");
-		}catch(Exception e) 
-		{
-			System.out.println("Image text is not displayed");
-		}
-		TwoSec();
+//		try 
+//		{
+//			ExplicitWait_PresenceOfEle("//*[@text='Images']");
+//			if(driver.findElement(By.xpath("//*[@text='Images']")).isDisplayed())
+//				ActionClick("//*[@text='Images']");
+//		}catch(Exception e) 
+//		{
+//			System.out.println("Image text is not displayed");
+//		}
+//		TwoSec();
 		try 
 		{
 			ExplicitWait_PresenceOfEle("//*[@text='Camera']");
@@ -196,12 +249,39 @@ public class Attached_Files extends Wrapper{
 			System.out.println("Select Button Is Not Displayed");
 		}
 	}
+	
+	public void SelectPicFromGallery() 
+	{
+//		ExplicitWait_PresenceOfEle("//*[@class='android.widget.ImageButton']");
+//		ActionClick("//*[@class='android.widget.ImageButton']");
+//		ExplicitWait_ElementToBeClickable("(//*[@text='Redmi Note 8 Pro'])[3]");//Images
+//		click("(//*[@text='Redmi Note 8 Pro'])[3]");
+//		ExplicitWait_ElementToBeClickable("//*[@text='Images']");//Images
+//		ActionClick("//*[@text='Images']");
+		ExplicitWait_PresenceOfEle("(//android.widget.LinearLayout[@resource-id=\"com.google.android.documentsui:id/item_root\"])[1]/android.widget.LinearLayout");
+		click("(//android.widget.LinearLayout[@resource-id=\"com.google.android.documentsui:id/item_root\"])[1]/android.widget.LinearLayout");
+	}
 
 	public void Click_RecordAudio() 
 	{
 //		FiveSec();
 		ExplicitWait_ElementToBeClickable("//*[@text='Record audio']");//Record audio
 		click("//*[@text='Record audio']");
+	}
+	
+	public void Capture_Audio() 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@content-desc='record audio']");
+		click("//*[@content-desc='record audio']");
+		FiveSec();	
+		click("//*[@content-desc='record audio']");
+	}
+	
+	public void Enter_AudioFileName(String audio_filename) 
+	{
+		ExplicitWait_ElementToBeClickable("//*[@class='android.widget.EditText']");
+		type("//*[@class='android.widget.EditText']", audio_filename);		
+		
 	}
 
 	public void Enter_Audio_Filename(String audiofilename) //com.commusoft.v4:id/filenameValue
@@ -239,8 +319,58 @@ public class Attached_Files extends Wrapper{
 		System.out.println("Audio File Is Saved");
 
 	}
+	
+	public void verifyAllAttachedFilesOnMOb() 
+	{
+		MobileElement file1 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[4]"));
+		Verify_AssertTrue(file1);
+		MobileElement file2 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[6]"));
+		Verify_AssertTrue(file2);
+		MobileElement file3 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[8]"));
+		Verify_AssertTrue(file3);
+		MobileElement file4 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[10]"));
+		Verify_AssertTrue(file4);
+		MobileElement file5 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[13]"));
+		Verify_AssertTrue(file5);
+	}
+
+	public void AttachedFiles_Back() //*[@text='Attached files']
+	{
+		ThreeSec();
+//		ExplicitWait_ElementToBeClickable("//*[@class='android.widget.ImageView'][1]");
+//		click("//*[@class='android.widget.ImageView'][1]");
+		ExplicitWait_ElementToBeClickable("//*[@text='Attached files']");
+		click("//*[@text='Attached files']");
+	}
 
 
+	public void Rename_File(String job_image)//JobImage
+	{
+		ExplicitWait_ElementToBeClickable("//*[contains(@text,'B')]");
+		click("//*[contains(@text,'B')]");
+		ExplicitWait_ElementToBeClickable("//*[@class='android.widget.EditText']");
+		clear("//*[@class='android.widget.EditText']");
+		type("//*[@class='android.widget.EditText']", job_image);
+	}
+	
+	public void Attachments_ViewAll() 
+	{
+		ExplicitWait_ElementToBeClickable("(//*[@text='Attachments']/following-sibling::*[contains(@text,'View all')])[1]");
+		click("(//*[@text='Attachments']/following-sibling::*[contains(@text,'View all')])[1]");
+	}
 
-
+	public void Today_Status_Verification() 
+	{
+		ExplicitWait_PresenceOfEle("//*[@text='Today']");
+		MobileElement today = driver.findElement(By.xpath("//*[@text='Today']"));
+		Verify_AssertTrue(today);
+	}
+	
+	public void Files_Verifications(String filename) 
+	{
+		ExplicitWait_PresenceOfEle("//*[contains(@text,'"+filename+"')]");
+		MobileElement file = driver.findElement(By.xpath("//*[contains(@text,'"+filename+"')]"));
+		Verify_AssertTrue(file);
+	}
 }
+

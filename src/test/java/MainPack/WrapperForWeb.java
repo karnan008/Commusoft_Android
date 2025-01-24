@@ -341,6 +341,11 @@ public class WrapperForWeb {
 		
 	}
 	
+	public void Verify_AssertTrueWeb(WebElement ele) 
+	{
+		Assert.assertTrue(ele.isDisplayed());
+	}
+	
 	public void WebOneSec() 
 	{
 

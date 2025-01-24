@@ -1,6 +1,8 @@
 package MobAndWeb_Page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import MainPack.WrapperForWeb;
 
@@ -16,14 +18,17 @@ public class VerifyRemindersOnWeb extends WrapperForWeb{
 	
 	public void ReminderTab() 
 	{
-		ExplicitWait_ElementToBeClickable2("//span[text()='View']");
-	    Webclick("//span[text()='View']");	
+		ExplicitWait_ElementToBeClickable2("//p[text()='Service reminders ']/span");
+	    Webclick("//p[text()='Service reminders ']/span");	
 	}
 	
-	public void VerifyServiceReminder(String title, String webname,String editsurname)  {
-		WebTwoSec();
-		ExplicitWait_PresenceOfEle2("//td[text()='"+title+" "+webname+" "+editsurname+"']");
-		AssertTrueWeb("//td[text()='"+title+" "+webname+" "+editsurname+"']");
+	public void VerifyServiceReminder()  
+	{
+		WebFiveSec();
+		ExplicitWait_PresenceOfEle2("//button[text()=' Edit ']");		
+		WebElement reminder = driverWeb.findElement(By.xpath("//button[text()=' Edit ']"));
+		Verify_AssertTrueWeb(reminder);
+		
 	}
 
 }

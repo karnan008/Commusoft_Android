@@ -56,8 +56,8 @@ public class InvoiceBreakdown extends Wrapper{
 	}
 	public void Select_Parts() 
 	{
-		ExplicitWait_ElementToBeClickable("//*[@text='Parts']");
-		click("//*[@text='Parts']");
+		ExplicitWait_ElementToBeClickable("(//*[@resource-id='android:id/text1'])[2]");
+		click("(//*[@resource-id='android:id/text1'])[2]");
 	}
 	public void Type_Total(String total) 
 	{

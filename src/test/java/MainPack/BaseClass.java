@@ -104,7 +104,7 @@ public class BaseClass extends Wrapper{
 		try {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps.setCapability(MobileCapabilityType.VERSION, "9");
+		caps.setCapability(MobileCapabilityType.VERSION, "9");//VERSION
 		//caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Star_Android");
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
 		//caps.setCapability(MobileCapabilityType.UDID, "ZF62248MWJ"); 
@@ -113,7 +113,7 @@ public class BaseClass extends Wrapper{
 		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 10000);
 		caps.setCapability(MobileCapabilityType.NO_RESET, true);
 		caps.setCapability("automationName", "UiAutomator2");//UiAutomator2  espresso
-		caps.setCapability(MobileCapabilityType.APPLICATION_NAME, "Commusoft");
+		caps.setCapability(MobileCapabilityType.APPLICATION_NAME, "Commusoft");//APPLICATION_NAME
 		caps.setCapability("clearDeviceLogsOnStart", true);
 		caps.setCapability("appPackage", "com.commusoft.v4"); //-----> Live pointed 
 		
