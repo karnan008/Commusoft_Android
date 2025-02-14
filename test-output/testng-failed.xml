@@ -5,18 +5,33 @@
     <classes>
       <class name="New_ui_Testclass.BasicSmoke_MobAndWeb">
         <methods>
-          <include name="teardown"/>
-          <include name="teardown"/>
-          <include name="ConnectWeb"/>
           <include name="CurrentClassName"/>
-          <include name="setup"/>
-          <include name="AddWorkaddressAndVerifyInWeb"/>
+          <include name="Verify_JobReminder_OnWeb"/>
           <include name="Job_PropetyHistory_AllSection_View_Verification"/>
+          <include name="teardown"/>
+          <include name="teardown"/>
+          <include name="Verify_CompletedJobWithFinalInvoice_OnWeb"/>
+          <include name="GenerateCertificateForJob_And_VerifyInMobile"/>
+          <include name="Add_Edit_Delete_Complete_OfficeTask_VerifyBothMobAndWeb"/>
+          <include name="JobAppointment_StatusVerification_PropertyHistory"/>
+          <include name="handleAppCrash"/>
+          <include name="EmailCertificateFromMobileAndVerifyOnTheGmailApp"/>
+          <include name="Customer_PropertyHistory_JobInvoicedStatusCheck"/>
           <include name="initial"/>
           <include name="Add_Draft_Delete_Clone_CustomFormNewUI"/>
-          <include name="Assets_ForCustomer"/>
+          <include name="Job_FreeOfCharge_VerifyStatusOnThePropertHistoryList"/>
+          <include name="Reject_JobDiaryEvent_InMobile"/>
+          <include name="CompleteJobWithInvoiceAndPayment_InMobile"/>
+          <include name="Verify_RejectedJobDiaryEvent_InWeb"/>
+          <include name="Verify_CompletedCertificateInWeb"/>
+          <include name="ConnectWeb"/>
+          <include name="Add_Edit_Delete_ReminderForJob"/>
+          <include name="setup"/>
+          <include name="Abort_Job_DiaryEvent_InMobile"/>
+          <include name="Add_Edit_Delete_CustomerAssetNewUI"/>
+          <include name="Verify_AbortedJob_DiaryEvent_InWeb"/>
           <include name="tearDownWeb"/>
-          <include name="handleAppCrash"/>
+          <include name="PropertyHistory_SectionVerification"/>
         </methods>
       </class> <!-- New_ui_Testclass.BasicSmoke_MobAndWeb -->
     </classes>
