@@ -133,16 +133,17 @@ public class CustomFormNewUIMob extends Wrapper{
 		MobileElement clonedCertificate = driver.findElement(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View"));
 		MobileElement addedCertificate = driver.findElement(By.xpath("//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View"));
 		
-		OneSec();
+		TwoSec();
 		Verify_AssertTrue(clonedCertificate);
 		Verify_AssertTrue(addedCertificate);
 	}
 
 	public void Close_NotSync_BottomSheet() 
 	{
-		ThreeSec();
+		FourSec();
 
 		String pageSource = driver.getPageSource();
+		System.out.println(pageSource);
 		if(pageSource.contains("Close")) 
 		{
 			click("//android.widget.TextView[@text='Close']");

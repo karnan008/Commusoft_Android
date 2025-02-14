@@ -2,7 +2,9 @@ package New_ui_Testclass;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -68,6 +70,12 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		Running_UserName = System.getProperty("user.name");
 		System.out.println("Current running user name: " + Running_UserName);
 	}
+	
+	@AfterMethod(alwaysRun = true)
+	public void handleAppCrash() throws MalformedURLException {
+	    CloseTheAppWhenItWasCrashed();
+	}
+	
 	@Test(priority=0, retryAnalyzer = RerunTestCase.class)
 	public void CreateCustomerAndVerifyInWeb() throws InterruptedException, IOException 
 	{
@@ -100,6 +108,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=1, retryAnalyzer = RerunTestCase.class)
 	public void EditCustomerAndVerifyInWeb() throws InterruptedException 
 	{
+		
+		
 		NewUI_EditCustomerOnMob newUI_EditCustomerOnMob = new NewUI_EditCustomerOnMob(driver);
 		Customer customer = new Customer(driver);
 		VerifyEditedCustomerOnWeb verifyEditedCustomerOnWeb = new VerifyEditedCustomerOnWeb(driverWeb);
@@ -131,6 +141,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=2, retryAnalyzer = RerunTestCase.class)//priority=2
 	public void CustomerEditInWebAndVerifyInMob() 
 	{
+		
 		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
 		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
 		NewUI_EditCustomerOnMob newUI_EditCustomerOnMob = new NewUI_EditCustomerOnMob(driver);
@@ -156,6 +167,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=3, retryAnalyzer = RerunTestCase.class)
 	public void AddCommunicationsForCustomer_InMobile() throws InterruptedException 
 	{
+		
 		
 		Add_Notes add_Notes = new Add_Notes(driver);
 		NewUI_Notes newUI_Notes = new NewUI_Notes(driver);
@@ -239,7 +251,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		add_Notes.Click_FabIcon_NewUI();
 		attached_Files.Click_ScanDocument();    
 		attached_Files.Capture_Document();
-		attached_Files.ConfirmScan();
+		attached_Files.ConfirmScan();                
 		attached_Files.ConfirmScan();
 		attached_Files.Click_Save_NewUI();
 		add_Notes.Click_FabIcon_NewUI();
@@ -262,7 +274,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	{
 		VerifyAttachedFilesOnWeb verifyAttachedFilesOnWeb = new VerifyAttachedFilesOnWeb(driverWeb);
 		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
-		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
+		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);       
 		editCustomerInWeb.SearchCustomer();
 		verifyCustomerOnWeb.ClickCustomer();
 		verifyAttachedFilesOnWeb.FilesTab();
@@ -274,6 +286,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=7, retryAnalyzer = RerunTestCase.class)
 	public void Assets_ForCustomer() throws InterruptedException 
 	{
+		
+		
 		Assets assets = new Assets(driver);
 		Add_Notes add_Notes = new Add_Notes(driver);
 		Attached_Files attached_Files = new Attached_Files(driver);
@@ -303,6 +317,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	public void Add_Reminders_ForCustomer_InMobile() throws InterruptedException
 	{
 
+		
 		Customer customer = new Customer(driver);
 
 		customer.Customer_More();
@@ -333,6 +348,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=10, retryAnalyzer = RerunTestCase.class)
 	public void AddCustomerContactsInMob() throws InterruptedException 
 	{
+		
 		AddContactsForCustomerInMob addContactsForCustomerInMob = new AddContactsForCustomerInMob(driver);
 		Add_Notes add_Notes = new Add_Notes(driver);
 		NewUI_Notes newUI_Notes = new NewUI_Notes(driver);
@@ -364,6 +380,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=12, retryAnalyzer = RerunTestCase.class)
 	public void AddWorkaddressAndVerifyInWeb() throws InterruptedException 
 	{
+		
 		NewUI_AddWorkAddress newUI_AddWorkAddress = new NewUI_AddWorkAddress(driver);
 		Customer customer = new Customer(driver);
 		VerifyWorkaddressOnWeb verifyWorkaddressOnWeb = new VerifyWorkaddressOnWeb(driverWeb);
@@ -390,6 +407,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=13, retryAnalyzer = RerunTestCase.class)
 	public void EditWorkAddressAndVerifyinWeb() throws InterruptedException 
 	{
+		
 		EditWorkAddressOnMob editWorkAddressOnMob = new EditWorkAddressOnMob(driver);
 		Customer customer = new Customer(driver);
 		VerifyEditedCustomerOnWeb verifyEditedCustomerOnWeb = new VerifyEditedCustomerOnWeb(driverWeb);
@@ -443,6 +461,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=15, retryAnalyzer = RerunTestCase.class)
 	public void EstimateAcceptWithPrice_InMobile() throws InterruptedException, IOException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		EstimateAccept estimate2 = new EstimateAccept(driver);
 		Estimate estimate = new Estimate(driver);
 		estimate2.Diary();
@@ -489,8 +509,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		estimate.Sign_save();
 		estimate.Verify_Status();
 		estimate.Verify_JobConvertionStatus();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
+		
 
 	}
 
@@ -508,6 +527,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=17, retryAnalyzer = RerunTestCase.class)
 	public void Customer_PropertyHistory_EstimateAcceptedStatusCheck() throws AWTException, InterruptedException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
 		Add_Notes add_Notes = new Add_Notes(driver);
 		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
@@ -526,6 +547,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=18, retryAnalyzer = RerunTestCase.class)
 	public void RejectEstimatePriceInMob() throws InterruptedException, IOException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		EstimateAccept estimate2 = new EstimateAccept(driver);
 		Estimate estimate = new Estimate(driver);
 		estimate2.Diary();
@@ -567,13 +590,14 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		ThreeSec();
 		Estimatesignature(266, 916, 731, 900);//simulator
 		estimate.Sign_save();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
+		
 	}
 
 	@Test(priority=19, retryAnalyzer = RerunTestCase.class)
 	public void Customer_PropertyHistory_EstimateRejectedStatusCheck() throws AWTException, InterruptedException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
 		Add_Notes add_Notes = new Add_Notes(driver);
 		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
@@ -584,13 +608,14 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		propertyHistoiry.History();
 		propertyHistoiry.Verify_Estimate_Rejected_Status();
 		propertyHistoiry.Back_PropertyHistory();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
+		
 	}
 
 	@Test(priority=20, retryAnalyzer = RerunTestCase.class)
 	public void Reject_EstimateDiaryEvent_InMobile() throws InterruptedException, IOException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		EstimateAccept estimate2 = new EstimateAccept(driver);
 		Estimate estimate = new Estimate(driver);
 		EstimateReject estimateReject = new EstimateReject(driver);
@@ -628,6 +653,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	@Test(priority=22, retryAnalyzer = RerunTestCase.class)
 	public void Abort_Estimate_InMobile() throws InterruptedException, IOException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		EstimateAccept estimate2 = new EstimateAccept(driver);
 		Estimate estimate = new Estimate(driver);
 		EstimateReject estimateReject = new EstimateReject(driver);
@@ -660,655 +687,24 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		verifyRejectedEstimateInWeb.verify_AbortedStatus();
 
 	}
-
+	
 	@Test(priority=24, retryAnalyzer = RerunTestCase.class)
-	public void CompleteJobWithInvoiceAndPayment_InMobile() throws InterruptedException, IOException 
+	public void A_RemoveEngineerDiaryEvent() throws InterruptedException 
 	{
-		Job job = new Job(driver);
-		Pages.Job job2 = new Pages.Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimate2.Diary_Travel();
-		estimate2.Diary_Arrive();
-		job2.Arrive_Question1(ArriveAnswer);
-		job.Next();
-
-		signature(172, 1696, 655, 1683);//simulator
-		job.Finish();
-		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
-		job.Finish();
-		job2.Job_Leave();
-		job2.Complete_Continue();
-		signature(246, 1677, 772, 1712);
-		job2.Sign_save();
-		signature(310, 868, 791, 941);
-		job2.Sign_save();
-		job2.Final_Invoice();
-		job2.Invoice_Description();
-		ScrollDown24Contains("Invoice category");
-		job2.Invoice_Category();
-		job2.Invoice_Next();
-		job2.Breakdown_Value("100");
-		job2.ExceptionHandling_For_DataNotLoad_InInvoiceScreen();
-		job2.Invoice_Saves();
-		job2.Payment();
-		job2.SelectOtherOptionAndMethod_Value();
-		job2.Nominal_Value();
-		job2.Payment_Save();
-		job2.Job_Status();
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();
-
-	}
-
-	@Test(priority=25, retryAnalyzer = RerunTestCase.class)
-	public void Verify_CompletedJobWithFinalInvoice_OnWeb() 
-	{
-		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		verifyCompletedJobAndInvoice.SearchJob();
-		verifyCompletedJobAndInvoice.Select_Job();
-		verifyCompletedJobAndInvoice.VerifyJobstatus();
-		verifyCompletedJobAndInvoice.VerifyInvoice();
-		verifyCompletedJobAndInvoice.Invoice_Tab();
-		verifyCompletedJobAndInvoice.Verify_Invoice_Final_Status();
-		verifyCompletedJobAndInvoice.Verify_Invoice_Payment_Status();
-	}
-
-	@Test(priority=26, retryAnalyzer = RerunTestCase.class)
-	public void Customer_PropertyHistory_JobInvoicedStatusCheck() throws AWTException, InterruptedException 
-	{
-
-		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
-		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.SearchCustomerByNumber();
-		newui_CreateCustomerOnMob.SelectCustomer();
-		add_Notes.Click_Choc_MenuButton();
-		propertyHistoiry.History();
-		propertyHistoiry.Verify_Job_Invoiced_Status();
-		propertyHistoiry.Back_PropertyHistory();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-
-	}
-
-	@Test(priority=27, retryAnalyzer = RerunTestCase.class)
-	public void Reject_JobDiaryEvent_InMobile() throws InterruptedException, IOException 
-	{
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Job job = new Job(driver);
-		EstimateReject estimateReject = new EstimateReject(driver);
-		Estimate estimate = new Estimate(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		job.StoreJobNumber();
-		estimateReject.Reject();
-		estimateReject.Reject_FeedbackReason();
-		estimate.save();
-	}
-
-	@Test(priority=28, retryAnalyzer = RerunTestCase.class)
-	public void Verify_RejectedJobDiaryEvent_InWeb() throws InterruptedException 
-	{
-		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		VerifyRejectedEstimateInWeb verifyRejectedEstimateInWeb = new VerifyRejectedEstimateInWeb(driverWeb);
-		verifyCompletedJobAndInvoice.SearchJob();
-		verifyCompletedJobAndInvoice.Select_Job();
-		verifyRejectedEstimateInWeb.verify_RejectStatus();
-
-	}
-
-	@Test(priority=29, retryAnalyzer = RerunTestCase.class)
-	public void Abort_Job_DiaryEvent_InMobile() throws InterruptedException, IOException
-	{
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Job job = new Job(driver);
-		EstimateReject estimateReject = new EstimateReject(driver);
-		Estimate estimate = new Estimate(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimateReject.Abort();
-		estimateReject.Abort_FeedbackReason();
-		estimate.save();
-	}
-
-	@Test(priority=30, retryAnalyzer = RerunTestCase.class)
-	public void Verify_AbortedJob_DiaryEvent_InWeb() throws InterruptedException 
-	{
-		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		VerifyRejectedEstimateInWeb verifyRejectedEstimateInWeb = new VerifyRejectedEstimateInWeb(driverWeb);
-		verifyCompletedJobAndInvoice.SearchJob();
-		verifyCompletedJobAndInvoice.Select_Job();
-		verifyRejectedEstimateInWeb.verify_AbortedStatus();
-	}
-
-	@Test(priority=31, retryAnalyzer = RerunTestCase.class)
-	public void GenerateCertificateForJob_And_VerifyInMobile() throws InterruptedException, IOException 
-	{
-		Job job = new Job(driver);
-		Pages.Job job2 = new Pages.Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Certificate certificate = new Certificate(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimate2.Diary_Travel();
-		estimate2.Diary_Arrive();
-		job2.Arrive_Question1(ArriveAnswer);
-		job.Next();
-
-		signature(172, 1696, 655, 1683);//simulator
-		job.Finish();
-		add_Notes.Click_Choc_MenuButton();
-		certificate.Click_Certificate();
-		certificate.Click_Fab();
-		certificate.Search_Certificate(AllFieldsCertificate);
-		certificate.Select_Certificate();
-		certificate.Next_InputType(CertificateInput);
-		certificate.Click_Finish();
-		certificate.verify_CertificateNumber();
-		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
-		job.Finish();
-		job2.Job_Leave();
-		job2.Complete_Continue();
-		signature(246, 1677, 772, 1712);
-		job2.Sign_save();
-		signature(310, 868, 791, 941);
-		job2.Sign_save();
-		job2.DoNothing();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-	}
-
-
-	@Test(priority=32, retryAnalyzer = RerunTestCase.class)
-	public void Verify_CompletedCertificateInWeb() 
-	{
-		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		Certificate certificate = new Certificate(driverWeb);
-		verifyCompletedJobAndInvoice.SearchJob();
-		verifyCompletedJobAndInvoice.Select_Job();
-		certificate.web_Certificate();
-		certificate.verify_WebCertificate();
-
-	}
-
-
-	@Test(priority=33, retryAnalyzer = RerunTestCase.class)
-	public void EmailCertificateFromMobileAndVerifyOnTheGmailApp() throws InterruptedException, IOException 
-	{
-
-		Job job = new Job(driver);
-		Pages.Job job2 = new Pages.Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Certificate certificate = new Certificate(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimate2.Diary_Travel();
-		estimate2.Diary_Arrive();
-		job2.Arrive_Question1(ArriveAnswer);
-		job.Next();
-
-		signature(172, 1696, 655, 1683);//simulator
-		job.Finish();
-		add_Notes.Click_Choc_MenuButton();
-		certificate.Click_Certificate();
-		certificate.Click_Fab();
-		certificate.Search_Certificate(AllFieldsCertificate);
-		certificate.Select_Certificate();
-		certificate.Next_InputType(CertificateInput);
-		certificate.Click_Finish();
-		certificate.verify_CertificateNumber();
-		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
-		job.Finish();
-		job2.Job_Leave();
-		job2.Complete_Continue();
-		signature(246, 1677, 772, 1712);
-		job2.Sign_save();
-		signature(310, 868, 791, 941);
-		job2.Sign_save();
-		job2.DoNothing();
-		certificate.Click_CompletedCertificate();
-		certificate.Email();
-		certificate.To();
-		certificate.CheckBox();
-		job2.Sign_save();
-		job2.Sign_save();
-		ThreeSec();
-		SwitchToGmailApp();
-		certificate.Verify_CertificateOnGmailApp(AllFieldsCertificate);
-		TwoSec();
-		SwitchToV4();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-
-
-
-	}
-
-
-	@Test(priority=34, retryAnalyzer = RerunTestCase.class)
-	public void Add_Edit_Delete_ReminderForJob() throws InterruptedException, IOException 
-	{
-		Job job = new Job(driver);
-		Pages.Job job2 = new Pages.Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Customer customer = new Customer(driver);
-		Attached_Files attached_Files = new Attached_Files(driver);
-		Reminder_Mob reminder = new Reminder_Mob(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		job.StoreJobNumber();
-
-		add_Notes.Click_Choc_MenuButton();
-		customer.Reminders();
-		add_Notes.Click_FabIcon_NewUI();
-		reminder.Select_ReminderDate();
-		reminder.Reminder_Note();
-		reminder.SelectUser(UserName);
-		attached_Files.Click_Save_NewUI();
-		reminder.Swipe_ReminderNotes();
-		reminder.Delete();
-		reminder.Delete();
-		add_Notes.Click_FabIcon_NewUI();
-		reminder.Select_ReminderDate();
-		reminder.Reminder_Note();
-		reminder.SelectUser(UserName);
-		attached_Files.Click_Save_NewUI();
-		reminder.Click_ReminderNotes();
-		reminder.Click_Edit();
-		reminder.EditDate();
-		reminder.EditNotes();
-		attached_Files.Click_Save_NewUI();
-		reminder.ReminderBack();
-
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimate2.Diary_Travel();
-		estimate2.Diary_Arrive();
-		job2.Arrive_Question1(ArriveAnswer);
-		job.Next();
-
-		signature(172, 1696, 655, 1683);//simulator
-		job.Finish();
-		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
-		job.Finish();
-		job2.Job_Leave();
-		job2.Complete_Continue();
-		signature(246, 1677, 772, 1712);
-		job2.Sign_save();
-		signature(310, 868, 791, 941);
-		job2.Sign_save();
-		job2.DoNothing();
-
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-	}
-
-	@Test(priority=35, retryAnalyzer = RerunTestCase.class)
-	public void Verify_JobReminder_OnWeb() 
-	{
-		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		Reminder_Web reminder_Web = new Reminder_Web(driverWeb);
-		verifyCompletedJobAndInvoice.SearchJob();
-		verifyCompletedJobAndInvoice.Select_Job();
-		reminder_Web.Click_Reminder();
-		reminder_Web.Verify_Reminder(UserName);
-
-	}
-
-	@Test(priority=36, retryAnalyzer = RerunTestCase.class)
-	public void Add_Edit_Delete_Complete_OfficeTask_VerifyBothMobAndWeb() throws InterruptedException, IOException 
-	{
-		Job job = new Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Attached_Files attached_Files = new Attached_Files(driver);
-		Reminder_Mob reminder = new Reminder_Mob(driver);
-		OfficeTask_Mob officeTask_Mob = new OfficeTask_Mob(driver);
-		OfficeTask_Web officeTask_Web = new OfficeTask_Web(driverWeb);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		job.StoreJobNumber();
-
-		add_Notes.Click_Choc_MenuButton();
-		officeTask_Mob.OfficeTask();
-		add_Notes.Click_FabIcon_NewUI();
-		officeTask_Mob.AssignTo();
-		officeTask_Mob.Select_AssignTo(UserName);
-		officeTask_Mob.Description();
-		attached_Files.Click_Save_NewUI();
-		officeTask_Mob.Verify_IncompleteTask();
-		officeTask_Mob.Swipe_OfficeTask();
-		reminder.Delete();
-		reminder.Delete();
-		add_Notes.Click_FabIcon_NewUI();
-		officeTask_Mob.AssignTo();
-		officeTask_Mob.Select_AssignTo(UserName);
-		officeTask_Mob.Description();
-		attached_Files.Click_Save_NewUI();
-		officeTask_Mob.Verify_User(UserName);
-		officeTask_Mob.Click_OfficeTask(UserName);
-		reminder.Click_Edit();
-		officeTask_Mob.Edit_Des();
-		attached_Files.Click_Save_NewUI();
-
-		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
-		verifyCompletedJobAndInvoice.SearchJob();
-		verifyCompletedJobAndInvoice.Select_Job();
-
-		officeTask_Web.Click_OfficeTask();
-		officeTask_Web.Verify_Username(UserName);
-		officeTask_Web.CompleteOfficeTask();
-
-		officeTask_Mob.Verify_Completed_OfficeTask();
-		officeTask_Mob.OfficeTaskBack();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-	}
-
-	@Test(priority=37, retryAnalyzer = RerunTestCase.class)
-	public void Job_FreeOfCharge_VerifyStatusOnThePropertHistoryList() throws InterruptedException, IOException, AWTException 
-	{
-		Job job = new Job(driver);
-		Pages.Job job2 = new Pages.Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimate2.Diary_Travel();
-		estimate2.Diary_Arrive();
-		job2.Arrive_Question1(ArriveAnswer);
-		job.Next();
-
-		signature(172, 1696, 655, 1683);//simulator
-		job.Finish();
-
-		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
-		job.Finish();
-		job2.Job_Leave();
-		job2.Complete_Continue();
-		signature(246, 1677, 772, 1712);
-		job2.Sign_save();
-		signature(310, 868, 791, 941);
-		job2.Sign_save();
-		job2.FreeOfCharge();
-		job2.FreeOfCharge_Reason();
-		job2.Sign_save();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-
-		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
-		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
-		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.SearchCustomerByNumber();
-		newui_CreateCustomerOnMob.SelectCustomer();
-		add_Notes.Click_Choc_MenuButton();
-		propertyHistoiry.History();
-		propertyHistoiry.Verify_Job_FreeOfCharge_Status();
-		propertyHistoiry.Back_PropertyHistory();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-	}
-
-	@Test(priority=38, retryAnalyzer = RerunTestCase.class)
-	public void PropertyHistory_SectionVerification() throws InterruptedException, AWTException 
-	{
 		
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
-		estimate2.Diary();
-		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.SearchCustomerByNumber();
-		newui_CreateCustomerOnMob.SelectCustomer();
-		add_Notes.Click_Choc_MenuButton();
-		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
-		propertyHistoiry.History();
-		propertyHistoiry.Select_Job_PropertyHistory();
-		propertyHistoiry.CustomerInformation_Section();
-		propertyHistoiry.JobDetails_Section();
-		propertyHistoiry.OtherJobDetails_Section();
-		ScrollDown24("Appointment history");		
-		propertyHistoiry.AppointmentHistory_Section();
-		ScrollDown24("Attachments");
-		propertyHistoiry.InstalledParts_Section();
-		propertyHistoiry.Invoices_Section();
-		propertyHistoiry.Attachments_Section();
-		ScrollDown24("Purchase orders");
-		propertyHistoiry.Certificates_Section();
-		propertyHistoiry.AdditionalWorks_Section();
-		propertyHistoiry.PurchaseOrders_Section();
-		propertyHistoiry.Job_Back_PropertHistory();
-		propertyHistoiry.Back_PropertyHistory();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-
+		RemoveEngineerEvents removeEngineerEvents = new RemoveEngineerEvents(driver);
+		//Remove all the diary events		
+		removeEngineerEvents.RemoveEvent();
+		
 	}
-
-	@Test(priority=39, retryAnalyzer = RerunTestCase.class)
-	public void Job_PropetyHistory_AllSection_View_Verification() throws InterruptedException, IOException 
-	{
-
-		//Diary travel
-		Job job = new Job(driver);
-		Pages.Job job2 = new Pages.Job(driver);
-		EstimateAccept estimate2 = new EstimateAccept(driver);
-			
-		estimate2.Diary();
-		estimate2.Fabicon();
-		job.Click_Job();
-		estimate2.starttime();
-		estimate2.SelectStartTime();
-		estimate2.EndTime();
-		estimate2.SelectEndTime();
-		estimate2.SearchCustomer();
-		estimate2.SelectCustomer();
-		job.JobDescription();
-		job.SaveJob();
-		estimate2.EstimateTravel();
-
-
-		//Job Attached files
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Attached_Files attached_Files = new Attached_Files(driver);
-		add_Notes.Click_Choc_MenuButton();
-		attached_Files.Click_AttachedFiles();
-		add_Notes.Click_FabIcon_NewUI();
-		attached_Files.Click_TakePhoto();
-		attached_Files.Exception_Handling();
-		attached_Files.Capture_SingleImage();
-		attached_Files.Click_PhotoNext();
-		attached_Files.Rename_File(JobImage);
-		attached_Files.Click_Save_NewUI();
-		attached_Files.Click_Save_NewUI();
-		add_Notes.Click_FabIcon_NewUI();
-		attached_Files.Click_RecordVideo();
-		attached_Files.Exception_Handling();
-		attached_Files.Capture_SingleVideo();
-		attached_Files.Click_VideoNext();
-		attached_Files.Rename_File(JobVideo);
-		attached_Files.Click_Save_NewUI();
-		attached_Files.Click_Save_NewUI();
-		add_Notes.Click_FabIcon_NewUI();
-		attached_Files.Click_ScanDocument();
-		attached_Files.Capture_Document();
-		attached_Files.ConfirmScan();
-		attached_Files.ConfirmScan();
-		attached_Files.Rename_File(JobDocument);
-		attached_Files.Click_Save_NewUI();
-		attached_Files.Click_Save_NewUI();
-		add_Notes.Click_FabIcon_NewUI();
-		attached_Files.Click_RecordAudio();
-		attached_Files.Capture_Audio();
-		attached_Files.Click_Save_NewUI();
-		attached_Files.Enter_AudioFileName(JobAudio);
-		attached_Files.Click_Save_NewUI();
-		add_Notes.Click_FabIcon_NewUI();
-		attached_Files.Click_ChooseFromGallery();
-		attached_Files.SelectPicFromGallery();
-		attached_Files.Rename_File(JobUploadedImage);
-		attached_Files.Click_Save_NewUI();
-		attached_Files.Upload_Save();
-		attached_Files.AttachedFiles_Back();
-
-
-		//Diary Complete
-		estimate2.Diary_Accept();
-		job.StoreJobNumber();
-		estimate2.Diary_Travel();
-		estimate2.Diary_Arrive();
-		job2.Arrive_Question1(ArriveAnswer);
-		job.Next();		
-		signature(172, 1696, 655, 1683);//simulator
-		job.Finish();
-		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
-		job.Finish();
-		job2.Job_Leave();
-		job2.Complete_Continue();
-		signature(246, 1677, 772, 1712);
-		job2.Sign_save();
-		signature(310, 868, 791, 941);
-		job2.Sign_save();
-		job2.Final_Invoice();
-		job2.Invoice_Description();
-		ScrollDown24Contains("Invoice category");
-		job2.Invoice_Category();
-		job2.Invoice_Next();
-		job2.Breakdown_Value("100");
-		job2.ExceptionHandling_For_DataNotLoad_InInvoiceScreen();
-		job2.Invoice_Saves();
-		job2.Payment();
-		job2.SelectOtherOptionAndMethod_Value();
-		job2.Nominal_Value();
-		job2.Payment_Save();
-		job2.Job_Status();
-
-		//Verify Files on the property history details screen
-		add_Notes.Click_Choc_MenuButton();
-		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
-		propertyHistoiry.PropertyHistory();
-		propertyHistoiry.Click_Job_PropertHistoryList();
-		ScrollDown24("Attachments");
-		attached_Files.Attachments_ViewAll();
-		attached_Files.Today_Status_Verification();
-		attached_Files.Files_Verifications(JobImage);
-		attached_Files.Files_Verifications(JobVideo);
-		attached_Files.Files_Verifications(JobDocument);
-		attached_Files.Files_Verifications(JobAudio);
-		attached_Files.Files_Verifications(JobUploadedImage);
-		attached_Files.AttachedFiles_Back();
-		propertyHistoiry.Job_Back_PropertHistory();
-		propertyHistoiry.Back_PropertyHistory();   
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-
-
-	}
-
-	@Test(priority=40, retryAnalyzer = RerunTestCase.class)//priority=40, retryAnalyzer = RerunTestCase.class
+	
+	@Test(priority=24, retryAnalyzer = RerunTestCase.class)//priority=40, retryAnalyzer = RerunTestCase.class
 	public void JobAppointment_StatusVerification_PropertyHistory() throws AWTException, InterruptedException, IOException 
 	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		EstimateAccept estimate2 = new EstimateAccept(driver);
 		Add_Notes add_Notes = new Add_Notes(driver);
 		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
@@ -1319,11 +715,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		Estimate estimate = new Estimate(driver);
 		EditCustomerInWebAndVerifyInMob editCustomerInWeb = new EditCustomerInWebAndVerifyInMob(driverWeb);
 		Pages.Job job2 = new Pages.Job(driver);
-		RemoveEngineerEvents removeEngineerEvents = new RemoveEngineerEvents(driver);
-		//Remove all the diary events		
-		removeEngineerEvents.RemoveEvent();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
+		
 
 		
 		// Reject
@@ -1479,11 +871,11 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		job2.Arrive_Question1(ArriveAnswer);
 		job.Next();
 
-		signature(172, 1696, 655, 1683);//simulator
+		signature(172, 1242, 655, 1000);//simulator
 		job.Finish();
 
 		job2.Job_Report();
-		job2.LeaveQuestion2(LeaveAnswer);
+		job2.Arrive_Question1(LeaveAnswer);
 		job.Finish();
 		job2.Job_Leave();
 		job2.Complete_Continue();
@@ -1516,14 +908,682 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		diaryHistory.Back_DiaryHistory();
 		propertyHistoiry.Job_Back_PropertHistory();
 		propertyHistoiry.Back_PropertyHistory();
+		
+
+	}
+
+	@Test(priority=25, retryAnalyzer = RerunTestCase.class)
+	public void CompleteJobWithInvoiceAndPayment_InMobile() throws InterruptedException, IOException 
+	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		Job job = new Job(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimate2.Diary_Travel();
+		estimate2.Diary_Arrive();
+		job2.Arrive_Question1(ArriveAnswer);
+		job.Next();
+
+		signature(163, 1183, 672, 1114);//simulator
+		job.Finish();
+		job2.Job_Report();
+		job2.Arrive_Question1(LeaveAnswer);
+		job.Finish();
+		job2.Job_Leave();
+		job2.Complete_Continue();
+		signature(246, 1677, 772, 1712);
+		job2.Sign_save();
+		signature(310, 868, 791, 941);
+		job2.Sign_save();
+		job2.Final_Invoice();
+		job2.Invoice_Description();
+		ScrollDown24Contains("Invoice category");
+		job2.Invoice_Category();
+		job2.Invoice_Next();
+		job2.Breakdown_Value("100");
+		job2.ExceptionHandling_For_DataNotLoad_InInvoiceScreen();
+		job2.Invoice_Saves();
+		job2.Payment();
+		job2.SelectOtherOptionAndMethod_Value();
+		job2.Nominal_Value();
+		job2.Payment_Save();
+		job2.Job_Status();
+		
+
+	}
+
+	@Test(priority=26, retryAnalyzer = RerunTestCase.class)
+	public void Verify_CompletedJobWithFinalInvoice_OnWeb() 
+	{
+		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+		verifyCompletedJobAndInvoice.SearchJob();
+		verifyCompletedJobAndInvoice.Select_Job();
+		verifyCompletedJobAndInvoice.VerifyJobstatus();
+		verifyCompletedJobAndInvoice.VerifyInvoice();
+		verifyCompletedJobAndInvoice.Invoice_Tab();
+		verifyCompletedJobAndInvoice.Verify_Invoice_Final_Status();
+		verifyCompletedJobAndInvoice.Verify_Invoice_Payment_Status();
+	}
+
+	@Test(priority=27, retryAnalyzer = RerunTestCase.class)
+	public void Customer_PropertyHistory_JobInvoicedStatusCheck() throws AWTException, InterruptedException 
+	{
+
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		propertyHistoiry.History();
+		propertyHistoiry.Verify_Job_Invoiced_Status();
+		propertyHistoiry.Back_PropertyHistory();
+		
+
+	}
+
+	@Test(priority=28, retryAnalyzer = RerunTestCase.class)
+	public void Reject_JobDiaryEvent_InMobile() throws InterruptedException, IOException 
+	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Job job = new Job(driver);
+		EstimateReject estimateReject = new EstimateReject(driver);
+		Estimate estimate = new Estimate(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		job.StoreJobNumber();
+		estimateReject.Reject();
+		estimateReject.Reject_FeedbackReason();
+		estimate.save();
+	}
+
+	@Test(priority=29, retryAnalyzer = RerunTestCase.class)
+	public void Verify_RejectedJobDiaryEvent_InWeb() throws InterruptedException 
+	{
+		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+		VerifyRejectedEstimateInWeb verifyRejectedEstimateInWeb = new VerifyRejectedEstimateInWeb(driverWeb);
+		verifyCompletedJobAndInvoice.SearchJob();
+		verifyCompletedJobAndInvoice.Select_Job();
+		verifyRejectedEstimateInWeb.verify_RejectStatus();
+
+	}
+
+	@Test(priority=30, retryAnalyzer = RerunTestCase.class)
+	public void Abort_Job_DiaryEvent_InMobile() throws InterruptedException, IOException
+	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Job job = new Job(driver);
+		EstimateReject estimateReject = new EstimateReject(driver);
+		Estimate estimate = new Estimate(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimateReject.Abort();
+		estimateReject.Abort_FeedbackReason();
+		estimate.save();
+	}
+
+	@Test(priority=31, retryAnalyzer = RerunTestCase.class)
+	public void Verify_AbortedJob_DiaryEvent_InWeb() throws InterruptedException 
+	{
+		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+		VerifyRejectedEstimateInWeb verifyRejectedEstimateInWeb = new VerifyRejectedEstimateInWeb(driverWeb);
+		verifyCompletedJobAndInvoice.SearchJob();
+		verifyCompletedJobAndInvoice.Select_Job();
+		verifyRejectedEstimateInWeb.verify_AbortedStatus();
+	}
+
+	@Test(priority=32, retryAnalyzer = RerunTestCase.class)
+	public void GenerateCertificateForJob_And_VerifyInMobile() throws InterruptedException, IOException 
+	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		Job job = new Job(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Certificate certificate = new Certificate(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimate2.Diary_Travel();
+		estimate2.Diary_Arrive();
+		job2.Arrive_Question1(ArriveAnswer);
+		job.Next();
+
+		signature(172, 1242, 655, 1000);//simulator
+		job.Finish();
+		add_Notes.Click_Choc_MenuButton();
+		certificate.Click_Certificate();
+		certificate.Click_Fab();
+		certificate.Search_Certificate(AllFieldsCertificate);
+		certificate.Select_Certificate();
+		certificate.Next_InputType(CertificateInput);
+		certificate.Click_Finish();
+		certificate.verify_CertificateNumber();
+		job2.Job_Report();
+		job2.Arrive_Question1(LeaveAnswer);
+		job.Finish();
+		job2.Job_Leave();
+		job2.Complete_Continue();
+		signature(246, 1677, 772, 1712);
+		job2.Sign_save();
+		signature(310, 868, 791, 941);
+		job2.Sign_save();
+		job2.DoNothing();
+		
+	}
+
+
+	@Test(priority=33, retryAnalyzer = RerunTestCase.class)
+	public void Verify_CompletedCertificateInWeb() 
+	{
+		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+		Certificate certificate = new Certificate(driverWeb);
+		verifyCompletedJobAndInvoice.SearchJob();
+		verifyCompletedJobAndInvoice.Select_Job();
+		certificate.web_Certificate();
+		certificate.verify_WebCertificate();
+
+	}
+
+
+	@Test(priority=34, retryAnalyzer = RerunTestCase.class)
+	public void EmailCertificateFromMobileAndVerifyOnTheGmailApp() throws InterruptedException, IOException 
+	{
+
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		Job job = new Job(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Certificate certificate = new Certificate(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimate2.Diary_Travel();
+		estimate2.Diary_Arrive();
+		job2.Arrive_Question1(ArriveAnswer);
+		job.Next();
+
+		signature(172, 1242, 655, 1000);//simulator
+		job.Finish();
+		add_Notes.Click_Choc_MenuButton();
+		certificate.Click_Certificate();
+		certificate.Click_Fab();
+		certificate.Search_Certificate(AllFieldsCertificate);
+		certificate.Select_Certificate();
+		certificate.Next_InputType(CertificateInput);
+		certificate.Click_Finish();
+		certificate.verify_CertificateNumber();
+		job2.Job_Report();
+		job2.Arrive_Question1(LeaveAnswer);
+		job.Finish();
+		job2.Job_Leave();
+		job2.Complete_Continue();
+		signature(246, 1677, 772, 1712);
+		job2.Sign_save();
+		signature(310, 868, 791, 941);
+		job2.Sign_save();
+		job2.DoNothing();
+		certificate.Click_CompletedCertificate();
+		certificate.Email();
+		certificate.To();
+		certificate.CheckBox();
+		job2.Sign_save();
+		job2.Sign_save();
+		ThreeSec();
+		SwitchToGmailApp();
+		certificate.Verify_CertificateOnGmailApp(AllFieldsCertificate);
+		TwoSec();
+		SwitchToV4();
+		
+
+
+
+	}
+
+
+	@Test(priority=35, retryAnalyzer = RerunTestCase.class)
+	public void Add_Edit_Delete_ReminderForJob() throws InterruptedException, IOException 
+	{
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		Job job = new Job(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Customer customer = new Customer(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		Reminder_Mob reminder = new Reminder_Mob(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		job.StoreJobNumber();
+
+		add_Notes.Click_Choc_MenuButton();
+		customer.Reminders();
+		add_Notes.Click_FabIcon_NewUI();
+		reminder.Select_ReminderDate();
+		reminder.Reminder_Note();
+		reminder.SelectUser(UserName);
+		attached_Files.Click_Save_NewUI();
+		reminder.Swipe_ReminderNotes();
+		reminder.Delete();
+		reminder.Delete();
+		add_Notes.Click_FabIcon_NewUI();
+		reminder.Select_ReminderDate();
+		reminder.Reminder_Note();
+		reminder.SelectUser(UserName);
+		attached_Files.Click_Save_NewUI();
+		reminder.Click_ReminderNotes();
+		reminder.Click_Edit();
+		reminder.EditDate();
+		reminder.EditNotes();
+		attached_Files.Click_Save_NewUI();
+		reminder.ReminderBack();
+
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimate2.Diary_Travel();
+		estimate2.Diary_Arrive();
+		job2.Arrive_Question1(ArriveAnswer);
+		job.Next();
+
+		signature(172, 1242, 655, 1000);//simulator
+		job.Finish();
+		job2.Job_Report();
+		job2.Arrive_Question1(LeaveAnswer);
+		job.Finish();
+		job2.Job_Leave();
+		job2.Complete_Continue();
+		signature(246, 1677, 772, 1712);
+		job2.Sign_save();
+		signature(310, 868, 791, 941);
+		job2.Sign_save();
+		job2.DoNothing();
+
+		
+	}
+
+	@Test(priority=36, retryAnalyzer = RerunTestCase.class)
+	public void Verify_JobReminder_OnWeb() 
+	{
+		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+		Reminder_Web reminder_Web = new Reminder_Web(driverWeb);
+		verifyCompletedJobAndInvoice.SearchJob();
+		verifyCompletedJobAndInvoice.Select_Job();
+		reminder_Web.Click_Reminder();
+		reminder_Web.Verify_Reminder(UserName);
+
+	}
+
+	@Test(priority=37, retryAnalyzer = RerunTestCase.class)
+	public void Add_Edit_Delete_Complete_OfficeTask_VerifyBothMobAndWeb() throws InterruptedException, IOException 
+	{
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		Job job = new Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		Reminder_Mob reminder = new Reminder_Mob(driver);
+		OfficeTask_Mob officeTask_Mob = new OfficeTask_Mob(driver);
+		OfficeTask_Web officeTask_Web = new OfficeTask_Web(driverWeb);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		job.StoreJobNumber();
+
+		add_Notes.Click_Choc_MenuButton();
+		officeTask_Mob.OfficeTask();
+		add_Notes.Click_FabIcon_NewUI();
+		officeTask_Mob.AssignTo();
+		officeTask_Mob.Select_AssignTo(UserName);
+		officeTask_Mob.Description();
+		attached_Files.Click_Save_NewUI();
+		officeTask_Mob.Verify_IncompleteTask();
+		officeTask_Mob.Swipe_OfficeTask();
+		reminder.Delete();
+		reminder.Delete();
+		add_Notes.Click_FabIcon_NewUI();
+		officeTask_Mob.AssignTo();
+		officeTask_Mob.Select_AssignTo(UserName);
+		officeTask_Mob.Description();
+		attached_Files.Click_Save_NewUI();
+		officeTask_Mob.Verify_User(UserName);
+		officeTask_Mob.Click_OfficeTask(UserName);
+		reminder.Click_Edit();
+		officeTask_Mob.Edit_Des();
+		attached_Files.Click_Save_NewUI();
+
+		VerifyCompletedJobAndInvoice verifyCompletedJobAndInvoice = new VerifyCompletedJobAndInvoice(driverWeb);
+		verifyCompletedJobAndInvoice.SearchJob();
+		verifyCompletedJobAndInvoice.Select_Job();
+
+		officeTask_Web.Click_OfficeTask();
+		officeTask_Web.Verify_Username(UserName);
+		officeTask_Web.CompleteOfficeTask();
+
+		officeTask_Mob.Verify_Completed_OfficeTask();
+		officeTask_Mob.OfficeTaskBack();
+		
+	}
+
+	@Test(priority=38, retryAnalyzer = RerunTestCase.class)
+	public void Job_FreeOfCharge_VerifyStatusOnThePropertHistoryList() throws InterruptedException, IOException, AWTException 
+	{
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
+		Job job = new Job(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimate2.Diary_Travel();
+		estimate2.Diary_Arrive();
+		job2.Arrive_Question1(ArriveAnswer);
+		job.Next();
+
+		signature(172, 1242, 655, 1000);//simulator
+		job.Finish();
+
+		job2.Job_Report();
+		job2.Arrive_Question1(LeaveAnswer);
+		job.Finish();
+		job2.Job_Leave();
+		job2.Complete_Continue();
+		signature(246, 1677, 772, 1712);
+		job2.Sign_save();
+		signature(310, 868, 791, 941);
+		job2.Sign_save();
+		job2.FreeOfCharge();
+		job2.FreeOfCharge_Reason();
+		job2.Sign_save();
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();
 
+		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
+		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		propertyHistoiry.History();
+		propertyHistoiry.Verify_Job_FreeOfCharge_Status();
+		propertyHistoiry.Back_PropertyHistory();
+		
 	}
+
+	@Test(priority=39, retryAnalyzer = RerunTestCase.class)
+	public void PropertyHistory_SectionVerification() throws InterruptedException, AWTException 
+	{
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
+		estimate2.Diary();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
+		propertyHistoiry.History();
+		propertyHistoiry.Select_Job_PropertyHistory();
+		propertyHistoiry.CustomerInformation_Section();
+		propertyHistoiry.JobDetails_Section();
+		propertyHistoiry.OtherJobDetails_Section();
+		ScrollDown24("Appointment history");		
+		propertyHistoiry.AppointmentHistory_Section();
+		ScrollDown24("Attachments");
+		propertyHistoiry.InstalledParts_Section();
+		propertyHistoiry.Invoices_Section();
+		propertyHistoiry.Attachments_Section();
+		ScrollDown24("Purchase orders");
+		propertyHistoiry.Certificates_Section();
+		propertyHistoiry.AdditionalWorks_Section();
+		propertyHistoiry.PurchaseOrders_Section();
+		propertyHistoiry.Job_Back_PropertHistory();
+		propertyHistoiry.Back_PropertyHistory();
+		
+
+	}
+
+	@Test(priority=40, retryAnalyzer = RerunTestCase.class)
+	public void Job_PropetyHistory_AllSection_View_Verification() throws InterruptedException, IOException 
+	{
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+
+		//Diary travel
+		Job job = new Job(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		EstimateAccept estimate2 = new EstimateAccept(driver);
+			
+		estimate2.Diary();
+		estimate2.Fabicon();
+		job.Click_Job();
+		estimate2.starttime();
+		estimate2.SelectStartTime();
+		estimate2.EndTime();
+		estimate2.SelectEndTime();
+		estimate2.SearchCustomer();
+		estimate2.SelectCustomer();
+		job.JobDescription();
+		job.SaveJob();
+		estimate2.EstimateTravel();
+
+
+		//Job Attached files
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		add_Notes.Click_Choc_MenuButton();
+		attached_Files.Click_AttachedFiles();
+		add_Notes.Click_FabIcon_NewUI();
+		attached_Files.Click_TakePhoto();
+		attached_Files.Exception_Handling();
+		attached_Files.Capture_SingleImage();
+		attached_Files.Click_PhotoNext();
+		attached_Files.Rename_File(JobImage);
+		attached_Files.Click_Save_NewUI();
+		attached_Files.Click_Save_NewUI();
+		add_Notes.Click_FabIcon_NewUI();
+		attached_Files.Click_RecordVideo();
+		attached_Files.Exception_Handling();
+		attached_Files.Capture_SingleVideo();
+		attached_Files.Click_VideoNext();
+		attached_Files.Rename_File(JobVideo);
+		attached_Files.Click_Save_NewUI();
+		attached_Files.Click_Save_NewUI();
+		add_Notes.Click_FabIcon_NewUI();
+		attached_Files.Click_ScanDocument();
+		attached_Files.Capture_Document();
+		attached_Files.ConfirmScan();                                
+		attached_Files.ConfirmScan();
+		attached_Files.Rename_File(JobDocument);
+		attached_Files.Click_Save_NewUI();
+		attached_Files.Click_Save_NewUI();
+		add_Notes.Click_FabIcon_NewUI();
+		attached_Files.Click_RecordAudio();
+		attached_Files.Capture_Audio();
+		attached_Files.Click_Save_NewUI();
+		attached_Files.Enter_AudioFileName(JobAudio);
+		attached_Files.Click_Save_NewUI();
+		add_Notes.Click_FabIcon_NewUI();
+		attached_Files.Click_ChooseFromGallery();
+		attached_Files.SelectPicFromGallery();
+		attached_Files.Rename_File(JobUploadedImage);
+		attached_Files.Click_Save_NewUI();
+		attached_Files.Upload_Save();
+		attached_Files.AttachedFiles_Back();
+
+
+		//Diary Complete
+		estimate2.Diary_Accept();
+		job.StoreJobNumber();
+		estimate2.Diary_Travel();
+		estimate2.Diary_Arrive();
+		job2.Arrive_Question1(ArriveAnswer);
+		job.Next();		
+		signature(172, 1242, 655, 1000);//simulator
+		job.Finish();
+		job2.Job_Report();
+		job2.Arrive_Question1(LeaveAnswer);
+		job.Finish();
+		job2.Job_Leave();
+		job2.Complete_Continue();
+		signature(246, 1677, 772, 1712);
+		job2.Sign_save();
+		signature(310, 868, 791, 941);
+		job2.Sign_save();
+		job2.Final_Invoice();
+		job2.Invoice_Description();
+		ScrollDown24Contains("Invoice category");
+		job2.Invoice_Category();
+		job2.Invoice_Next();
+		job2.Breakdown_Value("100");
+		job2.ExceptionHandling_For_DataNotLoad_InInvoiceScreen();
+		job2.Invoice_Saves();
+		job2.Payment();
+		job2.SelectOtherOptionAndMethod_Value();
+		job2.Nominal_Value();
+		job2.Payment_Save();
+		job2.Job_Status();
+
+		//Verify Files on the property history details screen
+		add_Notes.Click_Choc_MenuButton();
+		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
+		propertyHistoiry.PropertyHistory();
+		propertyHistoiry.Click_Job_PropertHistoryList();
+		ScrollDown24("Attachments");
+		attached_Files.Attachments_ViewAll();
+		attached_Files.Today_Status_Verification();
+		attached_Files.Files_Verifications(JobImage);
+		attached_Files.Files_Verifications(JobVideo);
+		attached_Files.Files_Verifications(JobDocument); 
+		attached_Files.Files_Verifications(JobAudio);
+		attached_Files.Files_Verifications(JobUploadedImage);
+		attached_Files.AttachedFiles_Back();
+		propertyHistoiry.Job_Back_PropertHistory();
+		propertyHistoiry.Back_PropertyHistory();   
+		
+
+
+	}
+
+	
 
 	@Test(priority=41, retryAnalyzer = RerunTestCase.class)
 	public void Add_Edit_Delete_CustomerAssetNewUI() throws AWTException, InterruptedException, IOException 
 	{
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 		
 		Add_Notes add_Notes = new Add_Notes(driver);
 		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
@@ -1590,14 +1650,15 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		assetNewUIMob.Select_Location(Location1);
 		attached_Files.Click_Save_NewUI();
 		assetNewUIMob.Back_AssetNewUI();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
+		
 	}
 	
 	@Test(priority=42, retryAnalyzer = RerunTestCase.class)
 	public void Add_Draft_Delete_Clone_CustomFormNewUI() throws AWTException, InterruptedException, IOException 
 	{
 		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
 
 		Add_Notes add_Notes = new Add_Notes(driver);
 		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
@@ -1670,163 +1731,9 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	
 	}
 
-	@Test (enabled=true)
+	@Test (enabled=false)
 	public void Demo() throws AWTException, InterruptedException, IOException 
-	{
-		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
-		Customer customer = new Customer(driver);
-		VerifyCustomerOnWeb verifyCustomerOnWeb = new VerifyCustomerOnWeb(driverWeb);
-		
-		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.FabIcon();
-		newui_CreateCustomerOnMob.AddProperty();
-		newui_CreateCustomerOnMob.Typeofproperty();
-		newui_CreateCustomerOnMob.Click_Customer();
-		newui_CreateCustomerOnMob.TypeofCustomer();
-		newui_CreateCustomerOnMob.Click_PrivateCustomer();
-		customer.Customer_title(Title);
-		customer.Customer_Name(Name);
-		customer.Customer_SurName(Surname);
-		customer.Customer_Telephone("8248724397");
-		customer.Customer_Mobile("8248724397");
-		customer.Customer_email("ssaravanan@commusoft.com");
-		customer.Customer_AddressLine1("Address line 1");
-		customer.Customer_Save();
-		ThreeSec();
-		customer.StoreCustomerNumber();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-		
-		//Asset new UI
-		Add_Notes add_Notes = new Add_Notes(driver);
-		Assets assets = new Assets(driver);
-		AssetNewUIMob assetNewUIMob = new AssetNewUIMob(driver);
-		Attached_Files attached_Files = new Attached_Files(driver);
-		Reminder_Mob reminder = new Reminder_Mob(driver);
-
-		newui_CreateCustomerOnMob.Home();
-		customer.profile();
-		assetNewUIMob.Labs();
-		assetNewUIMob.EnableNewAssets();
-		attached_Files.Click_Save_NewUI();
-		customer.Back_Profile();
-		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.SearchCustomerByNumber();
-		newui_CreateCustomerOnMob.SelectCustomer();
-		add_Notes.Click_Choc_MenuButton();
-		//Add
-		assets.Click_Assets();
-		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.SearchNewUI();
-		assetNewUIMob.TypeNewUI(Asset_Type);
-		assetNewUIMob.Select_Asset(Asset_Type);
-		assetNewUIMob.Fuel();
-		assetNewUIMob.Select_Fuel(Fuel1);
-		assetNewUIMob.Make();
-		assetNewUIMob.Select_Make(Make1);
-		assetNewUIMob.Model();
-		assetNewUIMob.Select_Model(Model1);
-		assetNewUIMob.Location();
-		assetNewUIMob.Select_Location(Location1);
-		attached_Files.Click_Save_NewUI();
-		//Edit
-		assetNewUIMob.Click_CustomerAsset(Asset_Type);
-		assetNewUIMob.Edit();
-		assetNewUIMob.Fuel();
-		assetNewUIMob.Select_Fuel(Fuel2);
-		assetNewUIMob.Make();
-		assetNewUIMob.Select_Make(Make2);
-		assetNewUIMob.Model();
-		assetNewUIMob.Select_Model(Model2);
-		assetNewUIMob.Location();
-		assetNewUIMob.Select_Location(Location2);
-		attached_Files.Click_Save_NewUI();
-		//Delete
-		assetNewUIMob.Swipe_Asset();
-		reminder.Delete();
-		reminder.Delete();
-		assetNewUIMob.Verify_DeletedCustomerAsset();
-		//Add
-		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.SearchNewUI();
-		assetNewUIMob.TypeNewUI(Asset_Type);
-		assetNewUIMob.Select_Asset(Asset_Type);
-		assetNewUIMob.Fuel();
-		assetNewUIMob.Select_Fuel(Fuel1);
-		assetNewUIMob.Make();
-		assetNewUIMob.Select_Make(Make1);
-		assetNewUIMob.Model();
-		assetNewUIMob.Select_Model(Model1);
-		assetNewUIMob.Location();
-		assetNewUIMob.Select_Location(Location1);
-		attached_Files.Click_Save_NewUI();
-		assetNewUIMob.Back_AssetNewUI();
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-		
-		//Custom form New UI
-		CustomFormNewUIMob customFormNewUIMob = new CustomFormNewUIMob(driver);
-		OnGoingWork onGoingWork = new OnGoingWork(driver);
-		Job job = new Job(driver);
-		Certificate certificate = new Certificate(driver);
-		NewUIElements newUIElements = new NewUIElements(driver);
-
-		newui_CreateCustomerOnMob.Home();
-		customer.profile();
-		assetNewUIMob.Labs();
-		customFormNewUIMob.EnableNewCustomForms();
-		attached_Files.Click_Save_NewUI();
-		customer.Back_Profile();
-		newui_CreateCustomerOnMob.Home();
-		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.SearchCustomerByNumber();
-		newui_CreateCustomerOnMob.SelectCustomer();
-		add_Notes.Click_Choc_MenuButton();
-		onGoingWork.CustomerOnGoing();
-		onGoingWork.FabIcon_OnGoing();
-		onGoingWork.AddNewJob();
-		job.JobDescription();
-		job.SaveJob();
-		onGoingWork.Click_FirstJob();
-		job.StoreJobNumber_CustomerOnGoing();
-		add_Notes.Click_Choc_MenuButton();
-		certificate.Click_Certificate();
-		//Draft
-		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.SearchNewUI();
-		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
-		assetNewUIMob.Select_Asset(AllFieldsCertificate);
-		customFormNewUIMob.Click_Next();
-		customFormNewUIMob.BackForDraft();
-		
-		//Delete
-		customFormNewUIMob.WaitForCertificate();
-		assetNewUIMob.Swipe_Asset();
-		reminder.Delete();
-		reminder.Delete();
-		customFormNewUIMob.Verify_DeletedCustomForm();
-		
-		//Add
-		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.SearchNewUI();
-		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
-		assetNewUIMob.Select_Asset(AllFieldsCertificate);
-		customFormNewUIMob.Next_InputType(CertificateInput);
-		attached_Files.Click_Save_NewUI();
-		customFormNewUIMob.Close_NotSync_BottomSheet();
-		customFormNewUIMob.Verify_CertificateNumber();
-		
-		//Clone
-		customFormNewUIMob.Click_FirstCertificate();
-		customFormNewUIMob.Clone();
-		customFormNewUIMob.Verify_ClonedCertificate();
-		newUIElements.BackArrowButton();
-		
-		
-		Click_NavigateUp_BackButton();
-		Click_MenuClosed_BackButton();
-		
-	}
+	{}
 	
 	
 	

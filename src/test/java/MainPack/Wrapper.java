@@ -245,34 +245,34 @@ public class Wrapper extends WrapperForWeb
 	public void click(String option)
 	{
 		//----------------------------> NORMAL CLICK <--------------------------------
-//		{
-//			if(option.contains("$"))
-//			{
-//				option = option.replace("$", "");
-//				driver.findElement(By.name(option)).click();
-//
-//			}
-//			else if(option.contains("#"))
-//			{
-//				option = option.replace("#", "");
-//				driver.findElement(By.id(option)).click(); 
-//			}
-//			else if(option.contains("~"))
-//			{
-//				option = option.replace("~", "");
-//				driver.findElement(By.className(option)).click();
-//			}
-//			else
-//			{
-//				//option = option.replace("//", "");
-//				driver.findElement(By.xpath(option)).click();
-//			}
-//		}
+		{
+			if(option.contains("$"))
+			{
+				option = option.replace("$", "");
+				driver.findElement(By.name(option)).click();
+
+			}
+			else if(option.contains("#"))
+			{
+				option = option.replace("#", "");
+				driver.findElement(By.id(option)).click(); 
+			}
+			else if(option.contains("~"))
+			{
+				option = option.replace("~", "");
+				driver.findElement(By.className(option)).click();
+			}
+			else
+			{
+				//option = option.replace("//", "");
+				driver.findElement(By.xpath(option)).click();
+			}
+		}
 
 		//------------------------------------------> RETRY CLICK BY USING WHILE LOOP <--------------------------
-		        String elementLocator =option;
-		
-		        retryClick(driver, elementLocator, 3, 1000);
+//		        String elementLocator =option;
+//		
+//		        retryClick(driver, elementLocator, 3, 1000);
 
 		//------------------------------------------> RETRY CLICK BY USING DO-WHILE LOOP <---------------------
 //		        int attempt = 1;
@@ -650,7 +650,7 @@ public class Wrapper extends WrapperForWeb
 		//		Thread.sleep(2000);
 
 
-		Thread.sleep(3000);
+//		Thread.sleep(3000);
 
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 		Sequence click = new Sequence(finger, 1);
@@ -661,7 +661,7 @@ public class Wrapper extends WrapperForWeb
 
 		driver.perform(Arrays.asList(click));
 
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 
 
 	}
@@ -751,7 +751,23 @@ public class Wrapper extends WrapperForWeb
 	public void signature(int startX, int startY, int endX, int endY) throws InterruptedException
 	{
 
-		ScrollDown24("Sign here");
+
+		TwoSec();
+		String pageSource = driver.getPageSource();
+		System.out.println(pageSource);
+		if(pageSource.contains("Sign here"))
+			ScrollDown24("Sign here");
+		else
+			System.out.println("No text available");
+		
+//		try 
+//		{
+//			ScrollDown24("Sign here");
+//		}catch(Exception e) 
+//		{
+//			System.out.println("No text available");
+//		}
+		
 		OneSec();
 		PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 		Sequence swipe = new Sequence(finger, 1);
@@ -2964,7 +2980,22 @@ public class Wrapper extends WrapperForWeb
 		
 	}
 
-	
+	public void CloseTheAppWhenItWasCrashed() throws MalformedURLException 
+	{
+		String pageSource = driver.getPageSource();
+		
+		if(pageSource.contains("Wait")) {
+			
+			ExplicitWait_PresenceOfEle("//*[@text='Wait']");
+			click("//*[@text='OK']");
+			TwoSec();
+			SwitchToV4();
+			
+		}else
+		{
+			System.out.println("App didn't crashed");
+		}
+	}
 	
 	
 }

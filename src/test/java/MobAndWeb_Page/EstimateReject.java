@@ -17,24 +17,26 @@ public class EstimateReject extends Wrapper{
 	
 	public void SelectStartTime() throws InterruptedException 
 	{
-		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
-		clickpoint(275, 1189);//hour
-		ThreeSec();
-		clickpoint(804,1185);//minutes
-		TwoSec();
-		click("//*[@text='OK']");
+//		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
+//		clickpoint(275, 1189);//hour
+////		ThreeSec();
+//		ExplicitWait_PresenceOfEle("//*[@text='9']");
+//		clickpoint(804,1185);//minutes
+////		TwoSec();
+//		click("//*[@text='OK']");
 		
 	}
 //	estimate2.EndTime();
 	
 	public void SelectEndTime() throws InterruptedException 
 	{
-		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
-		clickpoint(275, 1189);//hour
-		ThreeSec();
-		clickpoint(534,1445);//minutes
-		TwoSec();
-		click("//*[@text='OK']");
+//		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
+//		clickpoint(275, 1189);//hour
+////		ThreeSec();
+//		ExplicitWait_PresenceOfEle("//*[@text='9']");
+//		clickpoint(534,1445);//minutes
+////		TwoSec();
+//		click("//*[@text='OK']");
 	}
 //	estimate2.SearchCustomer();
 //	estimate2.SelectCustomer();
