@@ -100,43 +100,45 @@ public class EstimateAccept extends Wrapper{
 
 	public void Fabicon() throws InterruptedException 
 	{
-		FiveSec();
+		OneSec(); 
+		ExplicitWait_PresenceOfEle("//*[@resource-id='com.commusoft.v4:id/iv_today_events']");
 		clickpoint(943, 1896);
 	}
 
 	public void Click_Estimate() throws InterruptedException 
 	{
-		ThreeSec();
+//		ThreeSec(); commented on 10/02/2025
+		ExplicitWait_PresenceOfEle("//*[@text='Create estimate event']");
 		clickpoint(956, 1376);
 	}
 
 	public void starttime() 
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/starttimeIconview']");
-		click("//*[@resource-id='com.commusoft.v4:id/starttimeIconview']");
+//		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/starttimeIconview']");
+//		click("//*[@resource-id='com.commusoft.v4:id/starttimeIconview']");
 	}
 
 	public void SelectStartTime() throws InterruptedException 
 	{
-		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
-		clickpoint(275, 1189);//OK
-//		ThreeSec();
-		click("//*[@text='OK']");
+//		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
+//		clickpoint(275, 1189);//OK
+////		ThreeSec();
+//		click("//*[@text='OK']");
 	}
 	public void EndTime() 
 	{
-		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/end_time']");
-		click("//*[@resource-id='com.commusoft.v4:id/end_time']");
+//		ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/end_time']");
+//		click("//*[@resource-id='com.commusoft.v4:id/end_time']");
 	}
 
 	public void SelectEndTime() throws InterruptedException 
 	{
-		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
-		clickpoint(275, 1189);
-//		ThreeSec();
-		clickpoint(788, 1192);
-//		ThreeSec();
-		click("//*[@text='OK']");
+//		ExplicitWait_PresenceOfEle("//*[@text='CANCEL']");
+//		clickpoint(275, 1189);
+////		ThreeSec();
+//		clickpoint(788, 1192);
+////		ThreeSec();
+//		click("//*[@text='OK']");
 	}
 
 	public void SearchCustomer() 
@@ -159,7 +161,7 @@ public class EstimateAccept extends Wrapper{
 		
 		MobileElement num = driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/searchText']"));
 
-		num.sendKeys("4700");
+		num.sendKeys("4889");
 
 		ThreeSec();
 		click("//*[@resource-id='com.commusoft.v4:id/searchButtonView']");

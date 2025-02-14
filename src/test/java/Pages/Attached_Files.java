@@ -322,6 +322,7 @@ public class Attached_Files extends Wrapper{
 	
 	public void verifyAllAttachedFilesOnMOb() 
 	{
+		OneSec();
 		MobileElement file1 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[4]"));
 		Verify_AssertTrue(file1);
 		MobileElement file2 = driver.findElement(By.xpath("(//*[@class='android.view.View'])[6]"));

@@ -62,8 +62,8 @@ public class Job extends Wrapper{
 	public void StoreJobNumber() 
 	{
 
-		ExplicitWait_PresenceOfEle("//*[@text='Job Number']/following-sibling::*[@resource-id='com.commusoft.v4:id/jobnumber']");
-		jobnumber = driver.findElement(By.xpath("//*[@text='Job Number']/following-sibling::*[@resource-id='com.commusoft.v4:id/jobnumber']")).getText();
+		ExplicitWait_PresenceOfEle("//*[@text='Job number']/following-sibling::*[@resource-id='com.commusoft.v4:id/jobnumber']");
+		jobnumber = driver.findElement(By.xpath("//*[@text='Job number']/following-sibling::*[@resource-id='com.commusoft.v4:id/jobnumber']")).getText();
 		System.setProperty("jobnumber", jobnumber);
 
 
@@ -108,13 +108,15 @@ public class Job extends Wrapper{
 		try 
 		{
 
-
-			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
-			click("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
+//			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
+//			click("//*[@resource-id='com.commusoft.v4:id/save']");
+			ExplicitWait_ElementToBeClickable("//*[@text='Save']");
+			click("//*[@text='Save']");
+			
 		}catch(Exception e) 
 		{
-			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/save']");
-			click("//*[@resource-id='com.commusoft.v4:id/save']");
+			ExplicitWait_ElementToBeClickable("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
+			click("//*[@resource-id='com.commusoft.v4:id/toolbar_next']");
 		}
 
 		//		Thread.sleep(2000);
