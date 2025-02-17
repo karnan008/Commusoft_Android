@@ -14,8 +14,12 @@ public class NewUIElements extends Wrapper{
 	public void BackArrowButton() 
 	{
 		ThreeSec();
-		ExplicitWait_ElementToBeClickable("(//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[1]");
-		click("(//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[1]");
+//		ExplicitWait_ElementToBeClickable("(//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[1]");
+//		click("(//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.widget.ImageView)[1]");
+	
+		ExplicitWait_ElementToBeClickable("(//*[@class='android.widget.ImageView'])[1]");
+		click("(//*[@class='android.widget.ImageView'])[1]");
+	
 	}
 
 }
