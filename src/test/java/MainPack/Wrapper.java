@@ -2983,7 +2983,7 @@ public class Wrapper extends WrapperForWeb
 	public void CloseTheAppWhenItWasCrashed() throws MalformedURLException 
 	{
 		String pageSource = driver.getPageSource();
-		
+		System.out.println(pageSource);
 		if(pageSource.contains("Wait")) {
 			
 			ExplicitWait_PresenceOfEle("//*[@text='Wait']");
