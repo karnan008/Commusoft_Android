@@ -1,22 +1,13 @@
 package MobAndWeb_Page;
 
 import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.TouchActions;
-
-import com.google.common.collect.ImmutableMap;
 
 import MainPack.Wrapper;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 
@@ -248,5 +239,16 @@ public class Job extends Wrapper{
 		}
 	}
 
+	public void JobAssets()
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Job assets']");
+		click("//*[@text='Job assets']");
+	}
+
+	public void CompleteJob()
+	{
+		ExplicitWait_ElementToBeClickable("//*[@text='Complete job']");
+		click("//*[@text='Complete job']");
+	}
 
 }

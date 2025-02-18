@@ -131,9 +131,10 @@ public class DiaryHistory extends Wrapper{
 //	add_Notes.Click_Choc_MenuButton();
 //	onGoingWork.CustomerOnGoing();
 //	onGoingWork.Click_FirstJob();
-	public void Remove_EngineerEvents() 
+	public void Assets_ViewAll()
 	{
-		
+		ExplicitWait_ElementToBeClickable("(//*[@text='Assets on the job']/following-sibling::*[contains(@text,'View all')])[1]");
+		click("(//*[@text='Assets on the job']/following-sibling::*[contains(@text,'View all')])[1]");
 	}
 	
 }

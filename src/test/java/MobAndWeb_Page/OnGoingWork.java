@@ -49,4 +49,16 @@ public class OnGoingWork extends Wrapper{
 		MobileElement num = driver.findElement(By.xpath("//*[@resource-id='com.commusoft.v4:id/typenoValue']"));
 		click("//*[@text='"+jobnumber+"']");
 	}
+
+	public void ManageAssets()
+	{
+		ExplicitWait_PresenceOfEle("//*[@text='Manage assets']");
+		click("//*[@text='Manage assets']");
+	}
+
+	public void Select_JobAsset()
+	{
+		ExplicitWait_PresenceOfEle("(//*[@resource-id='com.commusoft.v4:id/assetcheck'])[1]");
+		click("(//*[@resource-id='com.commusoft.v4:id/assetcheck'])[1]");
+	}
 }

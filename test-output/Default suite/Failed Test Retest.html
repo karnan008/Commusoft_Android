@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Feb 17 18:02:09 IST 2025</td>
+<td>Started on:</td><td>Tue Feb 18 18:18:50 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>92 seconds (92558 ms)</td>
+<tr><td>Total time:</td><td>106 seconds (106661 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,60 +77,20 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='New_ui_Testclass.BasicSmoke_MobAndWeb.Demo()'><b>Demo</b><br>Test class: New_ui_Testclass.BasicSmoke_MobAndWeb</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //*[@class=&apos;android.widget.EditText&apos;]&apos; does not exist in DOM anymore
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;COMMUQA02&apos;, ip: &apos;192.168.100.189&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, autoGrantPermissions: true, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, autoGrantPermissions: true, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi Note 8 Pro, newCommandTimeout: 10000, noReset: true, platformName: android, platformVersion: 11, udid: 192.168.100.93:5555}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, viewportRect: {height: 2264, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: de3db08f-83d9-44eb-b44e-4010a34dc91f
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at MainPack.Wrapper.type(Wrapper.java:178)
-	at MobAndWeb_Page.AssetNewUIMob.TypeNewUI(AssetNewUIMob.java:50)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.Demo(BasicSmoke_MobAndWeb.java:1778)
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at MobAndWeb_Page.Newui_CreateCustomerOnMob.SearchCustomerByNumber(Newui_CreateCustomerOnMob.java:93)
+	at New_ui_Testclass.BasicSmoke_MobAndWeb.Demo(BasicSmoke_MobAndWeb.java:1870)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at MainPack.BaseClassForWebAndMobile.onFinish(BaseClassForWebAndMobile.java:354)
-... Removed 41 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2011857007", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2011857007'><pre>org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //*[@class=&apos;android.widget.EditText&apos;]&apos; does not exist in DOM anymore
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;COMMUQA02&apos;, ip: &apos;192.168.100.189&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, autoGrantPermissions: true, automationName: UiAutomator2, clearDeviceLogsOnStart: true, databaseEnabled: false, desired: {appActivity: com.commusoft.v4.Setup.Acti..., appPackage: com.commusoft.v4, autoGrantPermissions: true, automationName: UiAutomator2, clearDeviceLogsOnStart: true, deviceName: Redmi Note 8 Pro, newCommandTimeout: 10000, noReset: true, platformName: android, platformVersion: 11, udid: 192.168.100.93:5555}, deviceApiLevel: 30, deviceManufacturer: Xiaomi, deviceModel: Redmi Note 8 Pro, deviceName: 192.168.100.93:5555, deviceScreenDensity: 440, deviceScreenSize: 1080x2340, deviceUDID: 192.168.100.93:5555, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 10000, noReset: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 76, takesScreenshot: true, udid: 192.168.100.93:5555, viewportRect: {height: 2264, left: 0, top: 76, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: de3db08f-83d9-44eb-b44e-4010a34dc91f
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at io.appium.java_client.DefaultGenericMobileElement.execute(DefaultGenericMobileElement.java:45)
-	at io.appium.java_client.MobileElement.execute(MobileElement.java:1)
-	at io.appium.java_client.android.AndroidElement.execute(AndroidElement.java:1)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at MainPack.Wrapper.type(Wrapper.java:178)
-	at MobAndWeb_Page.AssetNewUIMob.TypeNewUI(AssetNewUIMob.java:50)
-	at New_ui_Testclass.BasicSmoke_MobAndWeb.Demo(BasicSmoke_MobAndWeb.java:1778)
+	at MainPack.BaseClassForWebAndMobile.onFinish(BaseClassForWebAndMobile.java:349)
+	at com.microsoft.java.test.runner.testng.TestNGRunner.run(TestNGRunner.java:45)
+	at com.microsoft.java.test.runner.testng.TestNGLauncher.execute(TestNGLauncher.java:32)
+	at com.microsoft.java.test.runner.Launcher.main(Launcher.java:57)
+... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1293967722", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1293967722'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at MobAndWeb_Page.Newui_CreateCustomerOnMob.SearchCustomerByNumber(Newui_CreateCustomerOnMob.java:93)
+	at New_ui_Testclass.BasicSmoke_MobAndWeb.Demo(BasicSmoke_MobAndWeb.java:1870)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -154,7 +114,7 @@ Session ID: de3db08f-83d9-44eb-b44e-4010a34dc91f
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
 	at org.testng.TestNG.runSuites(TestNG.java:1112)
 	at org.testng.TestNG.run(TestNG.java:1079)
-	at MainPack.BaseClassForWebAndMobile.onFinish(BaseClassForWebAndMobile.java:354)
+	at MainPack.BaseClassForWebAndMobile.onFinish(BaseClassForWebAndMobile.java:349)
 	at org.testng.TestRunner.fireEvent(TestRunner.java:873)
 	at org.testng.TestRunner.afterRun(TestRunner.java:828)
 	at org.testng.TestRunner.run(TestRunner.java:616)
@@ -168,12 +128,12 @@ Session ID: de3db08f-83d9-44eb-b44e-4010a34dc91f
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
 	at org.testng.TestNG.runSuites(TestNG.java:1112)
 	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+	at com.microsoft.java.test.runner.testng.TestNGRunner.run(TestNGRunner.java:45)
+	at com.microsoft.java.test.runner.testng.TestNGLauncher.execute(TestNGLauncher.java:32)
+	at com.microsoft.java.test.runner.Launcher.main(Launcher.java:57)
 </pre></div></td>
-<td>77</td>
-<td>New_ui_Testclass.BasicSmoke_MobAndWeb@11b5f4e2</td></tr>
+<td>90</td>
+<td>New_ui_Testclass.BasicSmoke_MobAndWeb@48bc2fce</td></tr>
 </table><p>
 </body>
 </html>

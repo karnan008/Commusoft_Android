@@ -1454,7 +1454,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	}
 
 	@Test(priority=40, retryAnalyzer = RerunTestCase.class)
-	public void Job_PropetyHistory_AllSection_View_Verification() throws InterruptedException, IOException 
+	public void Job_PropetyHistory_AttachedFiles_View_Verification() throws InterruptedException, IOException 
 	{
 		
 		Click_NavigateUp_BackButton();
@@ -1676,7 +1676,7 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		newui_CreateCustomerOnMob.Home();
 		customer.profile();
 		assetNewUIMob.Labs();
-		customFormNewUIMob.EnableNewCustomForms();
+		assetNewUIMob.EnableNewAssets();
 		attached_Files.Click_Save_NewUI();
 		customer.Back_Profile();
 		newui_CreateCustomerOnMob.Home();
@@ -1731,10 +1731,85 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 	
 	}
 
-	@Test (enabled=false)
+	@Test(priority=43, retryAnalyzer = RerunTestCase.class)
+	public void Job_PropetyHistory_JobAsset_View_Verification() throws AWTException, InterruptedException
+	{
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+
+		Add_Notes add_Notes = new Add_Notes(driver);
+		Newui_CreateCustomerOnMob newui_CreateCustomerOnMob = new Newui_CreateCustomerOnMob(driver);
+		Assets assets = new Assets(driver);
+		AssetNewUIMob assetNewUIMob = new AssetNewUIMob(driver);
+		Customer customer = new Customer(driver);
+		Attached_Files attached_Files = new Attached_Files(driver);
+		Reminder_Mob reminder = new Reminder_Mob(driver);
+		CustomFormNewUIMob customFormNewUIMob = new CustomFormNewUIMob(driver);
+		OnGoingWork onGoingWork = new OnGoingWork(driver);
+		Job job = new Job(driver);
+		Certificate certificate = new Certificate(driver);
+		NewUIElements newUIElements = new NewUIElements(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		
+
+		newui_CreateCustomerOnMob.Home();
+		customer.profile();
+		assetNewUIMob.Labs();
+		customFormNewUIMob.EnableNewCustomForms();
+		attached_Files.Click_Save_NewUI();
+		customer.Back_Profile();
+		newui_CreateCustomerOnMob.Home();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		onGoingWork.CustomerOnGoing();
+		onGoingWork.FabIcon_OnGoing();
+		onGoingWork.AddNewJob();
+		job.JobDescription();
+		onGoingWork.ManageAssets();
+		onGoingWork.Select_JobAsset();
+		job.SaveJob();
+		job.SaveJob();
+		onGoingWork.Click_FirstJob();
+		job.StoreJobNumber_CustomerOnGoing();
+		add_Notes.Click_Choc_MenuButton();
+		job.JobAssets();
+		assetNewUIMob.Verify_JobAssets();
+		newUIElements.BackArrowButton();
+		job.CompleteJob();
+		job2.Complete_Continue();
+		job2.FreeOfCharge();
+		job2.FOC_Reason();
+		job.SaveJob();
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+
+		//Verify Added Job Asset in the Property History (View details screen)
+		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
+		DiaryHistory diaryHistory = new DiaryHistory(driver);
+		newui_CreateCustomerOnMob.Home();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.SearchCustomerByNumber();
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		propertyHistoiry.History();
+		propertyHistoiry.Click_Job_PropertHistoryList();
+		ScrollDown24("Installed parts");
+		diaryHistory.Assets_ViewAll();
+		assetNewUIMob.Verify_JobAssets();
+		newUIElements.BackArrowButton();
+		propertyHistoiry.Job_Back_PropertHistory();
+		propertyHistoiry.Back_PropertyHistory();
+		
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+		
+	}
+
+	@Test (enabled=true)
 	public void Demo() throws AWTException, InterruptedException, IOException
 	{
-
 		
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();
@@ -1751,6 +1826,8 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		Job job = new Job(driver);
 		Certificate certificate = new Certificate(driver);
 		NewUIElements newUIElements = new NewUIElements(driver);
+		Pages.Job job2 = new Pages.Job(driver);
+		
 
 		newui_CreateCustomerOnMob.Home();
 		customer.profile();
@@ -1760,49 +1837,47 @@ public class BasicSmoke_MobAndWeb extends BaseClassForWebAndMobile{//1, TabletBa
 		customer.Back_Profile();
 		newui_CreateCustomerOnMob.Home();
 		newui_CreateCustomerOnMob.Search_Tab();
-		newui_CreateCustomerOnMob.PassCustomerNumber("4921");
+		newui_CreateCustomerOnMob.PassCustomerNumber("4923");
 		newui_CreateCustomerOnMob.SelectCustomer();
 		add_Notes.Click_Choc_MenuButton();
 		onGoingWork.CustomerOnGoing();
 		onGoingWork.FabIcon_OnGoing();
 		onGoingWork.AddNewJob();
 		job.JobDescription();
+		onGoingWork.ManageAssets();
+		onGoingWork.Select_JobAsset();
+		job.SaveJob();
 		job.SaveJob();
 		onGoingWork.Click_FirstJob();
 		job.StoreJobNumber_CustomerOnGoing();
 		add_Notes.Click_Choc_MenuButton();
-		certificate.Click_Certificate();
-		//Draft
-		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.SearchNewUI();
-		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
-		assetNewUIMob.Select_Asset(AllFieldsCertificate);
-		customFormNewUIMob.Click_Next();
-		customFormNewUIMob.BackForDraft();
-		
-		//Delete
-		customFormNewUIMob.WaitForCertificate();
-		assetNewUIMob.Swipe_Asset();
-		reminder.Delete();
-		reminder.Delete();
-		customFormNewUIMob.Verify_DeletedCustomForm();
-		
-		//Add
-		add_Notes.Click_FabIcon_NewUI();
-		assetNewUIMob.SearchNewUI();
-		assetNewUIMob.TypeNewUI(AllFieldsCertificate);
-		assetNewUIMob.Select_Asset(AllFieldsCertificate);
-		customFormNewUIMob.Next_InputType(CertificateInput);
-		attached_Files.Click_Save_NewUI();
-		customFormNewUIMob.Close_NotSync_BottomSheet();
-		customFormNewUIMob.Verify_CertificateNumber();
-		
-		//Clone
-		customFormNewUIMob.Click_FirstCertificate();
-		customFormNewUIMob.Clone();
-		customFormNewUIMob.Verify_ClonedCertificate();
+		job.JobAssets();
+		assetNewUIMob.Verify_JobAssets();
 		newUIElements.BackArrowButton();
-		
+		job.CompleteJob();
+		job2.Complete_Continue();
+		job2.FreeOfCharge();
+		job2.FOC_Reason();
+		job.SaveJob();
+		Click_NavigateUp_BackButton();
+		Click_MenuClosed_BackButton();
+
+		//Verify Added Job Asset in the Property History (View details screen)
+		PropertyHistory propertyHistoiry= new PropertyHistory(driver);
+		DiaryHistory diaryHistory = new DiaryHistory(driver);
+		newui_CreateCustomerOnMob.Home();
+		newui_CreateCustomerOnMob.Search_Tab();
+		newui_CreateCustomerOnMob.PassCustomerNumber("4923");
+		newui_CreateCustomerOnMob.SelectCustomer();
+		add_Notes.Click_Choc_MenuButton();
+		propertyHistoiry.History();
+		propertyHistoiry.Click_Job_PropertHistoryList();
+		ScrollDown24("Installed parts");
+		diaryHistory.Assets_ViewAll();
+		assetNewUIMob.Verify_JobAssets();
+		newUIElements.BackArrowButton();
+		propertyHistoiry.Job_Back_PropertHistory();
+		propertyHistoiry.Back_PropertyHistory();
 		
 		Click_NavigateUp_BackButton();
 		Click_MenuClosed_BackButton();

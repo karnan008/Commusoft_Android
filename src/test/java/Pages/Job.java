@@ -287,11 +287,11 @@ public class Job extends Wrapper{
 	}
 	public void FOC_Reason() throws InterruptedException
 	{
-		Thread.sleep(5000);
-		click("#com.commusoft.v4:id/reasonspinner");
-		Thread.sleep(10000);
-		click("//android.widget.TextView[@text='Admin error']");
 		Thread.sleep(2000);
+		click("#com.commusoft.v4:id/reasonspinner");
+		ExplicitWait_PresenceOfEle("//android.widget.TextView[@text='Admin error']");
+		click("//android.widget.TextView[@text='Admin error']");
+		
 	}
 	public void FOC_Comment() throws InterruptedException
 	{
